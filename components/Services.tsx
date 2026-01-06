@@ -14,7 +14,7 @@ import GoogleReviewCard from "./GoogleReviewCard";
 const serviceList = [
   {
     image: {
-      src: "/shayan-movers-packers.jpg",
+      src: "/home-moving-in-dubai.jpg",
       alt: "Home moving services for apartments and villas",
     },
     href: "/services/home-moving",
@@ -23,7 +23,7 @@ const serviceList = [
   },
   {
     image: {
-      src: "/shayan-movers-packers.jpg",
+      src: "/office-relocation-in-uae.jpg",
       alt: "Office relocation and business moving services",
     },
     href: "/services/office-relocation",
@@ -32,7 +32,7 @@ const serviceList = [
   },
   {
     image: {
-      src: "/shayan-movers-packers.jpg",
+      src: "/packing-services-dubai.jpg",
       alt: "Professional packing services with boxes and bubble wrap",
     },
     href: "/services/packing-services",
@@ -41,7 +41,7 @@ const serviceList = [
   },
   {
     image: {
-      src: "/shayan-movers-packers.jpg",
+      src: "/furniture-assembly-services-in-dubai.jpg",
       alt: "Furniture dismantling and assembly services",
     },
     href: "/services/furniture-assembly",
@@ -50,7 +50,7 @@ const serviceList = [
   },
   {
     image: {
-      src: "/shayan-movers-packers.jpg",
+      src: "/storage-services-in-dubai.jpg",
       alt: "Secure storage solutions for household items",
     },
     href: "/services/storage-solutions",
@@ -59,7 +59,7 @@ const serviceList = [
   },
   {
     image: {
-      src: "/shayan-movers-packers.jpg",
+      src: "/piano-movers.jpg",
       alt: "Special handling for pianos, antiques, and fragile items",
     },
     href: "/services/special-items",
@@ -70,8 +70,10 @@ const serviceList = [
 
 export function Services() {
   return (
-    <>
-      <h2 className="text-center mt-36">Our Moving Services in the UAE</h2>
+    <section className="mt-36 md:px-0 px-3">
+      <h2 className="text-center md:text-5xl text-4xl!">
+        Our Moving Services in UAE
+      </h2>
       <Carousel
         plugins={[
           Autoplay({
@@ -90,10 +92,10 @@ export function Services() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselNext />
-        <CarouselPrevious />
+        {/* <CarouselNext />
+        <CarouselPrevious /> */}
       </Carousel>
-    </>
+    </section>
   );
 }
 
@@ -182,9 +184,12 @@ const googleReviews = [
 
 export function ReviewSection() {
   return (
-    <section className="mt-36 max-w-6xl md:px-0 px-3 grid md:grid-cols-4 grid-cols-1 gap-6 mx-auto">
-      <div className="col-span-1 ">
-        <h2 className="text-3xl!">What Our Customers Says</h2>
+    <section className="mt-36 max-w-6xl md:px-0 px-3  mx-auto">
+      <div className="flex items-center justify-center text-center flex-col">
+        <h2 className=" whitespace-normal wrap-break-word">
+          What Our Customers Says
+        </h2>
+
         <div className="flex gap-x-1 mt-5">
           {Array(5)
             .fill(0)
@@ -194,29 +199,27 @@ export function ReviewSection() {
         </div>
         <p className="mt-2 font-medium">857 Google Reviews</p>
       </div>
-      <div className="md:col-span-3 col-span-1">
-        <Carousel
-          plugins={[
-            Autoplay({
-              delay: 2500,
-            }),
-          ]}
-          opts={{
-            align: "start",
-          }}
-          className="w-full"
-        >
-          <CarouselContent>
-            {googleReviews.map((review, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                <GoogleReviewCard review={{ ...review }} />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselNext />
-          <CarouselPrevious />
-        </Carousel>
-      </div>
+
+      <Carousel
+        plugins={[
+          Autoplay({
+            delay: 2500,
+          }),
+        ]}
+        opts={{
+          align: "start",
+          loop: true,
+        }}
+        className="max-w-5xl mx-auto mt-10"
+      >
+        <CarouselContent>
+          {googleReviews.map((review, index) => (
+            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+              <GoogleReviewCard review={{ ...review }} />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
     </section>
   );
 }

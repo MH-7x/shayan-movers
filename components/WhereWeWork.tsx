@@ -112,7 +112,7 @@ const LocationCard = ({ location }: { location: LocationType }) => (
 export const WhereWeWork = () => {
   return (
     <section className="mt-30 py-16 ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-(--brand-color) text-(--neutral-color) text-sm font-medium mb-4">

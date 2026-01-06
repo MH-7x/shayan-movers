@@ -33,7 +33,7 @@ const ContactSection = ({
             {title ? title : "Best House Moving Company in Dubai, UAE"}
           </h1>
         ) : (
-          <h2 className=" font-black md:text-5xl text-3xl">
+          <h2 className=" font-black md:text-5xl text-3xl!">
             {title ? title : "Best House Moving Company in Dubai, UAE"}
           </h2>
         )}
@@ -55,7 +55,7 @@ const ContactSection = ({
             </>
           )}
         </div>
-        <div className="mt-10 grid md:grid-cols-3 gap-x-5 md:px-0 px-5">
+        <div className="mt-10 grid md:grid-cols-3 gap-5 md:px-0 px-5">
           <div className="bg-white hover:bg-(--brand-color)/10 transition-colors duration-500 text-(--headline-color) drop-shadow-lg flex rounded-2xl flex-col items-center justify-center gap-y-4 p-6">
             <Medal className="w-10 h-10 b2" />
             <p className="  font-medium text-center">20+ Years Experience</p>

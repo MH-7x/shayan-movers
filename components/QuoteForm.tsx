@@ -73,7 +73,7 @@ const QuoteForm = ({ side }: { side?: boolean }) => {
       }`}
     >
       <div className="p-5 bg-(--heading-color)">
-        <h3 className="md:text-3xl text-2xl  text-white! text-center">
+        <h3 className="md:text-3xl text-2xl!  text-white! text-center">
           Request A Quote
         </h3>
       </div>

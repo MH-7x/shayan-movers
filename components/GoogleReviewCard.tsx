@@ -12,7 +12,7 @@ export interface Review {
 
 const GoogleReviewCard = ({ review }: { review: Review }) => {
   return (
-    <div className="bg-white rounded-[24px] p-6 max-w-[360px] w-full shadow-sm font-sans">
+    <div className="bg-white rounded-3xl p-6 max-w-96 shadow-sm font-sans">
       <div className="flex justify-between items-start mb-3">
         <div className="flex gap-3">
           <div className="w-12 h-12 rounded-full bg-gray-300 overflow-hidden flex-shrink-0 border overflow-hidden border-gray-100 relative">
@@ -72,10 +72,6 @@ const GoogleReviewCard = ({ review }: { review: Review }) => {
           {review.review}
         </p>
       </div>
-
-      <button className="text-gray-500 hover:text-gray-700 text-[15px]! font-medium cursor-pointer">
-        Read more
-      </button>
     </div>
   );
 };

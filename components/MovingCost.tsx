@@ -12,7 +12,7 @@ import { Button } from "./ui/button";
 
 const MovingCostsComponent: React.FC = () => {
   return (
-    <section className="w-full mt-36 px-4 md:px-6">
+    <section className="w-full mt-36 px-3 md:px-6">
       <div className="max-w-5xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-10">
@@ -84,7 +84,7 @@ const MovingCostsComponent: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="p-8 border border-gray-100 flex flex-col justify-center h-full">
+          <div className="md:p-8 p-4 md:mt-0 mt-4 border border-gray-100 flex flex-col justify-center h-full">
             <h3 className="text-2xl! font-bold  mb-6 flex items-center">
               <Truck className="w-6 h-6 text-(--brand-color) mr-3" />
               What affects your price?
