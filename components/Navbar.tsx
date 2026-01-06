@@ -1,8 +1,16 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ChevronDown, Menu, X, Globe, User, Headphones } from "lucide-react";
+import {
+  ChevronDown,
+  Menu,
+  X,
+  TimerResetIcon,
+  Mail,
+  PhoneCall,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 /**
  * Navigation Data Structure
@@ -21,42 +29,64 @@ interface NavItem {
 
 const navLinks: NavItem[] = [
   {
-    label: "Products",
-    href: "#",
+    label: "Services",
+    href: "/services",
     subItems: [
       {
-        title: "Application Services",
-        description: "WAF, DDoS, Bot Management",
+        title: "House & Villa Moving",
+        description:
+          "Villa movers Dubai, home relocation UAE, best house movers.",
         href: "#",
       },
       {
-        title: "Developer Platform",
-        description: "Workers, Pages, R2 Storage",
+        title: "Office & Commercial Moving",
+        description:
+          "Office movers Dubai, business relocation, corporate moving services.",
         href: "#",
       },
       {
-        title: "Network Services",
-        description: "Magic Transit, WAN, Interconnect",
+        title: "Furniture Moving & Assembly",
+        description:
+          "Furniture movers, sofa moving, handyman services, bed fixing.",
         href: "#",
       },
       {
-        title: "Zero Trust",
-        description: "Access, Gateway, Remote Browser",
+        title: "Packing & wrapping",
+        description:
+          "Professional packing services, bubble wrap packing, carton boxes",
+        href: "#",
+      },
+      {
+        title: "Apartment & Studio Moving",
+        description: "Studio movers, flat shifting, apartment movers near me.",
+        href: "#",
+      },
+      {
+        title: "Storage & Warehousing",
+        description:
+          "Short term storage Dubai, self-storage UAE, furniture storage",
+        href: "#",
+      },
+      {
+        title: "Local & Inter-Emirate Moving",
+        description: "Moving from Dubai to Abu Dhabi, inter-city movers UAE.",
         href: "#",
       },
     ],
   },
   {
-    label: "Solutions",
+    label: "Areas We Serve",
     href: "#",
     subItems: [
-      { title: "For Small Business", href: "#" },
-      { title: "For Enterprise", href: "#" },
-      { title: "Public Sector", href: "#" },
+      { title: "Movers and Packers in Abu Dhabi", href: "#" },
+      { title: "Movers and Packers in Sharjah", href: "#" },
+      { title: "Movers and Packers in Ajman", href: "#" },
+      { title: "Movers and Packers in Al Ain", href: "#" },
+      { title: "Movers and Packers in Ras Al Khaimah", href: "#" },
     ],
   },
-  { label: "Pricing", href: "#" },
-  { label: "Resources", href: "#" },
+  { label: "About Us", href: "#" },
+  { label: "Contact Movers", href: "#" },
 ];
 
 export default function Navbar() {
@@ -83,43 +113,39 @@ export default function Navbar() {
             href="#"
             className="flex items-center gap-1.5 hover:text-[var(--brand-color)] transition-colors"
           >
-            <Headphones size={14} />
-            Support
+            <TimerResetIcon size={14} />
+            Available 24/7
           </a>
-          <a
-            href="#"
-            className="hover:text-[var(--brand-color)] transition-colors"
-          >
-            1-888-Cloud-Dev
-          </a>
-          <div className="flex items-center gap-1.5 cursor-pointer hover:text-[var(--brand-color)]">
-            <Globe size={14} />
-            <span>English</span>
-          </div>
           <a
             href="#"
             className="flex items-center gap-1.5 hover:text-[var(--brand-color)] transition-colors"
           >
-            <User size={14} />
-            Log In
+            <Mail size={14} />
+            shayanmovers.ae@gmail.com
           </a>
+          <div className="flex items-center gap-1.5 cursor-pointer hover:text-[var(--brand-color)]">
+            <PhoneCall size={14} />
+            <span>+971 54 732 6816</span>
+          </div>
         </div>
       </div>
 
       {/* Main Navigation Bar */}
-      <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto md:px-6 px-3 md:py-0 py-3 flex items-center justify-between">
         <div className="flex items-center gap-10">
           {/* Placeholder Logo */}
-          <a
-            href="#"
-            className="text-2xl font-bold tracking-tight text-[var(--heading-color)] flex items-center gap-2"
-          >
-            <div className="w-8 h-8 bg-[var(--brand-color)] rounded-lg"></div>
-            <span style={{ fontFamily: "var(--font-sans)" }}>TECHFLOW</span>
-          </a>
+          <div className="md:w-52 w-36 md:h-16 h-10  relative">
+            <Image
+              src={"/shayanmovers-logo.png"}
+              fill
+              alt={"Shayan Movers"}
+              loading="eager"
+              className="object-contain"
+            />
+          </div>
 
           {/* Desktop Nav Links */}
-          <ul className="hidden lg:flex items-center gap-8 h-full">
+          <ul className="hidden lg:flex items-center gap-8 h-full md:ml-10">
             {navLinks.map((link) => (
               <li
                 key={link.label}
@@ -168,14 +194,19 @@ export default function Navbar() {
 
         {/* Action Buttons */}
         <div className="flex items-center gap-4">
-          <div className="hidden sm:block">
-            <Button variant="default" callBtn>
+          <div>
+            <Button variant="default" callBtn className="hidden md:block">
               Call Now
             </Button>
           </div>
           <Button
             className=" text-white bg-[#128C7E] hover:bg-[#128C7E]/90"
             wtsBtn
+            size={
+              typeof window !== "undefined" && window.screenX < 786
+                ? "sm"
+                : "default"
+            }
           >
             WhatsApp Us
           </Button>
