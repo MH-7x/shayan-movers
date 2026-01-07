@@ -21,6 +21,7 @@ const QuoteForm = ({ side }: { side?: boolean }) => {
     if (form) {
       const formData = new FormData(form);
       const data = Object.fromEntries(formData.entries());
+
       try {
         const results = await SendMail({
           data: {
@@ -35,13 +36,14 @@ const QuoteForm = ({ side }: { side?: boolean }) => {
           form.reset();
           toast("Your request has been sent successfully!", {
             description: (
-              <span className="text-stone-600">
+              <span className="text-slate-200">
                 We will contact you shortly.
               </span>
             ),
             style: {
-              backgroundColor: "#ECD920",
-              color: "#1c1716",
+              backgroundColor: "#00D100",
+              color: "#ffffff",
+              textShadow: "0 0 5px rgba(0, 0, 0, 0.2)",
             },
             icon: <CheckCheckIcon />,
           });
@@ -55,6 +57,7 @@ const QuoteForm = ({ side }: { side?: boolean }) => {
             : "Failed to send your request.",
           {
             icon: <X />,
+            style: { background: "red", color: "white" },
           }
         );
       }

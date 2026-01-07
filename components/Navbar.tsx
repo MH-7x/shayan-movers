@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 /**
  * Navigation Data Structure
@@ -86,7 +87,7 @@ const navLinks: NavItem[] = [
     ],
   },
   { label: "About Us", href: "#" },
-  { label: "Contact Movers", href: "#" },
+  { label: "Contact Movers", href: "/contact-us" },
 ];
 
 export default function Navbar() {
@@ -134,7 +135,11 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto md:px-6 px-3 md:py-0 py-3 flex items-center justify-between">
         <div className="flex items-center gap-10">
           {/* Placeholder Logo */}
-          <div className="md:w-52 w-36 md:h-16 h-10  relative">
+          <Link
+            href={"/"}
+            title="Logo"
+            className="md:w-52 w-36 md:h-16 h-10  relative"
+          >
             <Image
               src={"/shayanmovers-logo.png"}
               fill
@@ -142,7 +147,7 @@ export default function Navbar() {
               loading="eager"
               className="object-contain"
             />
-          </div>
+          </Link>
 
           {/* Desktop Nav Links */}
           <ul className="hidden lg:flex items-center gap-8 h-full md:ml-10">

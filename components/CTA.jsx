@@ -6,7 +6,7 @@ const CTA = () => {
   return (
     <section className="mt-32 bg-(--heading-color) md:px-20 px-3 md:py-0 pt-16 items-center md:gap-0 gap-y-10 min-h-96 grid md:grid-cols-2 relative overflow-hidden">
       <div>
-        <h2 className="md:text-4xl text-3xl! font-black text-white!">
+        <h2 className="md:text-4xl! text-3xl! font-black text-white!">
           Ready To Get Moving? Get Free Quote Now
         </h2>
         <p className="text-(--neutral-color) mt-4">

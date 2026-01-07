@@ -70,7 +70,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-[var(--heading-color)] font-bold text-base mb-6">
+            <h4 className="text-[var(--heading-color)] font-bold! text-xl! mb-6">
               Services
             </h4>
             <ul className="space-y-4">
@@ -97,7 +97,7 @@ export default function Footer() {
 
           {/* Support */}
           <div>
-            <h4 className="text-[var(--heading-color)] font-bold text-base mb-6">
+            <h4 className="text-[var(--heading-color)] font-bold! text-xl! mb-6">
               Locations
             </h4>
             <ul className="space-y-4">
@@ -122,7 +122,7 @@ export default function Footer() {
 
           {/* Contact & Newsletter */}
           <div className="space-y-6">
-            <h4 className="text-[var(--heading-color)] font-bold text-base mb-6">
+            <h4 className="text-[var(--heading-color)] font-bold! text-xl! mb-6">
               More Pages
             </h4>
             <ul className="space-y-4">

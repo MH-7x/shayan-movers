@@ -71,7 +71,7 @@ const serviceList = [
 export function Services() {
   return (
     <section className="mt-36 md:px-0 px-3">
-      <h2 className="text-center md:text-5xl text-4xl!">
+      <h2 className="text-center md:text-5xl! text-4xl!">
         Our Moving Services in UAE
       </h2>
       <Carousel

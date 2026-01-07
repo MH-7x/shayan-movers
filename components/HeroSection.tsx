@@ -13,7 +13,7 @@ const HeroSection = () => {
           <Star className="size-3.5 fill-current" />
           Trusted Movers in Dubai & Sharjah
         </div>
-        <h1 className=" mt-5">
+        <h1 className="font-extrabold! mt-5">
           Moving Made <span className="text-[#d84315]">Simple.</span>{" "}
           <br className="md:block hidden" />
           Safe, Fast, and Affordable.

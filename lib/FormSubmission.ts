@@ -34,7 +34,7 @@ export const SendMail = async ({
 
     const emailResponse = await resend.emails.send({
       from: "New Quote <onboarding@resend.dev>",
-      to: "samana.movers@gmail.com",
+      to: "shayanmovers.ae@gmail.com",
       subject: "New Moving Quote Request",
       react: EmailTemplate({
         name: data.name,

@@ -49,12 +49,13 @@ const HomePage = () => {
           </>
         }
       />
+      <ReviewSection />
       <Services />
       <Process />
       <WhyChooseUs />
 
       <WhereWeWork />
-      <ReviewSection />
+
       <MovingCostsComponent />
       <FAQs faqs={HomeFaqs} />
       <CTA />

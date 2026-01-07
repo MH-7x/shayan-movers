@@ -3,12 +3,14 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { Toaster } from "sonner";
+
 const inter = Inter({
   adjustFontFallback: false,
   subsets: ["latin"],
   variable: "--font-inter",
   preload: true,
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
   fallback: ["system-ui", "sans-serif"],
   display: "swap",
 });
@@ -48,6 +50,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <Toaster position="top-center" />
       </body>
     </html>
   );

@@ -61,7 +61,7 @@ export const EmailTemplate = ({
                 <Heading
                   as="h2"
                   style={{
-                    fontSize: 26,
+                    fontSize: 20,
                     fontWeight: "bold",
                     textAlign: "center",
                   }}

@@ -29,11 +29,11 @@ const ContactSection = ({
     >
       <div>
         {h1 ? (
-          <h1 className=" font-black md:text-5xl text-3xl">
+          <h1 className=" font-black md:text-5xl! text-3xl!">
             {title ? title : "Best House Moving Company in Dubai, UAE"}
           </h1>
         ) : (
-          <h2 className=" font-black md:text-5xl text-3xl!">
+          <h2 className=" font-black md:text-5xl! text-3xl!">
             {title ? title : "Best House Moving Company in Dubai, UAE"}
           </h2>
         )}
