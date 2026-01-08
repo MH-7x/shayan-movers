@@ -140,6 +140,7 @@ const AbuDhabiPage = () => {
           src={"/movers-and-packers-abu-dhabi.jpg"}
           alt="Movers and Packers Abu Dhabi"
           fill
+          loading="eager"
           className="object-cover -z-1"
         />
       </section>

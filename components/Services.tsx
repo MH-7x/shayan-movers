@@ -106,7 +106,7 @@ const googleReviews = [
     star: 5,
     review:
       "Shayan Movers made my move completely stress-free and handled all my furniture with great care. The team was punctual, polite, and very professional throughout the process.",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
+    image: "/ava/32.jpg",
   },
   {
     name: "Sarah Jenkins",
@@ -114,7 +114,7 @@ const googleReviews = [
     star: 5,
     review:
       "I highly recommend them! They packed my glass items securely and delivered everything to my new apartment without a single scratch.",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    image: "/ava/44.jpg",
   },
   {
     name: "Rahul Verma",
@@ -122,7 +122,7 @@ const googleReviews = [
     star: 5,
     review:
       "Booked them on short notice, and they were incredibly accommodating. Great service at a very reasonable price compared to other quotes I received.",
-    image: "https://randomuser.me/api/portraits/men/86.jpg",
+    image: "/ava/86.jpg",
   },
   {
     name: "Jessica Lee",
@@ -130,7 +130,7 @@ const googleReviews = [
     star: 5,
     review:
       "Used their service for our office relocation and was impressed by their speed. They dismantled and reassembled the desks perfectly.",
-    image: "https://randomuser.me/api/portraits/women/68.jpg",
+    image: "/ava/68.jpg",
   },
   {
     name: "Mohammed Tariq",
@@ -138,7 +138,7 @@ const googleReviews = [
     star: 5,
     review:
       "Best moving experience I've had so far. The guys were hardworking and finished the job way ahead of schedule.",
-    image: "https://randomuser.me/api/portraits/men/22.jpg",
+    image: "/ava/22.jpg",
   },
   {
     name: "Elena Rostova",
@@ -146,7 +146,7 @@ const googleReviews = [
     star: 5,
     review:
       "They helped me move a heavy sofa to the 5th floor without any complaints. Truly excellent service and very friendly staff!",
-    image: "https://randomuser.me/api/portraits/women/90.jpg",
+    image: "/ava/90.jpg",
   },
   {
     name: "David Miller",
@@ -154,7 +154,7 @@ const googleReviews = [
     star: 5,
     review:
       "From the initial quote to the final box, the communication was top-notch. Will definitely use Shayan Movers again for my next move.",
-    image: "https://randomuser.me/api/portraits/men/54.jpg",
+    image: "/ava/54.jpg",
   },
   {
     name: "Fatima Khalil",
@@ -162,7 +162,7 @@ const googleReviews = [
     star: 5,
     review:
       "I was worried about my electronics, but they wrapped everything perfectly. Professional service that doesn't break the bank.",
-    image: "https://randomuser.me/api/portraits/women/29.jpg",
+    image: "/ava/29.jpg",
   },
   {
     name: "James O'Connor",
@@ -170,7 +170,7 @@ const googleReviews = [
     star: 5,
     review:
       "Fast, efficient, and friendly team. They took all the hassle out of moving day and placed the furniture exactly where I wanted it.",
-    image: "https://randomuser.me/api/portraits/men/11.jpg",
+    image: "/ava/11.jpg",
   },
   {
     name: "Priya Singh",
@@ -178,7 +178,7 @@ const googleReviews = [
     star: 5,
     review:
       "Excellent experience with Shayan Movers! They arrived exactly on time and treated my belongings as if they were their own.",
-    image: "https://randomuser.me/api/portraits/women/19.jpg",
+    image: "/ava/19.jpg",
   },
 ];
 
