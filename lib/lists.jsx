@@ -366,3 +366,168 @@ export const HomeFaqs = [
     ),
   },
 ];
+
+export const AbuDhabiFaqs = [
+  {
+    question:
+      "What types of moving services does Shayan Movers provide in Abu Dhabi?",
+    answer: (
+      <>
+        <p>
+          At <strong>Shayan Movers</strong>, we offer a full range of
+          professional relocation services in Abu Dhabi to make your move smooth
+          and stress-free. Our services include:
+        </p>
+        <ul>
+          <li>House and villa moving</li>
+          <li>Office and commercial moving</li>
+          <li>Packing and unpacking services</li>
+          <li>Furniture dismantling and re-assembly</li>
+          <li>Short-term and long-term storage solutions</li>
+          <li>Transportation across Abu Dhabi and other UAE emirates</li>
+        </ul>
+        <p>
+          Whether you’re moving locally in Abu Dhabi or relocating to another
+          emirate, our team plans every move according to your needs.
+        </p>
+      </>
+    ),
+  },
+  {
+    question: "How far in advance should I book my move with Shayan Movers?",
+    answer: (
+      <>
+        <p>
+          We recommend booking your move with <strong>Shayan Movers</strong> at
+          least
+          <strong> 2–4 weeks in advance</strong>. This helps secure your
+          preferred date, especially during busy periods such as weekends,
+          month-ends, and summer.
+        </p>
+        <p>
+          Early booking allows us to properly plan logistics, assign the right
+          crew, and ensure a smooth moving experience.
+        </p>
+      </>
+    ),
+  },
+  {
+    question: "Do Shayan Movers handle packing and unpacking?",
+    answer: (
+      <>
+        <p>
+          Yes, <strong>Shayan Movers</strong> provides both full and partial
+          packing services. Our trained staff uses quality packing materials to
+          protect your furniture, electronics, kitchen items, and fragile
+          belongings.
+        </p>
+        <p>
+          If you prefer to pack some items yourself, we can safely handle the
+          rest according to your preference.
+        </p>
+      </>
+    ),
+  },
+  {
+    question: "Will Shayan Movers disassemble and reassemble furniture?",
+    answer: (
+      <>
+        <p>
+          Absolutely. Our movers are experienced in dismantling and reassembling
+          furniture such as beds, wardrobes, cabinets, and dining tables.
+        </p>
+        <p>
+          This service ensures safe transportation and proper setup at your new
+          location without damage.
+        </p>
+      </>
+    ),
+  },
+  {
+    question: "Do I need special permits or NOCs to move in Abu Dhabi?",
+    answer: (
+      <>
+        <p>
+          Some residential buildings and communities in Abu Dhabi require
+          move-in or move-out permits (NOCs) from building management.
+        </p>
+        <p>
+          <strong>Shayan Movers</strong> can guide you through the process and
+          help coordinate timing to comply with building regulations.
+        </p>
+      </>
+    ),
+  },
+  {
+    question: "Are my belongings insured during the move?",
+    answer: (
+      <>
+        <p>
+          Your belongings are handled with great care by{" "}
+          <strong>Shayan Movers</strong>. Our professional packing and handling
+          methods minimize risk during transport.
+        </p>
+        <p>
+          Optional insurance coverage is also available for customers who want
+          extra peace of mind, especially for high-value or fragile items.
+        </p>
+      </>
+    ),
+  },
+  {
+    question: "How does Shayan Movers calculate the cost of my move?",
+    answer: (
+      <>
+        <p>The cost of your move depends on several factors:</p>
+        <ul>
+          <li>Size of your home or office</li>
+          <li>Distance of the move</li>
+          <li>Number of movers required</li>
+          <li>Packing services and materials</li>
+          <li>Special or heavy items</li>
+        </ul>
+        <p>
+          <strong>Shayan Movers</strong> provides transparent pricing after a
+          pre-move assessment, with no hidden charges.
+        </p>
+      </>
+    ),
+  },
+  {
+    question: "Do you provide storage solutions if my new place isn’t ready?",
+    answer: (
+      <>
+        <p>
+          Yes, <strong>Shayan Movers</strong> offers secure short-term and
+          long-term storage solutions if your new home or office is not ready.
+        </p>
+        <p>
+          Your belongings are stored safely until you’re ready for delivery.
+        </p>
+      </>
+    ),
+  },
+  {
+    question:
+      "What makes Shayan Movers different from other moving companies in Abu Dhabi?",
+    answer: (
+      <>
+        <p>
+          <strong>Shayan Movers</strong> stands out because of our commitment to
+          quality service and customer satisfaction.
+        </p>
+        <ul>
+          <li>Experienced and trained moving staff</li>
+          <li>Careful packing and handling</li>
+          <li>Clear communication and on-time service</li>
+          <li>Transparent pricing with no hidden fees</li>
+          <li>Support throughout the entire moving process</li>
+        </ul>
+        <p>
+          Our goal is to make your move in Abu Dhabi smooth, safe, and
+          stress-free.
+        </p>
+      </>
+    ),
+  },
+];

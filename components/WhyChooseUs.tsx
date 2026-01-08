@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const WhyChooseUs = () => {
   return (
-    <div className="max-w-7xl mx-auto mt-36 px-3 lg:px-6">
+    <section className="max-w-7xl mx-auto mt-36 px-3 lg:px-6">
       <div className="text-center mb-10">
         <h2 className="">Why People Choose Shayan Movers</h2>
       </div>
@@ -61,7 +61,7 @@ const WhyChooseUs = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
