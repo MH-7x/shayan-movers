@@ -752,3 +752,332 @@ export const AjmanFaqs = [
     ),
   },
 ];
+
+export const SharjahFaqs = [
+  {
+    question:
+      "What services does Shayan Movers offer for residential shifting in Sharjah?",
+    answer: (
+      <div>
+        <p>
+          At <strong>Shayan Movers</strong>, we provide a comprehensive range of
+          residential moving services tailored to meet the needs of families and
+          individuals in Sharjah. Our &quot;A to Z&quot; service includes:
+        </p>
+        <ul>
+          <li>
+            Professional packing and wrapping using premium materials like
+            bubble wrap and corrugated sheets.
+          </li>
+          <li>
+            Safe dismantling and expert reassembly of all furniture (beds,
+            wardrobes, dining tables, etc.).
+          </li>
+          <li>
+            Specialized handling of delicate items, electronics, and kitchen
+            appliances.
+          </li>
+          <li>Curtain removal and re-fixing service.</li>
+          <li>
+            Loading and unloading using our fleet of covered, moisture-proof
+            trucks.
+          </li>
+        </ul>
+      </div>
+    ),
+  },
+  {
+    question: "How do you calculate the cost of moving in Sharjah?",
+    answer: (
+      <div>
+        <p>
+          The cost of moving with <strong>Shayan Movers</strong> is determined
+          by several factors to ensure you get a fair and transparent quote.
+          These factors include:
+        </p>
+        <p>
+          1. <strong>Volume of Items:</strong> The number of rooms (Studio,
+          1BHK, 2BHK, etc.) and the amount of furniture/boxes.
+          <br />
+          2. <strong>Distance:</strong> The distance between your current
+          location and the new destination.
+          <br />
+          3. <strong>Floor Level:</strong> Accessibility, such as the
+          availability of elevators or if items need to be carried via stairs.
+          <br />
+          4. <strong>Additional Services:</strong> Any special requirements like
+          storage, extra packing materials, or handyman services.
+        </p>
+        <p>
+          We offer free on-site surveys to provide you with a fixed,
+          no-obligation quote.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question:
+      "Do you provide packing materials, and is the packing included in the quote?",
+    answer: (
+      <div>
+        <p>
+          Yes, <strong>Shayan Movers</strong> provides all necessary
+          high-quality packing materials. Our standard full-service package
+          includes:
+        </p>
+        <ul>
+          <li>
+            <strong>Sturdy Carton Boxes:</strong> For books, clothes, and
+            kitchenware.
+          </li>
+          <li>
+            <strong>Bubble Wrap & Foam:</strong> For fragile items like
+            glassware and mirrors.
+          </li>
+          <li>
+            <strong>Stretch Film:</strong> To protect furniture surfaces from
+            dust and scratches.
+          </li>
+          <li>
+            <strong>Hanger Boxes:</strong> To keep your clothes wrinkle-free
+            during the move.
+          </li>
+        </ul>
+        <p>
+          Our professional packers handle everything, so you don’t have to worry
+          about the safety of your belongings.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question:
+      "How much notice do I need to give Shayan Movers before my moving day?",
+    answer: (
+      <div>
+        <p>
+          While we recommend booking your move at least{" "}
+          <strong>3 to 5 days</strong> in advance to secure your preferred date
+          and time, we understand that plans can change quickly.
+        </p>
+        <p>
+          <strong>Shayan Movers</strong> is known for its flexibility; we also
+          cater to last-minute or emergency moving requests in Sharjah depending
+          on our team&apos;s availability. Contact us immediately if you need an
+          urgent shift!
+        </p>
+      </div>
+    ),
+  },
+  {
+    question:
+      "Will Shayan Movers help with furniture and appliance installation?",
+    answer: (
+      <div>
+        <p>
+          Absolutely. Our team includes experienced carpenters and handymen who
+          specialize in:
+        </p>
+        <ul>
+          <li>
+            <strong>Dismantling & Reassembly:</strong> We handle everything from
+            IKEA furniture to heavy luxury sets.
+          </li>
+          <li>
+            <strong>Appliance Setup:</strong> We assist in disconnecting and
+            reconnecting basic appliances like washing machines and
+            refrigerators.
+          </li>
+          <li>
+            <strong>LCD & Bracket Fixing:</strong> We can mount your TVs and fix
+            wall decorations at your new home.
+          </li>
+          <li>
+            <strong>Curtain Installation:</strong> We ensure your curtains and
+            blinds are perfectly fitted in your new space.
+          </li>
+        </ul>
+      </div>
+    ),
+  },
+  {
+    question: "Do you offer office relocation services in Sharjah?",
+    answer: (
+      <div>
+        <p>
+          Yes, <strong>Shayan Movers</strong> provides specialized commercial
+          and office moving services. We understand that time is money, which is
+          why we focus on:
+        </p>
+        <ul>
+          <li>
+            <strong>Minimal Downtime:</strong> Working around your business
+            hours (including weekends).
+          </li>
+          <li>
+            <strong>IT & File Management:</strong> Careful packing of computers,
+            servers, and sensitive documents.
+          </li>
+          <li>
+            <strong>Organized Labeling:</strong> Ensuring every desk and chair
+            ends up in the correct workspace at the new office.
+          </li>
+        </ul>
+      </div>
+    ),
+  },
+  {
+    question: "How do you ensure the safety of my fragile and expensive items?",
+    answer: (
+      <div>
+        <p>
+          Safety is our top priority at <strong>Shayan Movers</strong>. We use a
+          multi-layer protection strategy:
+        </p>
+        <p>
+          First, each fragile item is individually wrapped in bubble wrap or
+          soft foam. Second, we use specialized crates for extremely delicate
+          items like antiques or large mirrors. Finally, our drivers are trained
+          to handle our trucks with care, ensuring a smooth ride across Sharjah
+          roads.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question: "What areas in Sharjah do you cover?",
+    answer: (
+      <div>
+        <p>
+          We provide moving and packing services throughout all major
+          residential and commercial areas in Sharjah, including but not limited
+          to:
+        </p>
+        <p>
+          <em>
+            Al Majaz, Al Nahda, Muwaileh, Al Qasimia, Al Taawun, Sharjah
+            Waterfront City, University City, and Al Khan.
+          </em>
+        </p>
+        <p>
+          Whether you are moving within Sharjah or to another emirate like Dubai
+          or Abu Dhabi, <strong>Shayan Movers</strong> is ready to assist you.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question: "Does Shayan Movers operate on weekends and public holidays?",
+    answer: (
+      <div>
+        <p>
+          Yes, we understand that many of our clients prefer to move during
+          their days off. <strong>Shayan Movers</strong> operates{" "}
+          <strong>7 days a week</strong>, including Fridays and public holidays.
+        </p>
+        <p>
+          Moving on a weekend allows you to supervise the process without taking
+          time off work. We recommend booking weekend slots early as they tend
+          to fill up quickly!
+        </p>
+      </div>
+    ),
+  },
+  {
+    question:
+      "Can Shayan Movers help with the disposal of unwanted furniture or appliances?",
+    answer: (
+      <div>
+        <p>
+          Yes, we offer junk removal and furniture disposal services as part of
+          our moving packages. If you have old sofas, broken appliances, or
+          general clutter that you don&apos;t want to take to your new home,{" "}
+          <strong>Shayan Movers</strong> can safely haul them away for you.
+        </p>
+        <p>
+          This ensures your new home stays organized and clutter-free from day
+          one.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question:
+      "Does Shayan Movers provide short-term or long-term storage in Sharjah?",
+    answer: (
+      <div>
+        <p>
+          If your new home or office isn&apos;t ready yet,{" "}
+          <strong>Shayan Movers</strong> offers secure, climate-controlled
+          storage solutions in Sharjah.
+        </p>
+        <ul>
+          <li>
+            <strong>Short-term Storage:</strong> Ideal for gaps between moving
+            dates.
+          </li>
+          <li>
+            <strong>Long-term Storage:</strong> For items you don&lsquo;t
+            currently have space for but wish to keep.
+          </li>
+          <li>
+            <strong>Security:</strong> Our warehouses are under 24/7 CCTV
+            surveillance and are regularly pest-controlled.
+          </li>
+        </ul>
+      </div>
+    ),
+  },
+  {
+    question:
+      "What should I do with my valuables like jewelry and cash during the move?",
+    answer: (
+      <div>
+        <p>
+          While <strong>Shayan Movers</strong> takes the utmost care with your
+          belongings, we strictly advise all our customers to personally carry
+          and manage small valuables such as:
+        </p>
+        <ul>
+          <li>Jewelry and expensive watches.</li>
+          <li>Cash and bank documents.</li>
+          <li>Passports, Emirates IDs, and other legal papers.</li>
+          <li>Small personal electronics like mobile phones and tablets.</li>
+        </ul>
+        <p>
+          This ensures your peace of mind and the safety of your most sensitive
+          personal items.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question: "What payment methods does Shayan Movers accept?",
+    answer: (
+      <div>
+        <p>
+          To make the process as convenient as possible for our Sharjah clients,{" "}
+          <strong>Shayan Movers</strong> accepts multiple payment methods:
+        </p>
+        <ul>
+          <li>
+            <strong>Cash:</strong> Payable to the team supervisor upon
+            completion of the move.
+          </li>
+          <li>
+            <strong>Bank Transfer:</strong> Online deposits can be made directly
+            to our company account.
+          </li>
+          <li>
+            <strong>Cheque:</strong> We accept company cheques for commercial
+            and office relocations.
+          </li>
+        </ul>
+        <p>
+          All payments are transparent, and there are never any hidden charges
+          after the final quote.
+        </p>
+      </div>
+    ),
+  },
+];

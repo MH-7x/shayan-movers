@@ -83,7 +83,7 @@ const navLinks: NavItem[] = [
         title: "Movers and Packers in Abu Dhabi",
         href: "/movers-and-packers-abu-dhabi",
       },
-      { title: "Movers and Packers in Sharjah", href: "#" },
+      { title: "Movers and Packers in Sharjah", href: "/movers-in-sharjah" },
       { title: "Movers and Packers in Ajman", href: "/movers-in-ajman" },
       { title: "Movers and Packers in Al Ain", href: "#" },
       { title: "Movers and Packers in Ras Al Khaimah", href: "#" },

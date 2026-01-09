@@ -56,7 +56,7 @@ const features = [
     highlight: false,
   },
 ];
-export const servicesList = [
+const servicesList = [
   {
     title: "House & Villa Movers in Ajman",
     desc: (
