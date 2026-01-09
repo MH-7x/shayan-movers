@@ -531,3 +531,224 @@ export const AbuDhabiFaqs = [
     ),
   },
 ];
+
+export const AjmanFaqs = [
+  {
+    question: "How much do movers and packers in Ajman typically cost?",
+    answer: (
+      <div className="space-y-4">
+        <p>
+          At <strong>Shayan Movers</strong>, we believe in fair and honest
+          pricing with no hidden fees. While exact costs depend on the volume of
+          items and distance, moving costs in Ajman generally range from:
+        </p>
+        <ul className="list-disc pl-5 space-y-2">
+          <li>
+            <strong>Studio Apartment:</strong> AED 500 – AED 800
+          </li>
+          <li>
+            <strong>1-Bedroom Apartment:</strong> AED 700 – AED 1,200
+          </li>
+          <li>
+            <strong>2-Bedroom Apartment:</strong> AED 1,200 – AED 1,800
+          </li>
+          <li>
+            <strong>Villas:</strong> AED 2,500+ (depending on size)
+          </li>
+        </ul>
+        <p>
+          We provide transparent, upfront quotes so you know exactly what you
+          are paying for before we start the job.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question: "Is Shayan Movers a licensed and insured moving company?",
+    answer: (
+      <div className="space-y-4">
+        <p>
+          Yes, we are <strong>fully licensed Ajman movers</strong>. This is one
+          of the primary reasons local residents trust us.
+        </p>
+        <p>
+          Your furniture and electronics are protected by UAE-standard
+          insurance, giving you total peace of mind. In the rare event of a
+          mishap, your valuables are covered, ensuring a stress-free relocation
+          experience.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question: "Which areas in Ajman do you serve?",
+    answer: (
+      <div className="space-y-4">
+        <p>
+          Our team has deep <strong>local expertise</strong> and serves the
+          entire Ajman community. We are particularly familiar with the parking
+          regulations and traffic patterns in popular residential areas,
+          including:
+        </p>
+        <ul className="list-disc pl-5 space-y-2">
+          <li>Al Jurf and Al Rawda</li>
+          <li>Al Nuaimiya and Al Rashidiya</li>
+          <li>Ajman Downtown and Al Mowaihat</li>
+          <li>Emirates City and Al Yasmeen</li>
+        </ul>
+      </div>
+    ),
+  },
+  {
+    question: "Can I book a move on short notice or during the weekend?",
+    answer: (
+      <div className="space-y-4">
+        <p>
+          Absolutely! We know that plans can change suddenly.{" "}
+          <strong>Shayan Movers is available 24/7</strong> to assist you.
+        </p>
+        <p>
+          Whether you need a last-minute move or a scheduled weekend relocation,
+          you can call or WhatsApp us any time—we are here whenever Ajman calls.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question: "Do you provide packing materials and furniture assembly?",
+    answer: (
+      <div className="space-y-4">
+        <p>
+          Yes, we offer a full-service moving experience. Our team arrives with
+          high-quality packing materials, including bubble wrap, sturdy boxes,
+          and protective blankets.
+        </p>
+        <p>Our professional crew also handles:</p>
+        <ul className="list-disc pl-5 space-y-2">
+          <li>
+            Expert <strong>dismantling</strong> of large furniture items like
+            beds and wardrobes.
+          </li>
+          <li>
+            Careful <strong>packing</strong> of electronics and fragile
+            kitchenware.
+          </li>
+          <li>
+            Complete <strong>reassembly</strong> and fixing at your new location
+            so you can settle in immediately.
+          </li>
+        </ul>
+      </div>
+    ),
+  },
+  {
+    question: "How far in advance should I book my move?",
+    answer: (
+      <div className="space-y-4">
+        <p>
+          While we offer same-day services for urgent requests, we generally
+          recommend booking at least <strong>24 to 48 hours</strong> in advance
+          to ensure your preferred time slot is secured.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question:
+      "Do you handle the relocation of delicate electronics and kitchen appliances?",
+    answer: (
+      <div className="space-y-4">
+        <p>
+          Yes, at <strong>Shayan Movers</strong>, we specialize in handling
+          sensitive items. We use double-layered bubble wrap and custom-sized
+          boxes for electronics like LED TVs, monitors, and sound systems.
+        </p>
+        <p>
+          Our team is also trained to safely disconnect and reconnect major
+          appliances such as refrigerators, washing machines, and dishwashers,
+          ensuring they are ready for use in your new Ajman home immediately.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question: "Can you help with the move-in/move-out permits (NOC) in Ajman?",
+    answer: (
+      <div className="space-y-4">
+        <p>
+          While the tenant is usually responsible for obtaining the NOC from the
+          building management or developer, <strong>Shayan Movers</strong>{" "}
+          provides all the necessary company documentation required for the
+          permit.
+        </p>
+        <p>
+          We are familiar with the requirements of major developers in Ajman.
+          Once you have your permit, we coordinate with the building security to
+          ensure the service elevators and parking are ready, making the process
+          seamless for you.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question: "Do you provide temporary storage solutions in Ajman?",
+    answer: (
+      <div className="space-y-4">
+        <p>
+          Yes! If your new home isn&apos;t ready yet,{" "}
+          <strong>Shayan Movers</strong> offers secure, climate-controlled
+          storage facilities. Whether you need to store a few boxes or the
+          entire contents of a villa, we have flexible weekly and monthly plans.
+        </p>
+        <p>
+          Our warehouses are monitored 24/7, ensuring your belongings stay safe
+          until you are ready for the final delivery.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question:
+      "What makes Shayan Movers different from 'cheap' unlicensed movers?",
+    answer: (
+      <div className="space-y-4">
+        <p>
+          Unlike many unauthorized &quot;truck-for-hire&quot; services,{" "}
+          <strong>Shayan Movers</strong> is a registered entity. The difference
+          lies in:
+        </p>
+        <ul className="list-disc pl-5 space-y-2">
+          <li>
+            <strong>Accountability:</strong> We provide official invoices and
+            written guarantees.
+          </li>
+          <li>
+            <strong>Professionalism:</strong> Our crew wears uniforms and is
+            trained in professional packing techniques—no rough handling.
+          </li>
+          <li>
+            <strong>Reliability:</strong> We don&apos;t &quot;no-show.&quot;
+            When you book with us, we arrive on time, every time.
+          </li>
+        </ul>
+      </div>
+    ),
+  },
+  {
+    question: "How do you handle moves during peak traffic hours in Ajman?",
+    answer: (
+      <div className="space-y-4">
+        <p>
+          Ajman traffic can be tricky, especially near Sheikh Ammar Road or
+          during school hours. Because of our <strong>local expertise</strong>,
+          we plan our routes and timing to avoid peak congestion.
+        </p>
+        <p>
+          We often recommend early morning or late evening slots to our clients
+          to ensure the truck reaches the destination faster, saving you time
+          and ensuring a smoother transition.
+        </p>
+      </div>
+    ),
+  },
+];

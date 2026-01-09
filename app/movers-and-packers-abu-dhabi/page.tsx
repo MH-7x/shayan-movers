@@ -240,7 +240,7 @@ const AbuDhabiPage = () => {
           ))}
         </div>
       </section>
-      <div className="group mt-28 relative bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-1 overflow-hidden max-w-4xl mx-auto">
+      <section className="group mt-28 relative bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-1 overflow-hidden max-w-4xl mx-auto">
         {/* Decorative background element */}
         <div
           className={`absolute top-0 right-0 w-24 h-24 rounded-bl-full opacity-20 transition-transform group-hover:scale-110 bg-(--brand-color)`}
@@ -253,9 +253,9 @@ const AbuDhabiPage = () => {
             <Landmark className="w-6 h-6 " />
           </div>
 
-          <h1 className="text-3xl! font-bold! mb-2">
+          <h2 className="text-3xl! font-bold! mb-2">
             Serving All Areas of Abu Dhabi
-          </h1>
+          </h2>
           <p className="  mb-8">
             We have teams stationed across the city to ensure we get to you on
             time. We regularly work in:
@@ -293,7 +293,7 @@ const AbuDhabiPage = () => {
             </ul>
           </div>
         </div>
-      </div>
+      </section>
       <Process />
       <FAQs faqs={AbuDhabiFaqs} />
       <CTA />
