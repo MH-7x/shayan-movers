@@ -1081,3 +1081,148 @@ export const SharjahFaqs = [
     ),
   },
 ];
+
+export const AlAinFaqs = [
+  {
+    question:
+      "What makes Shayan Movers a reliable choice in the Al Ain region?",
+    answer: (
+      <>
+        <p>
+          Shayan Movers has established a reputation for excellence over more
+          than 20 years in the UAE. We are a fully licensed and registered
+          company, offering customers peace of mind with up to AED 1,000 in
+          damage protection coverage for their belongings.
+        </p>
+        <p>Our service is built on:</p>
+        <ul>
+          <li>
+            <strong>Local Expertise:</strong> Deep knowledge of Al Ain’s
+            residential neighborhoods, including Al Jimi, Al Hili, and Al Maqam
+          </li>
+
+          <li>
+            <strong>Professional Crew:</strong> A dedicated, family-owned team
+            that is bilingual in Arabic and English .
+          </li>
+
+          <li>
+            <strong>Reliability:</strong> We utilize specialized equipment like
+            piano trolleys and lifters to ensure high-value items are moved
+            without damage
+          </li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    question: "How does Shayan Movers protect furniture and fragile items?",
+    answer: (
+      <>
+        <p>
+          We use a multi-layered protection approach for every item we handle.
+          Our team arrives with professional-grade packing materials, including
+          bubble wrap, sturdy boxes, and specialized padding.
+        </p>
+        <p>Specifically, Shayan Movers provides:</p>
+        <ul>
+          <li>
+            <strong>Upholstery Care:</strong> Sofas and cabinets are wrapped and
+            secured to prevent tears or dents during the transition
+          </li>
+
+          <li>
+            <strong>Hygienic Transport:</strong> We use clean, dedicated covers
+            for mattresses to ensure your bedding remains sanitary
+          </li>
+
+          <li>
+            <strong>High-Value Handling:</strong> Specialized care and
+            specialized padding are used for antiques and delicate artwork
+          </li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    question: "Can your team manage commercial and office moves in Al Ain?",
+    answer: (
+      <>
+        <p>
+          Yes, Shayan Movers provides expert commercial moving services designed
+          to minimize business downtime. We offer flexible scheduling, including
+          evenings and weekends, to work around your company’s operational hours
+        </p>
+        <p>Our commercial services include:</p>
+        <ul>
+          <li>
+            <strong>IT & Infrastructure:</strong> Careful packing and secure
+            transport of sensitive IT equipment, computers, and servers
+          </li>
+
+          <li>
+            <strong>Dedicated Coordination:</strong> A logistics manager is
+            assigned to oversee the planning and execution of the move
+          </li>
+
+          <li>
+            <strong>Furniture Assembly:</strong> Rapid assembly of office
+            furniture so your team can resume work immediately
+          </li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    question: "Which areas of Al Ain do you provide moving services for?",
+    answer: (
+      <>
+        <p>
+          Shayan Movers covers every corner of the city. Whether you are moving
+          into a villa in Al Jimi or an apartment in Al Hili, our team is
+          familiar with the local layouts and regulations
+        </p>
+        <p>
+          We also provide extensive services to suburban and residential
+          communities such as:
+        </p>
+        <ul>
+          <li>Zakher and Al Salamat </li>
+
+          <li>Al Yahar, Al Maqam, and Al Ameriya</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    question: "How does the Shayan Movers door-to-door process work?",
+    answer: (
+      <>
+        <p>
+          We simplify your relocation through a clear, six-step process that
+          ensures everything is handled from start to finish 45, 46]. It begins
+          with a free in-home survey to provide a transparent price with no
+          hidden fees
+        </p>
+        <p>The process includes:</p>
+        <ol>
+          <li>
+            <strong>Disassembly:</strong> Our in-house carpenters take apart
+            large furniture like beds and cabinets
+          </li>
+
+          <li>
+            <strong>Loading & Transport:</strong> Items are moved in clean,
+            covered white trucks equipped with GPS tracking
+          </li>
+
+          <li>
+            <strong>Assembly & Walk-through:</strong> We reassemble your items
+            and place them exactly where you want them, followed by a final
+            quality check
+          </li>
+        </ol>
+      </>
+    ),
+  },
+];

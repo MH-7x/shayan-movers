@@ -82,6 +82,7 @@ export function Services() {
         ]}
         opts={{
           align: "start",
+          loop: true,
         }}
         className="w-full max-w-6xl mx-auto my-20"
       >
