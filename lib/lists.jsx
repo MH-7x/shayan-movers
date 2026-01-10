@@ -1226,3 +1226,172 @@ export const AlAinFaqs = [
     ),
   },
 ];
+
+export const RAKFaqs = [
+  {
+    question:
+      "What types of moving services does Shayan Movers offer in Ras Al Khaimah?",
+    answer: (
+      <>
+        <p>
+          <strong>Shayan Movers</strong> offers complete moving and packing
+          solutions in Ras Al Khaimah designed for both residential and
+          commercial customers.
+        </p>
+        <ul>
+          <li>Apartment, villa, and house moving services</li>
+          <li>Office and commercial relocation</li>
+          <li>Professional packing and unpacking services</li>
+          <li>Furniture dismantling and reassembly</li>
+          <li>Safe transportation of heavy and fragile items</li>
+          <li>Optional short-term and long-term storage solutions</li>
+        </ul>
+        <p>
+          Our trained team handles your belongings with care and ensures a
+          smooth, stress-free moving experience from start to finish.
+        </p>
+      </>
+    ),
+  },
+
+  {
+    question: "How much do movers and packers charge in Ras Al Khaimah?",
+    answer: (
+      <>
+        <p>
+          Moving costs in Ras Al Khaimah depend on several factors such as the
+          size of your home or office, distance, number of items, and the
+          services required.
+        </p>
+        <ul>
+          <li>Size and volume of items</li>
+          <li>Local or inter-emirate move</li>
+          <li>Packing and unpacking requirements</li>
+          <li>Special handling for fragile or heavy furniture</li>
+        </ul>
+        <p>
+          At <strong>Shayan Movers</strong>, we offer transparent pricing with
+          no hidden charges. You can request a free quote to get an accurate
+          estimate based on your specific needs.
+        </p>
+      </>
+    ),
+  },
+
+  {
+    question: "Do you provide packing materials and packing services?",
+    answer: (
+      <>
+        <p>
+          Yes, <strong>Shayan Movers</strong> provides complete packing services
+          along with high-quality packing materials to protect your belongings
+          during the move.
+        </p>
+        <ul>
+          <li>Strong cartons and moving boxes</li>
+          <li>Bubble wrap and protective padding</li>
+          <li>Stretch wrap for furniture</li>
+          <li>Special boxes for clothes and fragile items</li>
+        </ul>
+        <p>
+          Our professional packers ensure everything is securely packed to
+          minimize the risk of damage during transportation.
+        </p>
+      </>
+    ),
+  },
+
+  {
+    question:
+      "Can Shayan Movers handle small or single-item moves in Ras Al Khaimah?",
+    answer: (
+      <>
+        <p>
+          Yes, we handle moves of all sizes. Whether you need to move a single
+          item like a sofa, bed, or appliance, or a few pieces of furniture,{" "}
+          <strong>Shayan Movers</strong> can help.
+        </p>
+        <p>
+          Single-item moves are priced based on distance, size, and handling
+          requirements. Contact us for a quick and affordable quote.
+        </p>
+      </>
+    ),
+  },
+
+  {
+    question: "How early should I book my move in Ras Al Khaimah?",
+    answer: (
+      <>
+        <p>
+          We recommend booking your move with <strong>Shayan Movers</strong> at
+          least <strong>2–4 weeks in advance</strong>, especially during
+          weekends and peak moving seasons.
+        </p>
+        <p>
+          Early booking helps secure your preferred moving date and allows us to
+          plan resources efficiently. However, we also try to accommodate
+          last-minute moves whenever possible.
+        </p>
+      </>
+    ),
+  },
+
+  {
+    question: "Are my belongings insured during the move?",
+    answer: (
+      <>
+        <p>
+          Yes, <strong>Shayan Movers</strong> offers insurance options to
+          protect your belongings during transportation.
+        </p>
+        <p>
+          Our team will explain the available coverage options before your move
+          so you can choose the level of protection that best suits your needs
+          and enjoy complete peace of mind.
+        </p>
+      </>
+    ),
+  },
+
+  {
+    question:
+      "Do you provide moving services from Ras Al Khaimah to other Emirates?",
+    answer: (
+      <>
+        <p>
+          Yes, <strong>Shayan Movers</strong> provides inter-emirate moving
+          services across the UAE.
+        </p>
+        <p>
+          We regularly handle moves from Ras Al Khaimah to Dubai, Sharjah, Abu
+          Dhabi, Ajman, and other Emirates with the same level of care and
+          professionalism.
+        </p>
+      </>
+    ),
+  },
+
+  {
+    question: "What is included in a full moving service with Shayan Movers?",
+    answer: (
+      <>
+        <p>
+          Our full moving service in Ras Al Khaimah is designed to cover every
+          stage of your relocation.
+        </p>
+        <ul>
+          <li>Professional packing of all items</li>
+          <li>Furniture dismantling and reassembly</li>
+          <li>Loading and unloading by trained movers</li>
+          <li>Safe transportation using well-maintained vehicles</li>
+          <li>Optional unpacking and arrangement</li>
+        </ul>
+        <p>
+          If you only need specific services, we can customize the moving
+          package according to your requirements.
+        </p>
+      </>
+    ),
+  },
+];
