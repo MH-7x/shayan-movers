@@ -90,6 +90,10 @@ const navLinks: NavItem[] = [
         title: "Movers and Packers in Ras Al Khaimah",
         href: "/movers-in-ras-al-khaimah",
       },
+      {
+        title: "House Furniture Movers in Abu Dhabi",
+        href: "/house-furniture-movers-abu-dhabi",
+      },
     ],
   },
   { label: "About Us", href: "#" },
@@ -177,7 +181,7 @@ export default function Navbar() {
 
                 {/* Desktop Dropdown */}
                 {link.subItems && (
-                  <div className="absolute top-[100%] left-0 w-80 bg-white border border-gray-100 shadow-xl rounded-xl p-4 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 ease-out z-50">
+                  <div className="absolute top-[100%] left-0 w-96 bg-white border border-gray-100 shadow-xl rounded-xl p-4 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 ease-out z-50">
                     <div className="grid gap-2">
                       {link.subItems.map((sub) => (
                         <a

@@ -1395,3 +1395,151 @@ export const RAKFaqs = [
     ),
   },
 ];
+
+export const AbuDhabiHouseMoversFaqs = [
+  {
+    question: "How much does it cost to move house furniture in Abu Dhabi?",
+    answer: (
+      <>
+        <p>
+          The cost of moving house furniture in Abu Dhabi usually starts from
+          <strong> AED 600 for a studio apartment</strong> and increases based
+          on the size of the home and the amount of furniture.
+        </p>
+        <p>
+          For larger apartments or villas, the price can go up to
+          <strong> AED 3,000 or more</strong>. Shayan Movers provides
+          <strong> free on-site or WhatsApp quotations</strong> with no hidden
+          charges.
+        </p>
+      </>
+    ),
+  },
+  {
+    question: "How much do movers cost in Abu Dhabi?",
+    answer: (
+      <>
+        <p>
+          Movers in Abu Dhabi charge based on home size, access, and required
+          services such as packing or dismantling.
+        </p>
+        <p>
+          Prices generally start from <strong>AED 600 for studios</strong>,
+          <strong> AED 900–1,200 for one-bedroom apartments</strong>, and can
+          exceed <strong>AED 3,000 for large villas</strong>. Free quotes help
+          you know the final price in advance.
+        </p>
+      </>
+    ),
+  },
+  {
+    question: "Are my items insured during the move?",
+    answer: (
+      <>
+        <p>
+          Yes, all moves include <strong>basic insurance coverage</strong> for
+          your belongings.
+        </p>
+        <p>
+          While our professional team takes maximum care during packing and
+          transport, insurance provides additional peace of mind throughout your
+          relocation.
+        </p>
+      </>
+    ),
+  },
+  {
+    question: "Do you provide the boxes and bubble wrap?",
+    answer: (
+      <>
+        <p>
+          Yes, we supply all necessary packing materials including
+          <strong> boxes, bubble wrap, stretch film, and packing tape</strong>.
+        </p>
+        <p>
+          Packing materials are typically included when you choose a
+          <strong> full-service house moving package</strong>.
+        </p>
+      </>
+    ),
+  },
+  {
+    question: "Can you move my furniture on a Friday?",
+    answer: (
+      <>
+        <p>
+          Yes, we operate <strong>seven days a week</strong>, including Fridays.
+        </p>
+        <p>
+          Some buildings in Abu Dhabi restrict moving on Fridays or public
+          holidays, so it is recommended to confirm with building management
+          before booking.
+        </p>
+      </>
+    ),
+  },
+  {
+    question: "Do you dismantle IKEA furniture?",
+    answer: (
+      <>
+        <p>
+          Yes, we professionally dismantle and reassemble all types of
+          furniture.
+        </p>
+        <p>
+          This includes <strong>IKEA, Home Centre</strong>, and other modular or
+          custom furniture brands, handled by trained technicians.
+        </p>
+      </>
+    ),
+  },
+  {
+    question: "Can you hire people to move furniture around your house?",
+    answer: (
+      <>
+        <p>
+          Yes, professional movers can help with
+          <strong> in-home furniture shifting</strong>.
+        </p>
+        <p>
+          This service is ideal for rearranging rooms, moving heavy furniture,
+          or safely relocating appliances within the same apartment or villa.
+        </p>
+      </>
+    ),
+  },
+  {
+    question: "How much does it cost to move furniture in Dubai?",
+    answer: (
+      <>
+        <p>
+          Furniture moving costs in Dubai depend on property size and the level
+          of service required.
+        </p>
+        <p>
+          Prices typically start from <strong>AED 700 for small moves</strong>
+          and can reach{" "}
+          <strong>AED 3,500 or more for full villa relocations</strong>,
+          especially when packing and dismantling services are included.
+        </p>
+      </>
+    ),
+  },
+  {
+    question: "What is the cheapest way to move a house?",
+    answer: (
+      <>
+        <p>
+          The most affordable option is choosing a
+          <strong> basic moving package</strong> and packing smaller items
+          yourself.
+        </p>
+        <p>
+          Moving on weekdays, avoiding peak seasons, and requesting a free quote
+          in advance can significantly reduce costs while still ensuring a safe
+          relocation.
+        </p>
+      </>
+    ),
+  },
+];
