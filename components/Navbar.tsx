@@ -31,13 +31,13 @@ interface NavItem {
 const navLinks: NavItem[] = [
   {
     label: "Services",
-    href: "/services",
+    href: "#",
     subItems: [
       {
         title: "House & Villa Moving",
         description:
           "Villa movers Dubai, home relocation UAE, best house movers.",
-        href: "#",
+        href: "/house-movers-in-dubai",
       },
       {
         title: "Office & Commercial Moving",
@@ -238,7 +238,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 top-[80px] bg-white z-40 transition-transform duration-300 lg:hidden ${
+        className={`fixed inset-0 top-20 bg-white z-40 transition-transform duration-300 lg:hidden ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -268,21 +268,6 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-
-          <div className="mt-10 pt-10 border-t border-gray-100 flex flex-col gap-4">
-            <a
-              href="#"
-              className="text-center py-3 font-semibold border border-gray-200 rounded-lg"
-            >
-              Log In
-            </a>
-            <a
-              href="#"
-              className="text-center py-3 font-semibold text-gray-500"
-            >
-              Support
-            </a>
-          </div>
         </div>
       </div>
     </header>

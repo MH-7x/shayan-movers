@@ -1543,3 +1543,157 @@ export const AbuDhabiHouseMoversFaqs = [
     ),
   },
 ];
+
+export const HouseMoversDubaiFaqs = [
+  {
+    question: "How much do movers Cost in Dubai?",
+    answer: (
+      <div>
+        <p>
+          The cost depends on the size of your property and the packing
+          requirements. At Shayan Movers, we provide transparent estimates. Here
+          is our standard price range for moving within Dubai:
+        </p>
+        <ul className="list-disc pl-5 mt-2 space-y-1">
+          <li>
+            <strong>Studio Apartment:</strong> AED 800 – 1,200
+          </li>
+
+          <li>
+            <strong>1-Bedroom Apartment:</strong> AED 1,200 – 1,600
+          </li>
+
+          <li>
+            <strong>2-Bedroom Apartment:</strong> AED 1,600 – 2,200
+          </li>
+
+          <li>
+            <strong>3-Bedroom Apartment:</strong> AED 2,200 – 3,000
+          </li>
+
+          <li>
+            <strong>Villas (4-5 Bedroom):</strong> AED 3,000 – 6,000+
+          </li>
+        </ul>
+        <p className="mt-2">
+          For an accurate quote, we offer a free home survey to assess your
+          specific items
+        </p>
+      </div>
+    ),
+  },
+  {
+    question: "What is the cheapest way to move a house?",
+    answer: (
+      <div>
+        <p>
+          The cheapest way is to avoid hidden fees and last-minute surcharges.
+          We recommend booking <strong>1-2 weeks in advance</strong> to secure
+          the best rates.
+        </p>
+        <p className="mt-2">
+          Unlike &quot;cheap&quot; movers who may add surprise costs for stairs
+          or parking later, Shayan Movers offers <strong>Fixed Pricing</strong>.
+          The price we agree on after the survey is the price you pay, saving
+          you money in the long run
+        </p>
+      </div>
+    ),
+  },
+  {
+    question: "How to identify fake packers and movers?",
+    answer: (
+      <div>
+        <p>
+          Fake or unreliable movers often lack insurance, official licenses, or
+          permanent staff. To ensure you are hiring a trusted company like
+          Shayan Movers, look for:
+        </p>
+        <ul className="list-disc pl-5 mt-2 space-y-1">
+          <li>
+            <strong>Licensed & Insured:</strong> Ensure they have valid
+            liability coverage.
+          </li>
+
+          <li>
+            <strong>Verified Teams:</strong> Professional movers employ trained
+            staff, not casual laborers picked up for the day
+          </li>
+
+          <li>
+            <strong>Physical Presence:</strong> We have over 20 years of
+            experience and a physical base in the UAE
+          </li>
+          <li>
+            <strong>No Hidden Fees:</strong> Be wary of vague phone quotes. We
+            provide written, fixed-price agreements
+          </li>
+        </ul>
+      </div>
+    ),
+  },
+  {
+    question: "How much will an apartment Cost in Dubai to move?",
+    answer: (
+      <div>
+        <p>
+          Moving an apartment varies by size and duration. For a{" "}
+          <strong>1-Bedroom apartment</strong>, the cost is typically{" "}
+          <strong>AED 1,200 – 1,600</strong>
+          and takes about 4–5 hours.
+        </p>
+        <p className="mt-2">
+          For larger <strong>2-Bedroom apartments</strong>, the cost ranges from{" "}
+          <strong>AED 1,600 – 2,200</strong>
+          with a duration of 5–6 hours. This includes professional packing,
+          transport in covered trucks, and furniture assembly
+        </p>
+      </div>
+    ),
+  },
+  {
+    question: "Is it worth hiring professional movers for shifting in Dubai?",
+    answer: (
+      <div>
+        <p>
+          Yes. Moving in Dubai presents unique challenges that make professional
+          help essential:
+        </p>
+        <ul className="list-disc pl-5 mt-2 space-y-1">
+          <li>
+            <strong>Climate Protection:</strong> We use air-conditioned trucks
+            and specialized packing to protect leather and electronics from the
+            intense heat
+          </li>
+
+          <li>
+            <strong>Building Regulations:</strong> We understand the permit
+            processes for communities like Emaar and Nakheel, ensuring no delays
+          </li>
+
+          <li>
+            <strong>Heavy Lifting:</strong> We handle the disassembly and
+            reassembly of large furniture items safely
+          </li>
+        </ul>
+      </div>
+    ),
+  },
+  {
+    question: "Do I need a permit to move house in Dubai?",
+    answer: (
+      <div>
+        <p>
+          Yes, most buildings require a{" "}
+          <strong>Move-in or Move-out Permit</strong>. You generally need to
+          submit your Ejari and ID to building management
+        </p>
+        <p className="mt-2">
+          <strong>Tip:</strong> Many buildings need 48 to 72 hours&apos; notice
+          to book the service elevator. Our team can assist you with this
+          coordination.
+        </p>
+      </div>
+    ),
+  },
+];

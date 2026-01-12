@@ -4,7 +4,6 @@ import {
   BoxesIcon,
   CheckCircle2,
   CircleDollarSign,
-  Globe,
   Landmark,
   MapPin,
   Medal,
@@ -18,6 +17,20 @@ import Image from "next/image";
 import heroImage from "@/public/house-furniture-movers-abu-dhabi.jpg";
 import ContactSection from "@/components/ContactSection";
 
+export const metadata = MetadataTemplate({
+  data: {
+    meta: {
+      title: "House Furniture Movers in Abu Dhabi | Shayan Movers UAE ",
+      desc: "Professional house furniture movers in Abu Dhabi. Licensed packers & movers offering safe, affordable relocation services. Free quote! Call: +971 54 732 6816 ",
+    },
+    image: {
+      path: "/house-furniture-movers-abu-dhabi.jpg",
+      alt: "House Furniture Movers in Abu Dhabi",
+    },
+    path: "/house-furniture-movers-abu-dhabi",
+  },
+});
+
 interface Feature {
   title: string;
   description: React.ReactNode;
@@ -28,87 +41,55 @@ const WhyChooseUs = () => {
     {
       title: "Licensed & Insured Moving Services",
       description: (
-        <>
-          <p>
-            We are fully licensed by the Abu Dhabi Municipality. This means we
-            follow all local laws and safety standards. We also provide
-            insurance for your belongings.
-          </p>{" "}
-          <p>
-            If something goes wrong, you are covered. We believe in being honest
-            about our policies so you can feel at ease.
-          </p>
-        </>
+        <p>
+          Fully licensed by Abu Dhabi Municipality with comprehensive insurance
+          coverage. We follow strict safety standards to ensure your belongings
+          are protected and you stay at ease.
+        </p>
       ),
       icon: <ShieldCheck className="w-8 h-8" />,
     },
     {
-      title: "Experienced Furniture Moving Specialists",
+      title: "Experienced Moving Specialists",
       description: (
-        <>
-          <p>
-            Our team has spent years working as house furniture movers in Abu
-            Dhabi. We have seen it all—from narrow stairwells to strict building
-            security.
-          </p>
-          <p>
-            We know how to handle delicate items like antiques, large
-            electronics, and heavy sofas. We also understand the paperwork and
-            access permits required by most Abu Dhabi communities.
-          </p>
-        </>
+        <p>
+          Expert movers skilled in handling delicate antiques, heavy furniture,
+          and complex building permits. We navigate narrow spaces and strict
+          security protocols with ease.
+        </p>
       ),
       icon: <Medal className="w-8 h-8" />,
     },
     {
       title: "Comprehensive Packing Solutions",
       description: (
-        <>
-          <p>
-            We use high-quality materials to protect your things. This includes
-            thick moving boxes, bubble wrap, and protective blankets.We don’t
-            just throw things in a box.
-          </p>
-          <p>
-            {" "}
-            We use a labeling system so you know exactly where your kitchen
-            items or bedroom clothes are when you arrive.
-          </p>
-        </>
+        <p>
+          We use premium materials like bubble wrap and protective blankets. Our
+          organized labeling system ensures every item is easy to find when you
+          arrive at your new home.
+        </p>
       ),
       icon: <BoxesIcon className="w-8 h-8" />,
     },
     {
       title: "Transparent & Competitive Pricing",
       description: (
-        <>
-          <p>
-            No one likes surprise charges. We give you a clear, detailed quote
-            before we start. The price we agree on is the price you pay.
-          </p>
-          <p>
-            We offer different packages to fit different budgets, and we always
-            try to keep our rates fair.
-          </p>
-        </>
+        <p>
+          No hidden fees or surprise charges. We provide clear, detailed quotes
+          upfront and offer flexible packages designed to fit your specific
+          moving budget.
+        </p>
       ),
       icon: <CircleDollarSign className="w-8 h-8" />,
     },
     {
       title: "Modern Fleet & Equipment",
       description: (
-        <>
-          <p>
-            {" "}
-            Our trucks are clean, well-maintained, and come in various sizes. We
-            use GPS tracking so we always know where your furniture is.
-          </p>
-          <p>
-            {" "}
-            Our team uses professional tools like dollies, ramps, and heavy-duty
-            straps to ensure everything is secure during the drive.
-          </p>
-        </>
+        <p>
+          Our GPS-tracked trucks are clean and well-maintained. We use
+          professional tools, including ramps and heavy-duty straps, to
+          guarantee safe and secure transport.
+        </p>
       ),
       icon: <Star className="w-8 h-8" />,
     },
@@ -131,7 +112,7 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
@@ -140,10 +121,10 @@ const WhyChooseUs = () => {
               <div className="mb-4 inline-block p-3 rounded-lg bg-orange-50 text-[#d84315] group-hover:bg-[#d84315] group-hover:text-white transition-colors duration-300">
                 {feature.icon}
               </div>
-              <h3 className="text-xl! font-bold text-[#263238] mb-3">
+              <h3 className="text-lg! font-bold text-[#263238] mb-3">
                 {feature.title}
               </h3>
-              <div className="text-gray-600">{feature.description}</div>
+              <div className="text-gray-600 text-sm">{feature.description}</div>
             </div>
           ))}
 
@@ -435,11 +416,12 @@ const LocationCard = ({ location }: { location: LocationType }) => (
   </div>
 );
 
-import { Phone, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import Link from "next/link";
 import { FAQs } from "@/components/FAQs";
 import { AbuDhabiHouseMoversFaqs } from "@/lib/lists";
 import CTA from "@/components/CTA";
+import MetadataTemplate from "@/lib/MetaDataTemplate";
 
 interface PricingTier {
   name: string;
@@ -633,7 +615,7 @@ const PricingCard = () => {
 const HouseFurnitureMoversAbuDhabi = () => {
   return (
     <main className=" mt-32">
-      <section className="relatve">
+      <section>
         <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24">
           <div className="mx-auto mb-12 w-full max-w-3xl text-center md:mb-16 lg:mb-20">
             <h1 className="mb-4 text-4xl font-semibold md:text-6xl">
@@ -671,12 +653,12 @@ const HouseFurnitureMoversAbuDhabi = () => {
         <img
           alt="Line Svg"
           src={"/lines-1.svg"}
-          className="absolute bottom-0 left-0 right-auto top-auto -z-10 inline-block md:bottom-1/2 md:left-0 md:right-auto md:top-auto"
+          className="absolute hidden  bottom-0 left-0 right-auto top-auto -z-10 sm:inline-block md:bottom-1/2 md:left-0 md:right-auto md:top-auto"
         />
         <img
           alt="Line Svg"
           src={"/lines-1.svg"}
-          className="absolute bottom-auto left-auto right-0 top-0 -z-10 hidden sm:inline-block"
+          className="absolute bottom-auto left-auto right-0 top-0 -z-10 hidden sm:inline-block "
         />
       </section>
       <ContactSection
