@@ -43,7 +43,7 @@ const navLinks: NavItem[] = [
         title: "Office & Commercial Moving",
         description:
           "Office movers Dubai, business relocation, corporate moving services.",
-        href: "#",
+        href: "/office-movers-in-dubai",
       },
       {
         title: "Furniture Moving & Assembly",

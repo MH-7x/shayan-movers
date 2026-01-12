@@ -1697,3 +1697,103 @@ export const HouseMoversDubaiFaqs = [
     ),
   },
 ];
+
+export const OfficeMoversDubai = [
+  {
+    question: "How much does it cost to move furniture in Dubai?",
+    answer: (
+      <>
+        <p>
+          Furniture moving costs in Dubai depend on the size of the move and the
+          services required.
+        </p>
+        <p>
+          Prices typically start from <strong>AED 700 for small moves</strong>
+          and can reach{" "}
+          <strong>AED 3,500 or more for full villa relocations</strong>.
+        </p>
+      </>
+    ),
+  },
+
+  {
+    question: "How far in advance should I book a move?",
+    answer: (
+      <>
+        <p>
+          It is best to book your move at least
+          <strong> 3 to 4 months in advance</strong>, especially for large
+          offices or full villa relocations.
+        </p>
+        <p>
+          Early booking helps secure your preferred date and allows proper
+          planning for packing, permits, and logistics.
+        </p>
+      </>
+    ),
+  },
+  {
+    question: "Can we move outside business hours?",
+    answer: (
+      <>
+        <p>
+          Yes, we offer <strong>night, weekend, and after-hours moves</strong>.
+        </p>
+        <p>
+          This service is especially helpful for offices that want to avoid
+          downtime and continue business operations during the day.
+        </p>
+      </>
+    ),
+  },
+  {
+    question: "Do you provide packing materials for office moves?",
+    answer: (
+      <>
+        <p>
+          Yes, we bring everything needed for office relocations, including
+          <strong> cartons, bubble wrap, tape, and protective covers</strong>.
+        </p>
+        <p>
+          Sensitive equipment and furniture are packed using industry-standard
+          materials to ensure maximum safety.
+        </p>
+      </>
+    ),
+  },
+  {
+    question: "Is moving insurance included?",
+    answer: (
+      <>
+        <p>
+          Yes, <strong>basic insurance</strong> is included in our standard
+          moving quotes.
+        </p>
+        <p>
+          For high-value or sensitive items, we can discuss
+          <strong> additional coverage options</strong> for full-value
+          protection.
+        </p>
+      </>
+    ),
+  },
+  {
+    question: "Why hire professional office movers?",
+    answer: (
+      <>
+        <p>
+          Professional office movers handle complex logistics such as
+          <strong>
+            {" "}
+            building permits, scheduling, and specialized equipment
+          </strong>
+          .
+        </p>
+        <p>
+          Hiring experts saves time, minimizes business disruption, and protects
+          valuable office assets that a DIY move often risks damaging.
+        </p>
+      </>
+    ),
+  },
+];

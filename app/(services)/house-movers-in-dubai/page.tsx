@@ -384,7 +384,7 @@ const HouseMoversDubai = () => {
               placeholder="blur"
               loading="eager"
               fill
-              alt="House Furniture Movers in Abu Dhabi"
+              alt="House Movers in Dubai"
               className="object-cover rounded-2xl"
             />
             <div className="absolute bottom-0 left-4 right-0 top-4 -z-10 h-full w-full rounded-2xl bg-(--brand-color)"></div>
