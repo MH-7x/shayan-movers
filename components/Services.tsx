@@ -17,7 +17,7 @@ const serviceList = [
       src: "/home-moving-in-dubai.jpg",
       alt: "Home moving services for apartments and villas",
     },
-    href: "/services/home-moving",
+    href: "/house-movers-in-dubai",
     title: "Home Moving",
     desc: "We pack and move studio apartments, 1–5 bedroom homes, and villas. From kitchen items to furniture, electronics, and personal belongings, everything is packed using proper protective materials.",
   },
@@ -26,7 +26,7 @@ const serviceList = [
       src: "/office-relocation-in-uae.jpg",
       alt: "Office relocation and business moving services",
     },
-    href: "/services/office-relocation",
+    href: "/office-movers-in-dubai",
     title: "Office Relocation",
     desc: "We minimize business downtime by carefully moving desks, computers, files, and equipment. After-hours and weekend moves are available when needed.",
   },
@@ -35,7 +35,7 @@ const serviceList = [
       src: "/packing-services-dubai.jpg",
       alt: "Professional packing services with boxes and bubble wrap",
     },
-    href: "/services/packing-services",
+    href: "/",
     title: "Packing Services",
     desc: "Short on time? Our team handles complete packing using high-quality boxes, bubble wrap, and packing paper to keep your items safe.",
   },
@@ -44,7 +44,7 @@ const serviceList = [
       src: "/furniture-assembly-services-in-dubai.jpg",
       alt: "Furniture dismantling and assembly services",
     },
-    href: "/services/furniture-assembly",
+    href: "/",
     title: "Furniture Assembly",
     desc: "Large furniture is professionally dismantled before moving and reassembled at your new location with proper tools and care.",
   },
@@ -53,7 +53,7 @@ const serviceList = [
       src: "/storage-services-in-dubai.jpg",
       alt: "Secure storage solutions for household items",
     },
-    href: "/services/storage-solutions",
+    href: "/",
     title: "Storage Solutions",
     desc: "Need temporary storage? Our secure facilities are available for both short-term and long-term storage requirements.",
   },
@@ -62,7 +62,7 @@ const serviceList = [
       src: "/piano-movers.jpg",
       alt: "Special handling for pianos, antiques, and fragile items",
     },
-    href: "/services/special-items",
+    href: "/",
     title: "Special Items",
     desc: "Pianos, artwork, antiques, and fragile items receive extra care with custom packing and crating for maximum protection.",
   },
@@ -191,14 +191,16 @@ export function ReviewSection() {
           What Our Customers Says
         </h2>
 
-        <div className="flex gap-x-1 mt-5">
-          {Array(5)
-            .fill(0)
-            .map((_, i) => (
-              <Star key={i} className="text-yellow-500 fill-yellow-500" />
-            ))}
+        <div className="flex md:flex-row flex-col gap-3 mt-5 items-center justify-center">
+          <div className="flex gap-x-1 ">
+            {Array(5)
+              .fill(0)
+              .map((_, i) => (
+                <Star key={i} className="text-yellow-500 fill-yellow-500" />
+              ))}
+          </div>
+          <p className="font-medium">857 Google Reviews</p>
         </div>
-        <p className="mt-2 font-medium">857 Google Reviews</p>
       </div>
 
       <Carousel
@@ -215,7 +217,10 @@ export function ReviewSection() {
       >
         <CarouselContent>
           {googleReviews.map((review, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+            <CarouselItem
+              key={index}
+              className="md:basis-1/2 lg:basis-1/3 select-none"
+            >
               <GoogleReviewCard review={{ ...review }} />
             </CarouselItem>
           ))}

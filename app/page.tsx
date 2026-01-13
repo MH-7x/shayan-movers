@@ -14,7 +14,7 @@ export const metadata = MetadataTemplate({
   data: {
     meta: {
       title: "Trusted Movers and Packers in Dubai | Shayan Movers",
-      desc: "Fast and affordable movers in Dubai &amp; Sharjah. We pack, move, and set up your furniture safely and securely. Call +971 54 732 6816 for a free quote today.",
+      desc: "Fast and affordable movers in Dubai & Sharjah. We pack, move, and set up your furniture safely and securely. Call +971 54 732 6816 for a free quote today.",
     },
     image: {
       path: "/shayan-movers-packers.jpg",

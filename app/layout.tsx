@@ -4,6 +4,7 @@ import "./globals.css";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { Toaster } from "sonner";
+import ActionButton from "@/components/ActionButtons";
 
 const inter = Inter({
   adjustFontFallback: false,
@@ -51,6 +52,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <Toaster position="top-center" />
+        <ActionButton />
       </body>
     </html>
   );

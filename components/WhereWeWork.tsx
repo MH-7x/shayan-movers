@@ -8,6 +8,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 interface LocationType {
   id: string;
@@ -16,6 +17,7 @@ interface LocationType {
   icon: JSX.Element;
   color: string;
   areas: string[];
+  href: string;
 }
 
 // --- Data Structure ---
@@ -39,6 +41,7 @@ const locations: LocationType[] = [
       "Jumeirah",
       "Palm Jumeirah",
     ],
+    href: "/",
   },
   {
     id: "sharjah",
@@ -54,6 +57,7 @@ const locations: LocationType[] = [
       "Bu Shaghara",
       "Hay Al Qasimiah", // Added your HQ area for completeness
     ],
+    href: "/movers-in-sharjah",
   },
   {
     id: "abudhabi",
@@ -62,6 +66,7 @@ const locations: LocationType[] = [
     icon: <Landmark className="w-6 h-6 " />,
     color: "bg-(--neutral-color) text-(--brand-color)",
     areas: ["Al Reem Island", "Khalifa City", "Yas Island"],
+    href: "/movers-and-packers-abu-dhabi",
   },
   {
     id: "northern",
@@ -69,10 +74,16 @@ const locations: LocationType[] = [
     description: "Connecting the wider UAE region.",
     icon: <Globe className="w-6 h-6 " />,
     color: "bg-(--neutral-color) text-(--brand-color)",
-    areas: ["Ajman", "Ras Al Khaimah", "Fujairah"],
+    areas: ["Ajman", "Ras Al Khaimah", "Al Ain"],
+    href: "/movers-in-ajman",
   },
 ];
 
+const otherLinks = [
+  "/movers-in-ajman",
+  "/movers-in-ras-al-khaimah",
+  "movers-in-al-ain",
+];
 // --- Sub-Component: Location Card ---
 const LocationCard = ({ location }: { location: LocationType }) => (
   <div className="group relative bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-1 overflow-hidden">
@@ -88,21 +99,48 @@ const LocationCard = ({ location }: { location: LocationType }) => (
         {location.icon}
       </div>
 
-      <h3 className="text-2xl! font-bold! mb-2">Movers in {location.city}</h3>
+      <Link href={location.href}>
+        <h3 className="text-2xl! font-bold! mb-2">Movers in {location.city}</h3>
+      </Link>
       <p className="text-sm  mb-6">{location.description}</p>
 
       <div className="space-y-3">
         <h4 className="text-xs! font-semibold! uppercase tracking-wider text-gray-400">
           Key Areas
         </h4>
-        <ul className="grid grid-cols-2 gap-y-2">
-          {location.areas.map((area, index) => (
-            <li key={index} className="flex items-start text-sm text-gray-700">
-              <CheckCircle2 className="w-4 h-4 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
-              <span>{area}</span>
-            </li>
-          ))}
-        </ul>
+        {location.id === "northern" ? (
+          <>
+            <ul className="grid grid-cols-2 gap-y-2">
+              {location.areas.map((area, index) => (
+                <li key={index}>
+                  <Link
+                    className="flex items-start text-sm text-gray-700"
+                    href={otherLinks[index]}
+                  >
+                    <CheckCircle2 className="w-4 h-4 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
+
+                    <span>{area}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </>
+        ) : (
+          <>
+            <ul className="grid grid-cols-2 gap-y-2">
+              {location.areas.map((area, index) => (
+                <li
+                  key={index}
+                  className="flex items-start text-sm text-gray-700"
+                >
+                  <CheckCircle2 className="w-4 h-4 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
+
+                  <span>{area}</span>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
       </div>
     </div>
   </div>
