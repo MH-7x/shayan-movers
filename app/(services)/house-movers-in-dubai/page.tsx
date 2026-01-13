@@ -65,6 +65,9 @@ import { FAQs } from "@/components/FAQs";
 import { HouseMoversDubaiFaqs } from "@/lib/lists";
 import CTA from "@/components/CTA";
 import MetadataTemplate from "@/lib/MetaDataTemplate";
+import { convertFaqsForSchema } from "@/lib/ConvertFaqsInRaw";
+import { generateFAQSchema } from "@/lib/GenerateFaqSchema";
+import Script from "next/script";
 
 const MovingServices = () => {
   const services = [
@@ -353,252 +356,257 @@ const WhyChooseUs = () => {
   );
 };
 
+const FaqsSchema = generateFAQSchema(
+  convertFaqsForSchema(HouseMoversDubaiFaqs)
+);
+
 const HouseMoversDubai = () => {
   return (
-    <main className=" mt-32">
-      <section>
-        <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24">
-          <div className="mx-auto mb-12 w-full max-w-3xl text-center md:mb-16 lg:mb-20">
-            <h1 className="mb-4 text-4xl font-semibold md:text-6xl">
-              House Movers in Dubai – Your Trusted Moving Partner
-            </h1>
-            <p className="mx-auto mb-5 max-w-4xl text-lg text-[#636262] lg:mb-8">
-              Moving house is a lot of work. Whether you are moving out of a
-              studio apartment or relocating a large 5-bedroom villa, the
-              logistics can be overwhelming.
-            </p>
-
-            <div className="flex justify-center gap-x-4">
-              <Button size={"lg"} callBtn>
-                <PhoneCall /> Call Now
-              </Button>
-              <Button variant={"secondary"} size={"lg"} wtsBtn>
-                <MessageCircle /> Quote On WhatsApp
-              </Button>
-            </div>
-          </div>
-
-          <div className="relative max-w-6xl mx-auto md:h-112.5 h-80 rounded-2xl bg-white ">
-            <Image
-              src={heroImage}
-              placeholder="blur"
-              loading="eager"
-              fill
-              alt="House Movers in Dubai"
-              className="object-cover rounded-2xl"
-            />
-            <div className="absolute bottom-0 left-4 right-0 top-4 -z-10 h-full w-full rounded-2xl bg-(--brand-color)"></div>
-          </div>
-        </div>
-
-        <img
-          alt="Line Svg"
-          src={"/lines-1.svg"}
-          className="absolute hidden  bottom-0 left-0 right-auto top-auto -z-10 sm:inline-block md:bottom-1/2 md:left-0 md:right-auto md:top-auto"
-        />
-        <img
-          alt="Line Svg"
-          src={"/lines-1.svg"}
-          className="absolute bottom-auto left-auto right-0 top-0 -z-10 hidden sm:inline-block "
-        />
-      </section>
-      <ContactSection
-        title="Get A Quote From House Movers in Dubai"
-        desc={
-          <>
-            <p>
-              Our team handles the heavy lifting so you don’t have to. From
-              packing your first box to setting up your furniture in the new
-              place, we make sure everything goes smoothly.
-            </p>
-            <p>
-              Shayan Movers has over 20 years of experience serving Dubai,
-              Sharjah, Abu Dhabi, and the rest of the UAE.
-            </p>
-          </>
-        }
+    <>
+      <Script
+        strategy="beforeInteractive"
+        id="FAQSchema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: FaqsSchema }}
       />
-      <ReviewSection />
-      <section className="max-w-7xl mx-auto mt-36 px-3 lg:px-6">
-        <div className="text-center mb-10">
-          <h2 className="max-w-2xl mx-auto md:text-5xl text-4xl!">
-            Why Choose Our House Moving Services in Dubai?
-          </h2>
-          <p className="mt-3 max-w-4xl mx-auto">
-            Moving your home in Dubai requires more than just a truck. You need
-            a team that understands how to navigate high-rise buildings, deal
-            with building security, and protect your furniture from the intense
-            UAE heat.
-          </p>
-          <p className="mt-1 max-w-4xl mx-auto">
-            We are one of the leading house movers and packers in Dubai because
-            we keep things simple and honest.
-          </p>
-        </div>
+      <main className=" mt-32">
+        <section>
+          <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24">
+            <div className="mx-auto mb-12 w-full max-w-3xl text-center md:mb-16 lg:mb-20">
+              <h1 className="mb-4 text-4xl font-semibold md:text-6xl">
+                House Movers in Dubai – Your Trusted Moving Partner
+              </h1>
+              <p className="mx-auto mb-5 max-w-4xl text-lg text-[#636262] lg:mb-8">
+                Moving house is a lot of work. Whether you are moving out of a
+                studio apartment or relocating a large 5-bedroom villa, the
+                logistics can be overwhelming.
+              </p>
 
-        <div className="flex flex-col md:flex-row pt-10">
-          <div className="mr-0 md:mr-8 mb-6 md:mb-0 md:w-1/3  relative rounded-2xl overflow-hidden h-96">
-            <Image
-              src="/house-movers-in-dubai.jpg"
-              fill
-              alt="movers and packers in dubai"
-              className="object-cover"
-            />
-          </div>
-
-          <div className="flex-1 flex flex-col sm:flex-row flex-wrap -mb-4 -mx-2">
-            {choiceList.map((choice, idx) => (
-              <div key={idx} className="w-full sm:w-1/2 mb-4 px-2 ">
-                <div className="h-full py-4 px-6 border border-(--brand-color) border-t-0 border-l-0 rounded-br-xl">
-                  <CheckCircle className="text-(--brand-color) mb-3" />
-                  <h3 className="text-2xl! font-bold text-md mb-3">
-                    {choice.title}
-                  </h3>
-                  <p className="">{choice.desc}</p>
-                </div>
+              <div className="flex justify-center gap-x-4">
+                <Button size={"lg"} callBtn>
+                  <PhoneCall /> Call Now
+                </Button>
+                <Button variant={"secondary"} size={"lg"} wtsBtn>
+                  <MessageCircle /> Quote On WhatsApp
+                </Button>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <MovingServices />
-      <section className="mt-32 px-3 ">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Transparent House Moving Costs in Dubai
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We don&apos;t like hidden fees, and we know you don&apos;t either.
-              The cost of your move depends on the size of your home and how
-              much packing you need.
-            </p>
-          </div>
+            </div>
 
-          <div className="overflow-hidden bg-white shadow-xl rounded-2xl border border-gray-100">
-            <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse">
-                <thead>
-                  <tr className="bg-(--heading-color) text-white">
-                    <th className="p-5 font-semibold text-sm! uppercase tracking-wider rounded-tl-lg">
-                      <div className="flex items-center gap-2">
-                        <Building2 className="w-4 h-4 text-blue-400" />
-                        Property Type
-                      </div>
-                    </th>
-                    <th className="p-5 font-semibold text-sm! uppercase tracking-wider">
-                      <div className="flex items-center gap-2">
-                        <Wallet className="w-4 h-4 text-green-400" />
-                        Estimated Cost Range
-                      </div>
-                    </th>
-                    <th className="p-5 font-semibold text-sm! uppercase tracking-wider rounded-tr-lg">
-                      <div className="flex items-center gap-2">
-                        <Clock className="w-4 h-4 text-orange-400" />
-                        Typical Duration
-                      </div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-100">
-                  {pricingData.map((item, index) => (
-                    <tr
-                      key={index}
-                      className={`hover:bg-blue-50/50 transition-colors ${
-                        index % 2 === 0 ? "bg-white" : "bg-gray-50/50"
-                      }`}
-                    >
-                      <td className="p-5 font-medium text-slate-900">
-                        {item.type}
-                      </td>
-                      <td className="p-5 text-slate-700 font-semibold">
-                        {item.cost}
-                      </td>
-                      <td className="p-5 text-gray-600">{item.duration}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="relative max-w-6xl mx-auto md:h-112.5 h-80 rounded-2xl bg-white ">
+              <Image
+                src={heroImage}
+                placeholder="blur"
+                loading="eager"
+                fill
+                alt="House Movers in Dubai"
+                className="object-cover rounded-2xl"
+              />
+              <div className="absolute bottom-0 left-4 right-0 top-4 -z-10 h-full w-full rounded-2xl bg-(--brand-color)"></div>
             </div>
           </div>
 
-          <div className="mt-6 flex items-start gap-3 p-4 bg-amber-50 text-amber-900 rounded-lg border border-amber-100 max-w-3xl mx-auto">
-            <Info className="w-5 h-5 shrink-0 mt-0.5 text-amber-600" />
-            <p className="text-sm">
-              <span className="font-bold">Note:</span> These are estimates. For
-              an exact price, call us for a free home survey.
-            </p>
-          </div>
-        </div>
-      </section>
-      <section className="group mt-28 relative bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-1 overflow-hidden max-w-4xl mx-auto">
-        {/* Decorative background element */}
-        <div
-          className={`absolute top-0 right-0 w-24 h-24 rounded-bl-full opacity-20 transition-transform group-hover:scale-110 bg-(--brand-color)`}
+          <img
+            alt="Line Svg"
+            src={"/lines-1.svg"}
+            className="absolute hidden  bottom-0 left-0 right-auto top-auto -z-10 sm:inline-block md:bottom-1/2 md:left-0 md:right-auto md:top-auto"
+          />
+          <img
+            alt="Line Svg"
+            src={"/lines-1.svg"}
+            className="absolute bottom-auto left-auto right-0 top-0 -z-10 hidden sm:inline-block "
+          />
+        </section>
+        <ContactSection
+          title="Get A Quote From House Movers in Dubai"
+          desc={
+            <>
+              <p>
+                Our team handles the heavy lifting so you don’t have to. From
+                packing your first box to setting up your furniture in the new
+                place, we make sure everything goes smoothly.
+              </p>
+              <p>
+                Shayan Movers has over 20 years of experience serving Dubai,
+                Sharjah, Abu Dhabi, and the rest of the UAE.
+              </p>
+            </>
+          }
         />
-
-        <div className="relative z-10">
-          <div
-            className={`inline-flex items-center justify-center p-3 rounded-xl mb-4 bg-(--brand-color)/20`}
-          >
-            <Building2 className="w-6 h-6 " />
-          </div>
-
-          <h2 className="text-3xl! font-bold! mb-2">Areas We Serve</h2>
-          <p className="  mb-8">
-            We are based in Sharjah but we move families across all of Dubai and
-            the UAE.
-            <br />
-            <b>Popular Dubai Neighborhoods:</b>
-          </p>
-
-          <div className="space-y-3">
-            <ul className="grid grid-cols-1 gap-y-2">
-              <li className="flex items-start  text-gray-700">
-                <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
-
-                <b>Dubai Marina & JBR </b>
-              </li>
-              <li className="flex items-start  text-gray-700">
-                <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
-                <li className="flex items-start  text-gray-700">
-                  <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
-
-                  <b>Downtown Dubai & Business Bay </b>
-                </li>
-              </li>
-              <li className="flex items-start  text-gray-700">
-                <li className="flex items-start  text-gray-700">
-                  <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
-
-                  <b>Downtown Dubai & Business Bay </b>
-                </li>
-              </li>
-              <li className="flex items-start  text-gray-700">
-                <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
-                <b>Arabian Ranches & Dubai Hills</b>
-              </li>
-              <li className="flex items-start  text-gray-700">
-                <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
-                <b>Palm Jumeirah & Al Barsha</b>
-              </li>
-              <li className="flex items-start  text-gray-700">
-                <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
-                <b>Mirdif, Silicon Oasis, and International City</b>
-              </li>
-            </ul>
-            <p className="text-sm text-gray-600 pt-3">
-              We also handle Inter-Emirate moves, such as moving from Dubai to
-              Abu Dhabi or Sharjah to Dubai.
+        <ReviewSection />
+        <section className="max-w-7xl mx-auto mt-36 px-3 lg:px-6">
+          <div className="text-center mb-10">
+            <h2 className="max-w-2xl mx-auto md:text-5xl text-4xl!">
+              Why Choose Our House Moving Services in Dubai?
+            </h2>
+            <p className="mt-3 max-w-4xl mx-auto">
+              Moving your home in Dubai requires more than just a truck. You
+              need a team that understands how to navigate high-rise buildings,
+              deal with building security, and protect your furniture from the
+              intense UAE heat.
+            </p>
+            <p className="mt-1 max-w-4xl mx-auto">
+              We are one of the leading house movers and packers in Dubai
+              because we keep things simple and honest.
             </p>
           </div>
-        </div>
-      </section>
-      <Process />
-      <WhyChooseUs />
-      <FAQs faqs={HouseMoversDubaiFaqs} />
-      <CTA />
-    </main>
+
+          <div className="flex flex-col md:flex-row pt-10">
+            <div className="mr-0 md:mr-8 mb-6 md:mb-0 md:w-1/3  relative rounded-2xl overflow-hidden h-96">
+              <Image
+                src="/house-movers-in-dubai.jpg"
+                fill
+                alt="movers and packers in dubai"
+                className="object-cover"
+              />
+            </div>
+
+            <div className="flex-1 flex flex-col sm:flex-row flex-wrap -mb-4 -mx-2">
+              {choiceList.map((choice, idx) => (
+                <div key={idx} className="w-full sm:w-1/2 mb-4 px-2 ">
+                  <div className="h-full py-4 px-6 border border-(--brand-color) border-t-0 border-l-0 rounded-br-xl">
+                    <CheckCircle className="text-(--brand-color) mb-3" />
+                    <h3 className="text-2xl! font-bold text-md mb-3">
+                      {choice.title}
+                    </h3>
+                    <p className="">{choice.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+        <MovingServices />
+        <section className="mt-32 px-3 ">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                Transparent House Moving Costs in Dubai
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                We don&apos;t like hidden fees, and we know you don&apos;t
+                either. The cost of your move depends on the size of your home
+                and how much packing you need.
+              </p>
+            </div>
+
+            <div className="overflow-hidden bg-white shadow-xl rounded-2xl border border-gray-100">
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="bg-(--heading-color) text-white">
+                      <th className="p-5 font-semibold text-sm! uppercase tracking-wider rounded-tl-lg">
+                        <div className="flex items-center gap-2">
+                          <Building2 className="w-4 h-4 text-blue-400" />
+                          Property Type
+                        </div>
+                      </th>
+                      <th className="p-5 font-semibold text-sm! uppercase tracking-wider">
+                        <div className="flex items-center gap-2">
+                          <Wallet className="w-4 h-4 text-green-400" />
+                          Estimated Cost Range
+                        </div>
+                      </th>
+                      <th className="p-5 font-semibold text-sm! uppercase tracking-wider rounded-tr-lg">
+                        <div className="flex items-center gap-2">
+                          <Clock className="w-4 h-4 text-orange-400" />
+                          Typical Duration
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-100">
+                    {pricingData.map((item, index) => (
+                      <tr
+                        key={index}
+                        className={`hover:bg-blue-50/50 transition-colors ${
+                          index % 2 === 0 ? "bg-white" : "bg-gray-50/50"
+                        }`}
+                      >
+                        <td className="p-5 font-medium text-slate-900">
+                          {item.type}
+                        </td>
+                        <td className="p-5 text-slate-700 font-semibold">
+                          {item.cost}
+                        </td>
+                        <td className="p-5 text-gray-600">{item.duration}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div className="mt-6 flex items-start gap-3 p-4 bg-amber-50 text-amber-900 rounded-lg border border-amber-100 max-w-3xl mx-auto">
+              <Info className="w-5 h-5 shrink-0 mt-0.5 text-amber-600" />
+              <p className="text-sm">
+                <span className="font-bold">Note:</span> These are estimates.
+                For an exact price, call us for a free home survey.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section className="group mt-28 relative bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-1 overflow-hidden max-w-4xl mx-auto">
+          {/* Decorative background element */}
+          <div
+            className={`absolute top-0 right-0 w-24 h-24 rounded-bl-full opacity-20 transition-transform group-hover:scale-110 bg-(--brand-color)`}
+          />
+
+          <div className="relative z-10">
+            <div
+              className={`inline-flex items-center justify-center p-3 rounded-xl mb-4 bg-(--brand-color)/20`}
+            >
+              <Building2 className="w-6 h-6 " />
+            </div>
+
+            <h2 className="text-3xl! font-bold! mb-2">Areas We Serve</h2>
+            <p className="  mb-8">
+              We are based in Sharjah but we move families across all of Dubai
+              and the UAE.
+              <br />
+              <b>Popular Dubai Neighborhoods:</b>
+            </p>
+
+            <div className="space-y-3">
+              <ul className="grid grid-cols-1 gap-y-2">
+                <li className="flex items-start  text-gray-700">
+                  <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
+
+                  <b>Dubai Marina & JBR </b>
+                </li>
+                <li className="flex items-start  text-gray-700">
+                  <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
+
+                  <b>Downtown Dubai & Business Bay </b>
+                </li>
+                <li className="flex items-start  text-gray-700">
+                  <b>Downtown Dubai & Business Bay </b>
+                </li>
+                <li className="flex items-start  text-gray-700">
+                  <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
+                  <b>Arabian Ranches & Dubai Hills</b>
+                </li>
+                <li className="flex items-start  text-gray-700">
+                  <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
+                  <b>Palm Jumeirah & Al Barsha</b>
+                </li>
+                <li className="flex items-start  text-gray-700">
+                  <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
+                  <b>Mirdif, Silicon Oasis, and International City</b>
+                </li>
+              </ul>
+              <p className="text-sm text-gray-600 pt-3">
+                We also handle Inter-Emirate moves, such as moving from Dubai to
+                Abu Dhabi or Sharjah to Dubai.
+              </p>
+            </div>
+          </div>
+        </section>
+        <Process />
+        <WhyChooseUs />
+        <FAQs faqs={HouseMoversDubaiFaqs} />
+        <CTA />
+      </main>
+    </>
   );
 };
 

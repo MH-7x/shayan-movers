@@ -422,6 +422,9 @@ import { FAQs } from "@/components/FAQs";
 import { AbuDhabiHouseMoversFaqs } from "@/lib/lists";
 import CTA from "@/components/CTA";
 import MetadataTemplate from "@/lib/MetaDataTemplate";
+import Script from "next/script";
+import { generateFAQSchema } from "@/lib/GenerateFaqSchema";
+import { convertFaqsForSchema } from "@/lib/ConvertFaqsInRaw";
 
 interface PricingTier {
   name: string;
@@ -612,86 +615,319 @@ const PricingCard = () => {
   );
 };
 
+const FaqsSchema = generateFAQSchema(
+  convertFaqsForSchema(AbuDhabiHouseMoversFaqs)
+);
+
 const HouseFurnitureMoversAbuDhabi = () => {
   return (
-    <main className=" mt-32">
-      <section>
-        <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24">
-          <div className="mx-auto mb-12 w-full max-w-3xl text-center md:mb-16 lg:mb-20">
-            <h1 className="mb-4 text-4xl font-semibold md:text-6xl">
-              Professional House Furniture Movers in Abu Dhabi .
-            </h1>
-            <p className="mx-auto mb-5 max-w-4xl text-lg text-[#636262] lg:mb-8">
-              Moving your home is one of the biggest changes you can make. If
-              you are looking for reliable house furniture movers in Abu Dhabi,
-              Shayan Movers is here to help.
-            </p>
+    <>
+      <Script
+        strategy="beforeInteractive"
+        id="FAQSchema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: FaqsSchema }}
+      />
+      <main className=" mt-32">
+        <section>
+          <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24">
+            <div className="mx-auto mb-12 w-full max-w-3xl text-center md:mb-16 lg:mb-20">
+              <h1 className="mb-4 text-4xl font-semibold md:text-6xl">
+                Professional House Furniture Movers in Abu Dhabi .
+              </h1>
+              <p className="mx-auto mb-5 max-w-4xl text-lg text-[#636262] lg:mb-8">
+                Moving your home is one of the biggest changes you can make. If
+                you are looking for reliable house furniture movers in Abu
+                Dhabi, Shayan Movers is here to help.
+              </p>
 
-            <div className="flex justify-center gap-x-4">
-              <Button size={"lg"} callBtn>
+              <div className="flex justify-center gap-x-4">
+                <Button size={"lg"} callBtn>
+                  <PhoneCall /> Call Now
+                </Button>
+                <Button variant={"secondary"} size={"lg"} wtsBtn>
+                  <MessageCircle /> Quote On WhatsApp
+                </Button>
+              </div>
+            </div>
+
+            <div className="relative max-w-6xl mx-auto h-112.5 rounded-2xl bg-white ">
+              <Image
+                src={heroImage}
+                placeholder="blur"
+                loading="eager"
+                fill
+                alt="House Furniture Movers in Abu Dhabi"
+                className="object-cover rounded-2xl"
+              />
+              <div className="absolute bottom-0 left-4 right-0 top-4 -z-10 h-full w-full rounded-2xl bg-(--brand-color)"></div>
+            </div>
+          </div>
+
+          <img
+            alt="Line Svg"
+            src={"/lines-1.svg"}
+            className="absolute hidden  bottom-0 left-0 right-auto top-auto -z-10 sm:inline-block md:bottom-1/2 md:left-0 md:right-auto md:top-auto"
+          />
+          <img
+            alt="Line Svg"
+            src={"/lines-1.svg"}
+            className="absolute bottom-auto left-auto right-0 top-0 -z-10 hidden sm:inline-block "
+          />
+        </section>
+        <ContactSection
+          title="Get A Quote From House Movers in Abu Dhabi"
+          desc={
+            <>
+              <p>
+                We focus on making your move easy and stress-free. As one of the
+                best house movers in Abu Dhabi, we handle everything from small
+                studio apartments to large family villas.
+              </p>
+              <p>
+                Whether you are moving to a new flat in Al Reem Island or a
+                villa in Saadiyat Island, our team knows the city well.{" "}
+              </p>
+            </>
+          }
+        />
+        <section className="mt-36 max-w-5xl mx-auto md:p-10 px-3 border-l-2 border-(--brand-color)">
+          <div className="flex flex-col gap-y-3 mt-5 md:max-w-4xl">
+            <p>
+              We offer complete house shifting services in Abu Dhabi that cover
+              every step of the journey.
+            </p>
+            <p>
+              Our house movers and packers in Abu Dhabi don&apos;t just move
+              boxes; we take care of your furniture as if it were our own.
+            </p>
+            <p>
+              We have years of experience navigating the specific building rules
+              and traffic patterns of the UAE capital. Our goal is simple: to
+              get your belongings to your new home safely and on time.
+            </p>
+            <div className="flex mt-5 gap-x-3">
+              <Button callBtn>
                 <PhoneCall /> Call Now
               </Button>
-              <Button variant={"secondary"} size={"lg"} wtsBtn>
+              <Button callBtn variant={"secondary"}>
                 <MessageCircle /> Quote On WhatsApp
               </Button>
             </div>
           </div>
+        </section>
+        <WhyChooseUs />
+        <ReviewSection />
+        <MovingServices />
+        <section className="md:px-0 px-3 mt-36 max-w-2xl mx-auto ">
+          <h2 className="mb-16 text-3xl! font-bold lg:text-4xl! ">
+            Our House Furniture Moving Process in Abu Dhabi
+          </h2>
 
-          <div className="relative max-w-6xl mx-auto h-112.5 rounded-2xl bg-white ">
-            <Image
-              src={heroImage}
-              placeholder="blur"
-              loading="eager"
-              fill
-              alt="House Furniture Movers in Abu Dhabi"
-              className="object-cover rounded-2xl"
-            />
-            <div className="absolute bottom-0 left-4 right-0 top-4 -z-10 h-full w-full rounded-2xl bg-(--brand-color)"></div>
+          <div className="flex">
+            <div className="mr-4 flex flex-col items-center">
+              <div>
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-(--brand-color)">
+                  1
+                </div>
+              </div>
+              <div className="h-full w-px bg-gray-300 "></div>
+            </div>
+            <div className="pt-1 pb-8">
+              <h3 className="mb-2 text-xl! font-bold">
+                Step 1: Free In-Home or Virtual Survey
+              </h3>
+              <p className="text">
+                First, we need to see what we are moving. We can come to your
+                home or do a video call. We look at the size of your furniture
+                and check for any tricky items. This helps us give you an
+                accurate price.
+              </p>
+            </div>
           </div>
-        </div>
+          <div className="flex">
+            <div className="mr-4 flex flex-col items-center">
+              <div>
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-(--brand-color)">
+                  2
+                </div>
+              </div>
+              <div className="h-full w-px bg-gray-300 "></div>
+            </div>
+            <div className="pt-1 pb-8">
+              <h3 className="mb-2 text-xl! font-bold">
+                Step 2: Detailed Quote & Planning
+              </h3>
+              <p className="text">
+                After the survey, we send you a quote. It lists everything
+                included so there are no questions later. Once you agree, we
+                pick a date that works for you.
+              </p>
+            </div>
+          </div>
+          <div className="flex">
+            <div className="mr-4 flex flex-col items-center">
+              <div>
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-(--brand-color)">
+                  3
+                </div>
+              </div>
+              <div className="h-full w-px bg-gray-300 "></div>
+            </div>
+            <div className="pt-1 pb-8">
+              <h3 className="mb-2 text-xl! font-bold">
+                Step 3: Professional Packing{" "}
+              </h3>
+              <p className="text">
+                On moving day, our team arrives with all the supplies. We work
+                room by room. We make sure fragile items are double-wrapped and
+                everything is boxed securely.
+              </p>
+            </div>
+          </div>
+          <div className="flex">
+            <div className="mr-4 flex flex-col items-center">
+              <div>
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-(--brand-color)">
+                  4
+                </div>
+              </div>
+              <div className="h-full w-px bg-gray-300 "></div>
+            </div>
+            <div className="pt-1 pb-8">
+              <h3 className="mb-2 text-xl! font-bold">
+                Step 4: Safe Loading & Transport
+              </h3>
+              <p className="text">
+                We load the truck carefully. We put the heaviest items on the
+                bottom and use straps to stop things from sliding. Our drivers
+                know the best routes in Abu Dhabi to avoid heavy traffic and
+                bumps.
+              </p>
+            </div>
+          </div>
+          <div className="flex">
+            <div className="mr-4 flex flex-col items-center">
+              <div>
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-(--brand-color)">
+                  5
+                </div>
+              </div>
+              <div className="h-full w-px bg-gray-300 "></div>
+            </div>
+            <div className="pt-1 pb-8">
+              <h3 className="mb-2 text-xl! font-bold">
+                Step 5: Unloading & Placement
+              </h3>
+              <p className="text">
+                When we reach your new home, we don’t just drop boxes in the
+                hallway. We put each box and piece of furniture in the specific
+                room you want. We take care not to scuff the walls or scratch
+                the new floors.
+              </p>
+            </div>
+          </div>
+          <div className="flex">
+            <div className="mr-4 flex flex-col items-center">
+              <div>
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-(--brand-color)">
+                  6
+                </div>
+              </div>
+              <div className="h-full w-px bg-gray-300 "></div>
+            </div>
+            <div className="pt-1 pb-8">
+              <h3 className="mb-2 text-xl! font-bold">
+                Step 6: Unpacking & Setup
+              </h3>
+              <p className="text">
+                If you chose our unpacking service, we help you get settled. We
+                reassemble your beds, set up your wardrobes, and take away all
+                the empty boxes and packing trash.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section className="mt-30 py-16 ">
+          <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+            {/* Header Section */}
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-(--brand-color) text-(--neutral-color) text-sm font-medium mb-4">
+                <MapPin className="w-4 h-4" />
+                <span>Service Coverage</span>
+              </div>
+              <h2 className="text-4xl! md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
+                Areas We Serve in{" "}
+                <span className="text-(--brand-color)">Abu Dhabi</span>
+              </h2>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                We work across the entire emirate. If you live in Abu Dhabi, we
+                can reach you.
+              </p>
+            </div>
 
-        <img
-          alt="Line Svg"
-          src={"/lines-1.svg"}
-          className="absolute hidden  bottom-0 left-0 right-auto top-auto -z-10 sm:inline-block md:bottom-1/2 md:left-0 md:right-auto md:top-auto"
-        />
-        <img
-          alt="Line Svg"
-          src={"/lines-1.svg"}
-          className="absolute bottom-auto left-auto right-0 top-0 -z-10 hidden sm:inline-block "
-        />
-      </section>
-      <ContactSection
-        title="Get A Quote From House Movers in Abu Dhabi"
-        desc={
-          <>
+            {/* Grid Layout */}
+            <div className="grid grid-cols-1 md:grid-cols-2  gap-6 lg:gap-8">
+              {locations.map((location) => (
+                <LocationCard key={location.id} location={location} />
+              ))}
+            </div>
+
+            {/* Bottom CTA / Trust Indicator */}
+            <div className="mt-16 bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div>
+                <h4 className="text-xl font-bold text-slate-900">
+                  Don&apos;t see your area listed?
+                </h4>
+                <p className=" mt-1">
+                  We likely still cover it! Contact us to confirm delivery
+                  options.
+                </p>
+              </div>
+              <Button variant={"secondary"} size={"lg"} wtsBtn className="py-6">
+                Check Availability <ArrowRight />
+              </Button>
+            </div>
+          </div>
+        </section>
+        <PricingCard />
+        <section className="mt-36 max-w-5xl mx-auto md:p-10 px-3">
+          <h2 className="md:text-4xl! text-3xl!">
+            Tips for a Smooth House Move in Abu Dhabi
+          </h2>
+          <div className="mt-3 w-7/12 h-1 bg-(--brand-color) rounded-3xl" />
+          <div className="flex flex-col gap-y-3 mt-5 md:max-w-4xl">
             <p>
-              We focus on making your move easy and stress-free. As one of the
-              best house movers in Abu Dhabi, we handle everything from small
-              studio apartments to large family villas.
+              A little bit of planning goes a long way. Here is some advice from
+              our team:
             </p>
-            <p>
-              Whether you are moving to a new flat in Al Reem Island or a villa
-              in Saadiyat Island, our team knows the city well.{" "}
-            </p>
-          </>
-        }
-      />
-      <section className="mt-36 max-w-5xl mx-auto md:p-10 px-3 border-l-2 border-(--brand-color)">
-        <div className="flex flex-col gap-y-3 mt-5 md:max-w-4xl">
-          <p>
-            We offer complete house shifting services in Abu Dhabi that cover
-            every step of the journey.
-          </p>
-          <p>
-            Our house movers and packers in Abu Dhabi don&apos;t just move
-            boxes; we take care of your furniture as if it were our own.
-          </p>
-          <p>
-            We have years of experience navigating the specific building rules
-            and traffic patterns of the UAE capital. Our goal is simple: to get
-            your belongings to your new home safely and on time.
-          </p>
+          </div>
+
+          <ol className="list-inside space-y-2 mt-5">
+            <li>
+              <b> 1. Book Early:</b> Abu Dhabi is busy. Try to book your movers
+              at least two weeks in advance, especially for weekends.
+            </li>
+            <li>
+              <b>2. Clear the Clutter:</b> Don&apos;t pay to move things you
+              don&apos;t need. Sell or donate old clothes and furniture before
+              you pack.
+            </li>
+            <li>
+              <b>3. Notify Security:</b> Many buildings in Al Reem or Al Raha
+              need an &quot;Entry Permit&quot; for movers. Check with your
+              building manager a few days before.
+            </li>
+            <li>
+              <b>4. The Essentials Box:</b> Pack a bag with things you need for
+              the first night—like chargers, toothbrushes, and a change of
+              clothes. Keep this with you in your car.
+            </li>
+            <li>
+              <b>5. Measure Twice:</b> Make sure your large sofa will fit
+              through the door of your new apartment!
+            </li>
+          </ol>
           <div className="flex mt-5 gap-x-3">
             <Button callBtn>
               <PhoneCall /> Call Now
@@ -700,232 +936,11 @@ const HouseFurnitureMoversAbuDhabi = () => {
               <MessageCircle /> Quote On WhatsApp
             </Button>
           </div>
-        </div>
-      </section>
-      <WhyChooseUs />
-      <ReviewSection />
-      <MovingServices />
-      <section className="md:px-0 px-3 mt-36 max-w-2xl mx-auto ">
-        <h2 className="mb-16 text-3xl! font-bold lg:text-4xl! ">
-          Our House Furniture Moving Process in Abu Dhabi
-        </h2>
-
-        <div className="flex">
-          <div className="mr-4 flex flex-col items-center">
-            <div>
-              <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-(--brand-color)">
-                1
-              </div>
-            </div>
-            <div className="h-full w-px bg-gray-300 "></div>
-          </div>
-          <div className="pt-1 pb-8">
-            <h3 className="mb-2 text-xl! font-bold">
-              Step 1: Free In-Home or Virtual Survey
-            </h3>
-            <p className="text">
-              First, we need to see what we are moving. We can come to your home
-              or do a video call. We look at the size of your furniture and
-              check for any tricky items. This helps us give you an accurate
-              price.
-            </p>
-          </div>
-        </div>
-        <div className="flex">
-          <div className="mr-4 flex flex-col items-center">
-            <div>
-              <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-(--brand-color)">
-                2
-              </div>
-            </div>
-            <div className="h-full w-px bg-gray-300 "></div>
-          </div>
-          <div className="pt-1 pb-8">
-            <h3 className="mb-2 text-xl! font-bold">
-              Step 2: Detailed Quote & Planning
-            </h3>
-            <p className="text">
-              After the survey, we send you a quote. It lists everything
-              included so there are no questions later. Once you agree, we pick
-              a date that works for you.
-            </p>
-          </div>
-        </div>
-        <div className="flex">
-          <div className="mr-4 flex flex-col items-center">
-            <div>
-              <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-(--brand-color)">
-                3
-              </div>
-            </div>
-            <div className="h-full w-px bg-gray-300 "></div>
-          </div>
-          <div className="pt-1 pb-8">
-            <h3 className="mb-2 text-xl! font-bold">
-              Step 3: Professional Packing{" "}
-            </h3>
-            <p className="text">
-              On moving day, our team arrives with all the supplies. We work
-              room by room. We make sure fragile items are double-wrapped and
-              everything is boxed securely.
-            </p>
-          </div>
-        </div>
-        <div className="flex">
-          <div className="mr-4 flex flex-col items-center">
-            <div>
-              <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-(--brand-color)">
-                4
-              </div>
-            </div>
-            <div className="h-full w-px bg-gray-300 "></div>
-          </div>
-          <div className="pt-1 pb-8">
-            <h3 className="mb-2 text-xl! font-bold">
-              Step 4: Safe Loading & Transport
-            </h3>
-            <p className="text">
-              We load the truck carefully. We put the heaviest items on the
-              bottom and use straps to stop things from sliding. Our drivers
-              know the best routes in Abu Dhabi to avoid heavy traffic and
-              bumps.
-            </p>
-          </div>
-        </div>
-        <div className="flex">
-          <div className="mr-4 flex flex-col items-center">
-            <div>
-              <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-(--brand-color)">
-                5
-              </div>
-            </div>
-            <div className="h-full w-px bg-gray-300 "></div>
-          </div>
-          <div className="pt-1 pb-8">
-            <h3 className="mb-2 text-xl! font-bold">
-              Step 5: Unloading & Placement
-            </h3>
-            <p className="text">
-              When we reach your new home, we don’t just drop boxes in the
-              hallway. We put each box and piece of furniture in the specific
-              room you want. We take care not to scuff the walls or scratch the
-              new floors.
-            </p>
-          </div>
-        </div>
-        <div className="flex">
-          <div className="mr-4 flex flex-col items-center">
-            <div>
-              <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-(--brand-color)">
-                6
-              </div>
-            </div>
-            <div className="h-full w-px bg-gray-300 "></div>
-          </div>
-          <div className="pt-1 pb-8">
-            <h3 className="mb-2 text-xl! font-bold">
-              Step 6: Unpacking & Setup
-            </h3>
-            <p className="text">
-              If you chose our unpacking service, we help you get settled. We
-              reassemble your beds, set up your wardrobes, and take away all the
-              empty boxes and packing trash.
-            </p>
-          </div>
-        </div>
-      </section>
-      <section className="mt-30 py-16 ">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          {/* Header Section */}
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-(--brand-color) text-(--neutral-color) text-sm font-medium mb-4">
-              <MapPin className="w-4 h-4" />
-              <span>Service Coverage</span>
-            </div>
-            <h2 className="text-4xl! md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
-              Areas We Serve in{" "}
-              <span className="text-(--brand-color)">Abu Dhabi</span>
-            </h2>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              We work across the entire emirate. If you live in Abu Dhabi, we
-              can reach you.
-            </p>
-          </div>
-
-          {/* Grid Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2  gap-6 lg:gap-8">
-            {locations.map((location) => (
-              <LocationCard key={location.id} location={location} />
-            ))}
-          </div>
-
-          {/* Bottom CTA / Trust Indicator */}
-          <div className="mt-16 bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
-              <h4 className="text-xl font-bold text-slate-900">
-                Don&apos;t see your area listed?
-              </h4>
-              <p className=" mt-1">
-                We likely still cover it! Contact us to confirm delivery
-                options.
-              </p>
-            </div>
-            <Button variant={"secondary"} size={"lg"} wtsBtn className="py-6">
-              Check Availability <ArrowRight />
-            </Button>
-          </div>
-        </div>
-      </section>
-      <PricingCard />
-      <section className="mt-36 max-w-5xl mx-auto md:p-10 px-3">
-        <h2 className="md:text-4xl! text-3xl!">
-          Tips for a Smooth House Move in Abu Dhabi
-        </h2>
-        <div className="mt-3 w-7/12 h-1 bg-(--brand-color) rounded-3xl" />
-        <div className="flex flex-col gap-y-3 mt-5 md:max-w-4xl">
-          <p>
-            A little bit of planning goes a long way. Here is some advice from
-            our team:
-          </p>
-        </div>
-
-        <ol className="list-inside space-y-2 mt-5">
-          <li>
-            <b> 1. Book Early:</b> Abu Dhabi is busy. Try to book your movers at
-            least two weeks in advance, especially for weekends.
-          </li>
-          <li>
-            <b>2. Clear the Clutter:</b> Don&apos;t pay to move things you
-            don&apos;t need. Sell or donate old clothes and furniture before you
-            pack.
-          </li>
-          <li>
-            <b>3. Notify Security:</b> Many buildings in Al Reem or Al Raha need
-            an &quot;Entry Permit&quot; for movers. Check with your building
-            manager a few days before.
-          </li>
-          <li>
-            <b>4. The Essentials Box:</b> Pack a bag with things you need for
-            the first night—like chargers, toothbrushes, and a change of
-            clothes. Keep this with you in your car.
-          </li>
-          <li>
-            <b>5. Measure Twice:</b> Make sure your large sofa will fit through
-            the door of your new apartment!
-          </li>
-        </ol>
-        <div className="flex mt-5 gap-x-3">
-          <Button callBtn>
-            <PhoneCall /> Call Now
-          </Button>
-          <Button callBtn variant={"secondary"}>
-            <MessageCircle /> Quote On WhatsApp
-          </Button>
-        </div>
-      </section>
-      <FAQs faqs={AbuDhabiHouseMoversFaqs} />
-      <CTA />
-    </main>
+        </section>
+        <FAQs faqs={AbuDhabiHouseMoversFaqs} />
+        <CTA />
+      </main>
+    </>
   );
 };
 

@@ -25,6 +25,9 @@ import Process from "@/components/Process";
 import { FAQs } from "@/components/FAQs";
 import { AjmanFaqs } from "@/lib/lists";
 import CTA from "@/components/CTA";
+import Script from "next/script";
+import { generateFAQSchema } from "@/lib/GenerateFaqSchema";
+import { convertFaqsForSchema } from "@/lib/ConvertFaqsInRaw";
 
 const features = [
   {
@@ -188,155 +191,166 @@ const WhyChooseUsSection = () => {
     </section>
   );
 };
-
+const FaqsSchema = generateFAQSchema(convertFaqsForSchema(AjmanFaqs));
 const page = () => {
   return (
-    <main className="md:mt-30.25 mt-17.5 ">
-      <section className=" bg-(--neutral-color)/75 md:pl-56 pl-3 md:pr-72 pr-3 py-14 flex items-center justify-start relative overflow-hidden">
-        <div className="md:border-l-4 py-8 md:pl-5 border-(--heading-color) z-1">
-          <h1 className="text-(--brand-color)! md:text-4xl! text-3xl!">
-            Movers in Ajman – Shayan Movers and Packers
-          </h1>
-          <p className="mt-5">
-            Moving home is a big deal. Whether you are moving across the street
-            in Al Nuaimia or relocating your business to the Ajman Free Zone,
-            you need a team that shows up on time and handles your belongings
-            with care.
-          </p>
-          <p className="mt-2">
-            Shayan Movers is a professional moving company serving Ajman and the
-            surrounding Emirates. We make sure your move is smooth, safe, and
-            stays on schedule.
-          </p>
-          <div className="flex mt-5 gap-x-3">
-            <Button callBtn>
-              <PhoneCall /> Call Now
-            </Button>
-            <Button callBtn variant={"secondary"}>
-              <MessageCircle /> Quote On WhatsApp
-            </Button>
-          </div>
-        </div>
-        <Image
-          src={"/movers-in-ajman.jpg"}
-          alt="Movers and Packers in Ajman"
-          fill
-          loading="eager"
-          className="object-cover -z-1"
-        />
-      </section>
-      <ContactSection
-        title="Get A Quote From Best Movers in Ajman"
-        desc={
-          <>
-            <p>
-              Shayan Movers and Packers in Ajman is known for its reliable and
-              professional moving services. We offer a wide range of moving
-              services to help you move your belongings from one place to
-              another safely and efficiently.
-            </p>
-            <p className="mt-1">
-              So Contact Us Now, Share your detail about moving and we will give
-              you quote within 10 mins.
-            </p>
-          </>
-        }
+    <>
+      <Script
+        strategy="beforeInteractive"
+        id="FAQSchema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: FaqsSchema }}
       />
-      <ReviewSection />
-      <WhyChooseUsSection />
-      <section className="mt-36 md:px-0 px-3">
-        <h2 className="text-center md:text-5xl! text-4xl!">
-          Our Ajman Moving Services
-        </h2>
-        <p className="mt-3 text-center">
-          We provide a full range of services to cover every part of your move.
-        </p>
-        <div className="w-full max-w-6xl mx-auto my-20 grid md:grid-cols-2 grid-cols-1 gap-x-10">
-          {servicesList.map((service, i) => (
-            <div key={i}>
-              <div className="w-full md:h-92 h-80 relative z-0 overflow-hidden rounded-t-lg">
-                <Image
-                  src={service.img.src}
-                  alt={service.title}
-                  fill
-                  className="absolute object-cover object-center"
-                />
-              </div>
-              <div className="w-11/12 mx-auto rounded-2xl shadow-lg shadow-neutral-100 bg-white/90 min-h-32 z-10 transform -translate-y-10 py-5 px-3 ">
-                <Link href={service.href}>
-                  <h3 className="md:text-2xl! text-xl! font-bold! b1 text-center">
-                    {service.title}
-                  </h3>
-                </Link>
-                <p className="b-text mt-3 md:text-base text-sm! text-center">
-                  {service.desc}
-                </p>
-                <div className="flex items-center justify-center gap-x-5 w-full mt-5">
-                  <Button wtsBtn size={"sm"}>
-                    Get A Quote
-                  </Button>
-                  <Link
-                    href={service.href}
-                    title={service.title}
-                    className="text-sm text-(--brand-color) underline underline-offset-1"
-                  >
-                    Service Details..
+      <main className="md:mt-30.25 mt-17.5 ">
+        <section className=" bg-(--neutral-color)/75 md:pl-56 pl-3 md:pr-72 pr-3 py-14 flex items-center justify-start relative overflow-hidden">
+          <div className="md:border-l-4 py-8 md:pl-5 border-(--heading-color) z-1">
+            <h1 className="text-(--brand-color)! md:text-4xl! text-3xl!">
+              Movers in Ajman – Shayan Movers and Packers
+            </h1>
+            <p className="mt-5">
+              Moving home is a big deal. Whether you are moving across the
+              street in Al Nuaimia or relocating your business to the Ajman Free
+              Zone, you need a team that shows up on time and handles your
+              belongings with care.
+            </p>
+            <p className="mt-2">
+              Shayan Movers is a professional moving company serving Ajman and
+              the surrounding Emirates. We make sure your move is smooth, safe,
+              and stays on schedule.
+            </p>
+            <div className="flex mt-5 gap-x-3">
+              <Button callBtn>
+                <PhoneCall /> Call Now
+              </Button>
+              <Button callBtn variant={"secondary"}>
+                <MessageCircle /> Quote On WhatsApp
+              </Button>
+            </div>
+          </div>
+          <Image
+            src={"/movers-in-ajman.jpg"}
+            alt="Movers and Packers in Ajman"
+            fill
+            loading="eager"
+            className="object-cover -z-1"
+          />
+        </section>
+        <ContactSection
+          title="Get A Quote From Best Movers in Ajman"
+          desc={
+            <>
+              <p>
+                Shayan Movers and Packers in Ajman is known for its reliable and
+                professional moving services. We offer a wide range of moving
+                services to help you move your belongings from one place to
+                another safely and efficiently.
+              </p>
+              <p className="mt-1">
+                So Contact Us Now, Share your detail about moving and we will
+                give you quote within 10 mins.
+              </p>
+            </>
+          }
+        />
+        <ReviewSection />
+        <WhyChooseUsSection />
+        <section className="mt-36 md:px-0 px-3">
+          <h2 className="text-center md:text-5xl! text-4xl!">
+            Our Ajman Moving Services
+          </h2>
+          <p className="mt-3 text-center">
+            We provide a full range of services to cover every part of your
+            move.
+          </p>
+          <div className="w-full max-w-6xl mx-auto my-20 grid md:grid-cols-2 grid-cols-1 gap-x-10">
+            {servicesList.map((service, i) => (
+              <div key={i}>
+                <div className="w-full md:h-92 h-80 relative z-0 overflow-hidden rounded-t-lg">
+                  <Image
+                    src={service.img.src}
+                    alt={service.title}
+                    fill
+                    className="absolute object-cover object-center"
+                  />
+                </div>
+                <div className="w-11/12 mx-auto rounded-2xl shadow-lg shadow-neutral-100 bg-white/90 min-h-32 z-10 transform -translate-y-10 py-5 px-3 ">
+                  <Link href={service.href}>
+                    <h3 className="md:text-2xl! text-xl! font-bold! b1 text-center">
+                      {service.title}
+                    </h3>
                   </Link>
+                  <p className="b-text mt-3 md:text-base text-sm! text-center">
+                    {service.desc}
+                  </p>
+                  <div className="flex items-center justify-center gap-x-5 w-full mt-5">
+                    <Button wtsBtn size={"sm"}>
+                      Get A Quote
+                    </Button>
+                    <Link
+                      href={service.href}
+                      title={service.title}
+                      className="text-sm text-(--brand-color) underline underline-offset-1"
+                    >
+                      Service Details..
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
-      <Process />
-      <section className="group mt-28 relative bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-1 overflow-hidden max-w-4xl mx-auto">
-        {/* Decorative background element */}
-        <div
-          className={`absolute top-0 right-0 w-24 h-24 rounded-bl-full opacity-20 transition-transform group-hover:scale-110 bg-(--brand-color)`}
-        />
-
-        <div className="relative z-10">
+            ))}
+          </div>
+        </section>
+        <Process />
+        <section className="group mt-28 relative bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-1 overflow-hidden max-w-4xl mx-auto">
+          {/* Decorative background element */}
           <div
-            className={`inline-flex items-center justify-center p-3 rounded-xl mb-4 bg-(--brand-color)/20`}
-          >
-            <Landmark className="w-6 h-6 " />
-          </div>
+            className={`absolute top-0 right-0 w-24 h-24 rounded-bl-full opacity-20 transition-transform group-hover:scale-110 bg-(--brand-color)`}
+          />
 
-          <h2 className="text-3xl! font-bold! mb-2">Service Areas in Ajman</h2>
-          <p className="  mb-8">
-            We provide moving services throughout the entire city and
-            surrounding districts, including:
-          </p>
+          <div className="relative z-10">
+            <div
+              className={`inline-flex items-center justify-center p-3 rounded-xl mb-4 bg-(--brand-color)/20`}
+            >
+              <Landmark className="w-6 h-6 " />
+            </div>
 
-          <div className="space-y-3">
-            <ul className="grid grid-cols-1 gap-y-2">
-              <li className="flex items-start  text-gray-700">
-                <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
-                <p className="font-semibold">Al Nuaimia & Al Khan</p>
-              </li>
-              <li className="flex items-start  text-gray-700">
-                <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
-                <p className="font-semibold">Al Jurf & Al Raqaib</p>
-              </li>
-              <li className="flex items-start  text-gray-700">
-                <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
-                <p className="font-semibold">Al Mowaihat & Al Tallah</p>
-              </li>
-              <li className="flex items-start  text-gray-700">
-                <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
-                <p className="font-semibold">Ajman Corniche & Garden City</p>
-              </li>
-              <li className="flex items-start  text-gray-700">
-                <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
-                <p className="font-semibold">Masfout & Manama</p>
-              </li>
-            </ul>
+            <h2 className="text-3xl! font-bold! mb-2">
+              Service Areas in Ajman
+            </h2>
+            <p className="  mb-8">
+              We provide moving services throughout the entire city and
+              surrounding districts, including:
+            </p>
+
+            <div className="space-y-3">
+              <ul className="grid grid-cols-1 gap-y-2">
+                <li className="flex items-start  text-gray-700">
+                  <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
+                  <p className="font-semibold">Al Nuaimia & Al Khan</p>
+                </li>
+                <li className="flex items-start  text-gray-700">
+                  <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
+                  <p className="font-semibold">Al Jurf & Al Raqaib</p>
+                </li>
+                <li className="flex items-start  text-gray-700">
+                  <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
+                  <p className="font-semibold">Al Mowaihat & Al Tallah</p>
+                </li>
+                <li className="flex items-start  text-gray-700">
+                  <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
+                  <p className="font-semibold">Ajman Corniche & Garden City</p>
+                </li>
+                <li className="flex items-start  text-gray-700">
+                  <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
+                  <p className="font-semibold">Masfout & Manama</p>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-      </section>
-      <FAQs faqs={AjmanFaqs} />
-      <CTA />
-    </main>
+        </section>
+        <FAQs faqs={AjmanFaqs} />
+        <CTA />
+      </main>
+    </>
   );
 };
 

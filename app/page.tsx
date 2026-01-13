@@ -9,6 +9,9 @@ import HeroSection from "@/components/HeroSection";
 import Process from "@/components/Process";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import MetadataTemplate from "@/lib/MetaDataTemplate";
+import Script from "next/script";
+import { generateFAQSchema } from "@/lib/GenerateFaqSchema";
+import { convertFaqsForSchema } from "@/lib/ConvertFaqsInRaw";
 
 export const metadata = MetadataTemplate({
   data: {
@@ -24,42 +27,52 @@ export const metadata = MetadataTemplate({
   },
 });
 
+const FaqsSchema = generateFAQSchema(convertFaqsForSchema(HomeFaqs));
+
 const HomePage = () => {
   return (
-    <main className="mt-32 overflow-hidden">
-      <HeroSection />
-      <ContactSection
-        title="Professional Moving Services Across the UAE"
-        desc={
-          <>
-            <p>
-              Moving house is often listed as one of the most stressful things
-              you can do. At Shayan Movers and Packers, we make that change.
-            </p>
-            <p className="mt-2">
-              We are a real, registered company with a physical office in
-              Sharjah, but we serve clients across Dubai and the entire UAE
-              every day.
-            </p>
-            <p className="mt-2">
-              Our team knows how to handle everything from studio apartments to
-              large villas, and we treat your belongings like they&apos;re our
-              own.
-            </p>
-          </>
-        }
+    <>
+      <Script
+        strategy="beforeInteractive"
+        id="FAQSchema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: FaqsSchema }}
       />
-      <ReviewSection />
-      <Services />
-      <Process />
-      <WhyChooseUs />
+      <main className="mt-32 overflow-hidden">
+        <HeroSection />
+        <ContactSection
+          title="Professional Moving Services Across the UAE"
+          desc={
+            <>
+              <p>
+                Moving house is often listed as one of the most stressful things
+                you can do. At Shayan Movers and Packers, we make that change.
+              </p>
+              <p className="mt-2">
+                We are a real, registered company with a physical office in
+                Sharjah, but we serve clients across Dubai and the entire UAE
+                every day.
+              </p>
+              <p className="mt-2">
+                Our team knows how to handle everything from studio apartments
+                to large villas, and we treat your belongings like they&apos;re
+                our own.
+              </p>
+            </>
+          }
+        />
+        <ReviewSection />
+        <Services />
+        <Process />
+        <WhyChooseUs />
 
-      <WhereWeWork />
+        <WhereWeWork />
 
-      <MovingCostsComponent />
-      <FAQs faqs={HomeFaqs} />
-      <CTA />
-    </main>
+        <MovingCostsComponent />
+        <FAQs faqs={HomeFaqs} />
+        <CTA />
+      </main>
+    </>
   );
 };
 

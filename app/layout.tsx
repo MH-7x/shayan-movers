@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { Toaster } from "sonner";
 import ActionButton from "@/components/ActionButtons";
+import { PageBreadcrumbs } from "@/components/Breadcrumbs";
 
 const inter = Inter({
   adjustFontFallback: false,
@@ -48,6 +49,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="">
       <body className={`${inter.className} antialiased bg-(--neutral-color)`}>
+        <PageBreadcrumbs />
         <Navbar />
         {children}
         <Footer />

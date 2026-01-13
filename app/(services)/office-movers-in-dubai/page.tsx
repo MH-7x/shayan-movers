@@ -3,6 +3,8 @@ import CTA from "@/components/CTA";
 import { FAQs } from "@/components/FAQs";
 import { ReviewSection } from "@/components/Services";
 import { Button } from "@/components/ui/button";
+import { convertFaqsForSchema } from "@/lib/ConvertFaqsInRaw";
+import { generateFAQSchema } from "@/lib/GenerateFaqSchema";
 import { OfficeMoversDubai } from "@/lib/lists";
 import MetadataTemplate from "@/lib/MetaDataTemplate";
 import heroImage from "@/public/office-movers-in-dubai.jpg";
@@ -29,6 +31,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 
 export const metadata = MetadataTemplate({
   data: {
@@ -290,251 +293,266 @@ const steps = [
   },
 ];
 
+const FaqsSchema = generateFAQSchema(convertFaqsForSchema(OfficeMoversDubai));
 const OfficeMoversPage = () => {
   return (
-    <main className=" mt-32">
-      <section>
-        <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24">
-          <div className="mx-auto mb-12 w-full max-w-3xl text-center md:mb-16 lg:mb-20">
-            <h1 className="mb-4 text-4xl font-semibold md:text-6xl">
-              Office Movers in Dubai - Commercial Moving Services
-            </h1>
-            <p className="mx-auto mb-3 max-w-4xl text-lg text-[#636262]">
-              Moving an office is a big task that needs careful planning. At
-              Shayan Movers, we specialize as professional office movers in
-              Dubai, helping businesses move to new locations without the usual
-              stress.
-            </p>
-            <p className="mx-auto mb-5 max-w-4xl text-lg text-[#636262] lg:mb-8">
-              We understand that your equipment, documents, and furniture are
-              vital to your work, so we handle everything with care.
-            </p>
+    <>
+      <Script
+        strategy="beforeInteractive"
+        id="FAQSchema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: FaqsSchema }}
+      />
+      <main className=" mt-32">
+        <section>
+          <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24">
+            <div className="mx-auto mb-12 w-full max-w-3xl text-center md:mb-16 lg:mb-20">
+              <h1 className="mb-4 text-4xl font-semibold md:text-6xl">
+                Office Movers in Dubai - Commercial Moving Services
+              </h1>
+              <p className="mx-auto mb-3 max-w-4xl text-lg text-[#636262]">
+                Moving an office is a big task that needs careful planning. At
+                Shayan Movers, we specialize as professional office movers in
+                Dubai, helping businesses move to new locations without the
+                usual stress.
+              </p>
+              <p className="mx-auto mb-5 max-w-4xl text-lg text-[#636262] lg:mb-8">
+                We understand that your equipment, documents, and furniture are
+                vital to your work, so we handle everything with care.
+              </p>
 
-            <div className="flex justify-center gap-x-4">
-              <Button size={"lg"} callBtn>
-                <PhoneCall /> Call Now
-              </Button>
-              <Button variant={"secondary"} size={"lg"} wtsBtn>
-                <MessageCircle /> Quote On WhatsApp
-              </Button>
+              <div className="flex justify-center gap-x-4">
+                <Button size={"lg"} callBtn>
+                  <PhoneCall /> Call Now
+                </Button>
+                <Button variant={"secondary"} size={"lg"} wtsBtn>
+                  <MessageCircle /> Quote On WhatsApp
+                </Button>
+              </div>
+            </div>
+
+            <div className="relative max-w-6xl mx-auto md:h-112.5 h-80 rounded-2xl bg-white ">
+              <Image
+                src={heroImage}
+                placeholder="blur"
+                loading="eager"
+                fill
+                alt="Office Movers in Dubai"
+                className="object-cover rounded-2xl"
+              />
+              <div className="absolute bottom-0 left-4 right-0 top-4 -z-10 h-full w-full rounded-2xl bg-(--brand-color)"></div>
             </div>
           </div>
 
-          <div className="relative max-w-6xl mx-auto md:h-112.5 h-80 rounded-2xl bg-white ">
-            <Image
-              src={heroImage}
-              placeholder="blur"
-              loading="eager"
-              fill
-              alt="Office Movers in Dubai"
-              className="object-cover rounded-2xl"
-            />
-            <div className="absolute bottom-0 left-4 right-0 top-4 -z-10 h-full w-full rounded-2xl bg-(--brand-color)"></div>
-          </div>
-        </div>
-
-        <img
-          alt="Line Svg"
-          src={"/lines-1.svg"}
-          className="absolute hidden  bottom-0 left-0 right-auto top-auto -z-10 sm:inline-block md:bottom-1/2 md:left-0 md:right-auto md:top-auto"
+          <img
+            alt="Line Svg"
+            src={"/lines-1.svg"}
+            className="absolute hidden  bottom-0 left-0 right-auto top-auto -z-10 sm:inline-block md:bottom-1/2 md:left-0 md:right-auto md:top-auto"
+          />
+          <img
+            alt="Line Svg"
+            src={"/lines-1.svg"}
+            className="absolute bottom-auto left-auto right-0 top-0 -z-10 hidden sm:inline-block "
+          />
+        </section>
+        <ContactSection
+          title="Get A Quote From Office Movers in Dubai"
+          desc={
+            <>
+              <p>
+                Our team focuses on office relocation exclusively within Dubai.
+                We know the local building regulations, the best routes to avoid
+                traffic, and how to get the necessary permits.
+              </p>
+              <p>
+                Whether you are a small startup or a large corporation, we
+                provide the support you need to get back to work quickly.
+              </p>
+            </>
+          }
         />
-        <img
-          alt="Line Svg"
-          src={"/lines-1.svg"}
-          className="absolute bottom-auto left-auto right-0 top-0 -z-10 hidden sm:inline-block "
-        />
-      </section>
-      <ContactSection
-        title="Get A Quote From Office Movers in Dubai"
-        desc={
-          <>
-            <p>
-              Our team focuses on office relocation exclusively within Dubai. We
-              know the local building regulations, the best routes to avoid
-              traffic, and how to get the necessary permits.
-            </p>
-            <p>
-              Whether you are a small startup or a large corporation, we provide
-              the support you need to get back to work quickly.
-            </p>
-          </>
-        }
-      />
-      <ReviewSection />
-      <WhyChooseUs />
+        <ReviewSection />
+        <WhyChooseUs />
 
-      <section className="mt-36 md:px-0 px-3">
-        <h2 className="text-center md:text-5xl! text-4xl!">
-          Comprehensive <br /> Office Relocation Services
-        </h2>
-        <p className="mt-3 text-center">
-          We offer a full range of services to cover every part of your move.
-        </p>
-        <div className="w-full md:max-w-11/12 mx-auto my-20 grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-x-10">
-          {servicesList.map((service, i) => (
-            <div key={i}>
-              <div className="w-full  h-80 relative z-0 overflow-hidden rounded-t-lg">
-                <Image
-                  src={service.img.src}
-                  alt={service.img.alt}
-                  fill
-                  className="absolute object-cover object-center"
-                />
+        <section className="mt-36 md:px-0 px-3">
+          <h2 className="text-center md:text-5xl! text-4xl!">
+            Comprehensive <br /> Office Relocation Services
+          </h2>
+          <p className="mt-3 text-center">
+            We offer a full range of services to cover every part of your move.
+          </p>
+          <div className="w-full md:max-w-11/12 mx-auto my-20 grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-x-10">
+            {servicesList.map((service, i) => (
+              <div key={i}>
+                <div className="w-full  h-80 relative z-0 overflow-hidden rounded-t-lg">
+                  <Image
+                    src={service.img.src}
+                    alt={service.img.alt}
+                    fill
+                    className="absolute object-cover object-center"
+                  />
+                </div>
+                <div className="w-11/12 mx-auto rounded-2xl shadow-lg shadow-neutral-100 bg-white/90 min-h-32 z-10 transform -translate-y-10 py-5 px-3 ">
+                  <Link href={service.href}>
+                    <h3 className=" text-xl! font-bold! b1 text-center">
+                      {service.title}
+                    </h3>
+                  </Link>
+                  <p className="b-text mt-3 md:text-base text-sm! text-center">
+                    {service.desc}
+                  </p>
+                </div>
               </div>
-              <div className="w-11/12 mx-auto rounded-2xl shadow-lg shadow-neutral-100 bg-white/90 min-h-32 z-10 transform -translate-y-10 py-5 px-3 ">
-                <Link href={service.href}>
-                  <h3 className=" text-xl! font-bold! b1 text-center">
-                    {service.title}
-                  </h3>
-                </Link>
-                <p className="b-text mt-3 md:text-base text-sm! text-center">
-                  {service.desc}
+            ))}
+          </div>
+        </section>
+
+        <section id="new-features" className="py-8  sm:py-10 lg:py-16">
+          <div className="px-3 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h2 className="leading-tight md:text-5xl! text-4xl!">
+                Tailored Solutions for <br className="hidden md:block" /> Every
+                Business
+              </h2>
+              <p className="mt-4 text-base leading-7 text-gray-600 sm:mt-8">
+                We adapt our approach based on who you are:
+              </p>
+            </div>
+            <div className="grid grid-cols-1 mt-10 text-center sm:mt-16 sm:grid-cols-2 sm:gap-x-12 gap-y-12 md:gap-0 xl:mt-24">
+              <div className="md:p-8 lg:p-14 flex flex-col md:border-r md:border-gray-200 justify-center items-center">
+                <div className="w-14 h-14 rounded-full bg-purple-200 flex justify-center items-center">
+                  <Store className="text-3xl" />
+                </div>
+                <h3 className="mt-12 text-xl! font-bold">
+                  Small & Medium Businesses:
+                </h3>
+                <p className="mt-5 text-base text-gray-600">
+                  We focus on cost-effective moves that get you into your new
+                  space without breaking the budget.
+                </p>
+              </div>
+
+              <div className="md:p-8 lg:p-14 md:border-b md:border-gray-200 flex flex-col justify-center items-center">
+                <div className="w-14 h-14 rounded-full bg-teal-200 flex justify-center items-center">
+                  <Building2Icon className="text-3xl" />
+                </div>
+                <h3 className="mt-12 text-xl! ">Tech & IT Companies</h3>
+                <p className="mt-5 text-base text-gray-600">
+                  We prioritize the safe handling of high-end tech and minimize
+                  the time your servers are offline.
+                </p>
+              </div>
+
+              <div className="md:p-8 lg:p-14 md:border-t md:border-gray-200 flex flex-col justify-center items-center">
+                <div className="w-14 h-14 rounded-full bg-yellow-200 flex justify-center items-center">
+                  <School className="text-3xl" />
+                </div>
+                <h3 className="mt-12 text-xl! font-bold">
+                  Schools & Educational Institutions
+                </h3>
+                <p className="mt-5 text-base text-gray-600">
+                  We have experience moving libraries, labs, and classrooms,
+                  ensuring everything stays in the right order.
+                </p>
+              </div>
+
+              <div className="md:p-8 lg:p-14 md:border-l md:border-gray-200 flex flex-col justify-center items-center">
+                <div className="w-14 h-14 rounded-full bg-red-200 flex justify-center items-center">
+                  <Landmark className="text-3xl" />
+                </div>
+                <h3 className="mt-12 text-xl! font-bold">
+                  Government & Corporate Offices
+                </h3>
+                <p className="mt-5 text-base text-gray-600">
+                  We have the manpower and logistics to handle large-scale moves
+                  while following all official regulations
                 </p>
               </div>
             </div>
-          ))}
-        </div>
-      </section>
-
-      <section id="new-features" className="py-8  sm:py-10 lg:py-16">
-        <div className="px-3 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="leading-tight md:text-5xl! text-4xl!">
-              Tailored Solutions for <br className="hidden md:block" /> Every
-              Business
-            </h2>
-            <p className="mt-4 text-base leading-7 text-gray-600 sm:mt-8">
-              We adapt our approach based on who you are:
-            </p>
           </div>
-          <div className="grid grid-cols-1 mt-10 text-center sm:mt-16 sm:grid-cols-2 sm:gap-x-12 gap-y-12 md:gap-0 xl:mt-24">
-            <div className="md:p-8 lg:p-14 flex flex-col md:border-r md:border-gray-200 justify-center items-center">
-              <div className="w-14 h-14 rounded-full bg-purple-200 flex justify-center items-center">
-                <Store className="text-3xl" />
-              </div>
-              <h3 className="mt-12 text-xl! font-bold">
-                Small & Medium Businesses:
-              </h3>
-              <p className="mt-5 text-base text-gray-600">
-                We focus on cost-effective moves that get you into your new
-                space without breaking the budget.
+        </section>
+
+        <section className="mt-36">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Header */}
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
+                Our Office Moving Process
+              </h2>
+              <p className="text-lg text-slate-600 ">
+                From the first quote to the final setup, we handle every detail
+                of your move across the UAE.
               </p>
             </div>
 
-            <div className="md:p-8 lg:p-14 md:border-b md:border-gray-200 flex flex-col justify-center items-center">
-              <div className="w-14 h-14 rounded-full bg-teal-200 flex justify-center items-center">
-                <Building2Icon className="text-3xl" />
-              </div>
-              <h3 className="mt-12 text-xl! ">Tech & IT Companies</h3>
-              <p className="mt-5 text-base text-gray-600">
-                We prioritize the safe handling of high-end tech and minimize
-                the time your servers are offline.
-              </p>
-            </div>
+            {/* Process Steps */}
+            <div className="relative">
+              {/* Connecting Line (Desktop) */}
 
-            <div className="md:p-8 lg:p-14 md:border-t md:border-gray-200 flex flex-col justify-center items-center">
-              <div className="w-14 h-14 rounded-full bg-yellow-200 flex justify-center items-center">
-                <School className="text-3xl" />
-              </div>
-              <h3 className="mt-12 text-xl! font-bold">
-                Schools & Educational Institutions
-              </h3>
-              <p className="mt-5 text-base text-gray-600">
-                We have experience moving libraries, labs, and classrooms,
-                ensuring everything stays in the right order.
-              </p>
-            </div>
-
-            <div className="md:p-8 lg:p-14 md:border-l md:border-gray-200 flex flex-col justify-center items-center">
-              <div className="w-14 h-14 rounded-full bg-red-200 flex justify-center items-center">
-                <Landmark className="text-3xl" />
-              </div>
-              <h3 className="mt-12 text-xl! font-bold">
-                Government & Corporate Offices
-              </h3>
-              <p className="mt-5 text-base text-gray-600">
-                We have the manpower and logistics to handle large-scale moves
-                while following all official regulations
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mt-36">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
-              Our Office Moving Process
-            </h2>
-            <p className="text-lg text-slate-600 ">
-              From the first quote to the final setup, we handle every detail of
-              your move across the UAE.
-            </p>
-          </div>
-
-          {/* Process Steps */}
-          <div className="relative">
-            {/* Connecting Line (Desktop) */}
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
-              {steps.map((step) => (
-                <div key={step.id} className="group flex flex-col items-center">
-                  {/* Icon Circle */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+                {steps.map((step) => (
                   <div
-                    className={`w-16 h-16 ${step.color} text-white rounded-full flex items-center justify-center mb-6 shadow-lg transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}
+                    key={step.id}
+                    className="group flex flex-col items-center"
                   >
-                    {step.icon}
-                  </div>
-
-                  {/* Step Content */}
-                  <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center flex-1 transition-all duration-300 group-hover:shadow-md group-hover:-translate-y-1">
-                    <div className="inline-block px-3 py-1 bg-slate-100 text-slate-500 text-xs font-bold rounded-full mb-3 uppercase tracking-wider">
-                      Step 0{step.id}
+                    {/* Icon Circle */}
+                    <div
+                      className={`w-16 h-16 ${step.color} text-white rounded-full flex items-center justify-center mb-6 shadow-lg transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}
+                    >
+                      {step.icon}
                     </div>
-                    <h3 className="text-xl! font-bold text-slate-800 mb-2">
-                      {step.title}
-                    </h3>
-                    <p className="text-slate-600 text-sm leading-relaxed">
-                      {step.description}
-                    </p>
+
+                    {/* Step Content */}
+                    <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center flex-1 transition-all duration-300 group-hover:shadow-md group-hover:-translate-y-1">
+                      <div className="inline-block px-3 py-1 bg-slate-100 text-slate-500 text-xs font-bold rounded-full mb-3 uppercase tracking-wider">
+                        Step 0{step.id}
+                      </div>
+                      <h3 className="text-xl! font-bold text-slate-800 mb-2">
+                        {step.title}
+                      </h3>
+                      <p className="text-slate-600 text-sm leading-relaxed">
+                        {step.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section className="mt-36 max-w-5xl mx-auto md:p-10 px-3">
-        <h2 className="md:text-4xl! text-3xl!">Office Relocation Checklist</h2>
-        <div className="mt-3 w-7/12 h-1 bg-(--brand-color) rounded-3xl" />
-        <div className="mt-5">
-          <p className="mb-5">Use this list to help stay organized:</p>
-          <ol className="list-item list-inside space-y-2">
-            <li>1. Start your planning at least 3 months before the move.</li>
-            <li>2. Create a full inventory of everything you own.</li>
-            <li>
-              3. Pick a &quot;move coordinator&quot; in your office to be the
-              main point of contact.
-            </li>
-            <li>4. Label all boxes clearly on at least two sides.</li>
-            <li>
-              5. Back up all digital data before the IT equipment is moved.
-            </li>
-            <li>
-              6. Get all building permissions and NOCs ready for the move date.
-            </li>
-            <li>
-              7. Update your address on your website, Google profile, and with
-              your bank.
-            </li>
-          </ol>
-        </div>
-      </section>
-      <FAQs faqs={OfficeMoversDubai} />
-      <CTA />
-    </main>
+        </section>
+        <section className="mt-36 max-w-5xl mx-auto md:p-10 px-3">
+          <h2 className="md:text-4xl! text-3xl!">
+            Office Relocation Checklist
+          </h2>
+          <div className="mt-3 w-7/12 h-1 bg-(--brand-color) rounded-3xl" />
+          <div className="mt-5">
+            <p className="mb-5">Use this list to help stay organized:</p>
+            <ol className="list-item list-inside space-y-2">
+              <li>1. Start your planning at least 3 months before the move.</li>
+              <li>2. Create a full inventory of everything you own.</li>
+              <li>
+                3. Pick a &quot;move coordinator&quot; in your office to be the
+                main point of contact.
+              </li>
+              <li>4. Label all boxes clearly on at least two sides.</li>
+              <li>
+                5. Back up all digital data before the IT equipment is moved.
+              </li>
+              <li>
+                6. Get all building permissions and NOCs ready for the move
+                date.
+              </li>
+              <li>
+                7. Update your address on your website, Google profile, and with
+                your bank.
+              </li>
+            </ol>
+          </div>
+        </section>
+        <FAQs faqs={OfficeMoversDubai} />
+        <CTA />
+      </main>
+    </>
   );
 };
 

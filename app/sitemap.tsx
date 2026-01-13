@@ -64,6 +64,13 @@ const pages: MetadataRoute.Sitemap = [
     images: ["/office-movers-in-dubai.jpg"],
     lastModified: "26-01-13",
   },
+  {
+    url: "/movers-and-packers-abu-dhabi",
+    changeFrequency: "monthly",
+    priority: 0.95,
+    images: ["/movers-and-packers-abu-dhabi.jpg"],
+    lastModified: "26-01-13",
+  },
 ];
 export default function sitemap(): MetadataRoute.Sitemap {
   return pages.map((page) => ({
