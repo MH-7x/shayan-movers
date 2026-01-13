@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import MetadataTemplate from "@/lib/MetaDataTemplate";
 import { CheckCircle2, Landmark, MessageCircle, PhoneCall } from "lucide-react";
 import Image from "next/image";
+
 export const metadata = MetadataTemplate({
   data: {
     meta: {
@@ -11,35 +12,12 @@ export const metadata = MetadataTemplate({
       desc: "Looking for reliable movers in Sharjah? Shayan Movers offers professional packing and moving for homes and offices. Licensed, insured, and 24/7 service.",
     },
     image: {
-      path: "/movers-in-ajman.jpg",
-      alt: "Movers and Packers in Ajman",
+      path: "/movers-in-sharjah.jpg",
+      alt: "Movers and Packers in sharjah",
     },
-    path: "/movers-in-ajman",
+    path: "/movers-in-sharjah",
   },
 });
-
-const features = [
-  {
-    title: "Experienced Professional Team",
-    desc: "Our crew is trained, uniformed, and experienced in handling fragile items and expensive furniture with care.",
-  },
-  {
-    title: "Transparent Pricing",
-    desc: "Clear, fixed quotes with no hidden fees — plus free on-site estimates so you know exactly what you're paying for.",
-  },
-  {
-    title: "No‑Damage Guarantee",
-    desc: "We use premium packing materials (thick bubble wrap, wardrobe boxes). If something is damaged during the move, we will replace it.",
-  },
-  {
-    title: "24/7 Support",
-    desc: "A dedicated coordinator is available anytime via WhatsApp or phone to help you book or answer questions.",
-  },
-  {
-    title: "Trust & Reputation",
-    desc: "Thousands of successful moves across the UAE — punctual, reliable, and professional service every time.",
-  },
-];
 
 import React from "react";
 import {
@@ -54,6 +32,9 @@ import Process from "@/components/Process";
 import { FAQs } from "@/components/FAQs";
 import { SharjahFaqs } from "@/lib/lists";
 import CTA from "@/components/CTA";
+import { generateFAQSchema } from "@/lib/GenerateFaqSchema";
+import { convertFaqsForSchema } from "@/lib/ConvertFaqsInRaw";
+import Script from "next/script";
 
 interface Feature {
   title: string;
@@ -159,7 +140,7 @@ const services = [
     img: {
       src: "/House-Villa-Moving-Sharjah.jpg",
     },
-    href: "#",
+    href: "/house-movers-in-dubai",
   },
   {
     title: "Apartment & Studio Moving",
@@ -174,7 +155,7 @@ const services = [
     img: {
       src: "/Apartment-Studio-Moving-Sharjah.jpg",
     },
-    href: "#",
+    href: "/house-movers-in-dubai",
   },
   {
     title: "Office & Commercial Moving",
@@ -189,7 +170,7 @@ const services = [
     img: {
       src: "/Office-Commercial-Moving-Sharjah.jpg",
     },
-    href: "#",
+    href: "/office-movers-in-dubai",
   },
   {
     title: "Furniture Moving & Assembly",
@@ -204,7 +185,7 @@ const services = [
     img: {
       src: "/Furniture-Moving-Assembly-Sharjah.jpg",
     },
-    href: "#",
+    href: "/",
   },
   {
     title: "Packing & Wrapping Services",
@@ -219,7 +200,7 @@ const services = [
     img: {
       src: "/Packing-Wrapping-Services-Sharjah.jpg",
     },
-    href: "#",
+    href: "/",
   },
   {
     title: "Storage & Warehousing",
@@ -234,7 +215,7 @@ const services = [
     img: {
       src: "/Storage-Warehousing-Sharjah.jpg",
     },
-    href: "#",
+    href: "/",
   },
   {
     title: "Local & Inter-Emirate Moving",
@@ -248,208 +229,222 @@ const services = [
     img: {
       src: "/Local-Inter-Emirate-Moving-Sharjah.jpg",
     },
-    href: "#",
+    href: "/",
   },
 ];
 
+const FaqsSchema = generateFAQSchema(convertFaqsForSchema(SharjahFaqs));
+
 const SharjahPage = () => {
   return (
-    <main className="md:mt-30.25 mt-17.5 ">
-      <section className=" bg-(--neutral-color)/75 md:pl-56 pl-3 md:pr-72 pr-3 py-14 flex items-center justify-start relative overflow-hidden">
-        <div className="md:border-l-4 py-8 md:pl-5 border-(--heading-color) z-1">
-          <h1 className="text-(--brand-color)! md:text-4xl! text-3xl!">
-            Reliable Movers in Sharjah – Shayan Movers and Packers
-          </h1>
-          <p className="mt-5">
-            Moving to a new place is a big step, but it doesn&apos;t have to be
-            a headache. If you are looking for movers in Sharjah, Shayan Movers
-            is here to help.
-          </p>
-          <p className="mt-2">
-            We are a trusted Sharjah moving company with over 15 years of
-            experience in the UAE. Our team is fully licensed and insured,
-            offering 24/7 service to fit your busy schedule.
-          </p>
-          <div className="flex mt-5 gap-x-3">
-            <Button callBtn>
-              <PhoneCall /> Call Now
-            </Button>
-            <Button callBtn variant={"secondary"}>
-              <MessageCircle /> Quote On WhatsApp
-            </Button>
-          </div>
-        </div>
-        <Image
-          src={"/movers-in-sharjah.jpg"}
-          alt="Movers and Packers in sharjah"
-          fill
-          loading="eager"
-          className="object-cover -z-1"
-        />
-      </section>
-      <ContactSection
-        title="Get A Quote From Best Movers in Sharjah"
-        desc={
-          <>
-            <p>
-              Whether you are moving a small apartment or a large corporate
-              office, we focus on making your relocation easy and stress-free.
-              We cover every corner of Sharjah and provide door-to-door service
-              across the entire UAE.
-            </p>
-            <p className="mt-1">
-              So Contact Us Now, Share your detail about moving and we will give
-              you quote within 10 mins.
-            </p>
-          </>
-        }
+    <>
+      <Script
+        strategy="beforeInteractive"
+        id="FAQSchema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: FaqsSchema }}
       />
-      <ReviewSection />
-      <WhyChooseUs />
-      <section className="mt-36 md:px-0 px-3">
-        <h2 className="text-center md:text-5xl! text-4xl!">
-          Our Sharjah Moving Services
-        </h2>
-        <p className="mt-3 text-center">
-          We provide a full range of services to cover every part of your move.
-        </p>
-        <div className="w-full max-w-6xl mx-auto my-20 grid md:grid-cols-2 grid-cols-1 gap-x-10">
-          {services.map((service, i) => (
-            <div key={i}>
-              <div className="w-full md:h-92 h-80 relative z-0 overflow-hidden rounded-t-lg">
-                <Image
-                  src={service.img.src}
-                  alt={service.title}
-                  fill
-                  className="absolute object-cover object-center"
-                />
-              </div>
-              <div className="w-11/12 mx-auto rounded-2xl shadow-lg shadow-neutral-100 bg-white/90 min-h-32 z-10 transform -translate-y-10 py-5 px-3 ">
-                <Link href={service.href}>
-                  <h3 className="md:text-2xl! text-xl! font-bold! b1 text-center">
-                    {service.title}
-                  </h3>
-                </Link>
-                <p className="b-text mt-3 md:text-base text-sm! text-center">
-                  {service.desc}
-                </p>
-                <div className="flex items-center justify-center gap-x-5 w-full mt-5">
-                  <Button wtsBtn size={"sm"}>
-                    Get A Quote
-                  </Button>
-                  <Link
-                    href={service.href}
-                    title={service.title}
-                    className="text-sm text-(--brand-color) underline underline-offset-1"
-                  >
-                    Service Details..
+
+      <main className="md:mt-30.25 mt-17.5 ">
+        <section className=" bg-(--neutral-color)/75 md:pl-56 pl-3 md:pr-72 pr-3 py-14 flex items-center justify-start relative overflow-hidden">
+          <div className="md:border-l-4 py-8 md:pl-5 border-(--heading-color) z-1">
+            <h1 className="text-(--brand-color)! md:text-4xl! text-3xl!">
+              Reliable Movers in Sharjah – Shayan Movers and Packers
+            </h1>
+            <p className="mt-5">
+              Moving to a new place is a big step, but it doesn&apos;t have to
+              be a headache. If you are looking for movers in Sharjah, Shayan
+              Movers is here to help.
+            </p>
+            <p className="mt-2">
+              We are a trusted Sharjah moving company with over 15 years of
+              experience in the UAE. Our team is fully licensed and insured,
+              offering 24/7 service to fit your busy schedule.
+            </p>
+            <div className="flex mt-5 gap-x-3">
+              <Button callBtn>
+                <PhoneCall /> Call Now
+              </Button>
+              <Button callBtn variant={"secondary"}>
+                <MessageCircle /> Quote On WhatsApp
+              </Button>
+            </div>
+          </div>
+          <Image
+            src={"/movers-in-sharjah.jpg"}
+            alt="Movers and Packers in sharjah"
+            fill
+            loading="eager"
+            className="object-cover -z-1"
+          />
+        </section>
+        <ContactSection
+          title="Get A Quote From Best Movers in Sharjah"
+          desc={
+            <>
+              <p>
+                Whether you are moving a small apartment or a large corporate
+                office, we focus on making your relocation easy and stress-free.
+                We cover every corner of Sharjah and provide door-to-door
+                service across the entire UAE.
+              </p>
+              <p className="mt-1">
+                So Contact Us Now, Share your detail about moving and we will
+                give you quote within 10 mins.
+              </p>
+            </>
+          }
+        />
+        <ReviewSection />
+        <WhyChooseUs />
+        <section className="mt-36 md:px-0 px-3">
+          <h2 className="text-center md:text-5xl! text-4xl!">
+            Our Sharjah Moving Services
+          </h2>
+          <p className="mt-3 text-center">
+            We provide a full range of services to cover every part of your
+            move.
+          </p>
+          <div className="w-full max-w-6xl mx-auto my-20 grid md:grid-cols-2 grid-cols-1 gap-x-10">
+            {services.map((service, i) => (
+              <div key={i}>
+                <div className="w-full md:h-92 h-80 relative z-0 overflow-hidden rounded-t-lg">
+                  <Image
+                    src={service.img.src}
+                    alt={service.title}
+                    fill
+                    className="absolute object-cover object-center"
+                  />
+                </div>
+                <div className="w-11/12 mx-auto rounded-2xl shadow-lg shadow-neutral-100 bg-white/90 min-h-32 z-10 transform -translate-y-10 py-5 px-3 ">
+                  <Link href={service.href}>
+                    <h3 className="md:text-2xl! text-xl! font-bold! b1 text-center">
+                      {service.title}
+                    </h3>
                   </Link>
+                  <p className="b-text mt-3 md:text-base text-sm! text-center">
+                    {service.desc}
+                  </p>
+                  <div className="flex items-center justify-center gap-x-5 w-full mt-5">
+                    <Button wtsBtn size={"sm"}>
+                      Get A Quote
+                    </Button>
+                    <Link
+                      href={service.href}
+                      title={service.title}
+                      className="text-sm text-(--brand-color) underline underline-offset-1"
+                    >
+                      Service Details..
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
-      <Process />
-      <section className="group mt-28 relative bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-1 overflow-hidden max-w-4xl mx-auto">
-        {/* Decorative background element */}
-        <div
-          className={`absolute top-0 right-0 w-24 h-24 rounded-bl-full opacity-20 transition-transform group-hover:scale-110 bg-(--brand-color)`}
-        />
-
-        <div className="relative z-10">
-          <div
-            className={`inline-flex items-center justify-center p-3 rounded-xl mb-4 bg-(--brand-color)/20`}
-          >
-            <Landmark className="w-6 h-6 " />
+            ))}
           </div>
+        </section>
+        <Process />
+        <section className="group mt-28 relative bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-1 overflow-hidden max-w-4xl mx-auto">
+          {/* Decorative background element */}
+          <div
+            className={`absolute top-0 right-0 w-24 h-24 rounded-bl-full opacity-20 transition-transform group-hover:scale-110 bg-(--brand-color)`}
+          />
 
-          <h2 className="text-3xl! font-bold! mb-2">
-            Service Areas in Sharjah
+          <div className="relative z-10">
+            <div
+              className={`inline-flex items-center justify-center p-3 rounded-xl mb-4 bg-(--brand-color)/20`}
+            >
+              <Landmark className="w-6 h-6 " />
+            </div>
+
+            <h2 className="text-3xl! font-bold! mb-2">
+              Service Areas in Sharjah
+            </h2>
+            <p className="  mb-8">
+              Our Sharjah movers serve everywhere from Al Nahda to Al Majaz. We
+              cover all major neighbourhoods including:
+            </p>
+
+            <div className="space-y-3">
+              <ul className="grid grid-cols-1 gap-y-2">
+                <li className="flex items-start  text-gray-700">
+                  <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
+                  <p className="font-semibold">• Al Nahda & Al Taawun</p>
+                </li>
+                <li className="flex items-start  text-gray-700">
+                  <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
+                  <p className="font-semibold">• Muwaileh & University City</p>
+                </li>
+                <li className="flex items-start  text-gray-700">
+                  <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
+                  <p className="font-semibold">• Al Majaz & Al Qasimia</p>
+                </li>
+                <li className="flex items-start  text-gray-700">
+                  <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
+                  <p className="font-semibold">• Abu Shagara & Al Khan</p>
+                </li>
+                <li className="flex items-start  text-gray-700">
+                  <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
+                  <p className="font-semibold">• Industrial Areas 1–17</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section className="mt-36 max-w-5xl mx-auto md:p-10 px-3">
+          <h2 className="md:text-4xl! text-3xl!">Pricing & Free Quotes</h2>
+          <div className="mt-3 w-7/12 h-1 bg-(--brand-color) rounded-3xl" />
+          <div className="flex flex-col gap-y-3 mt-5 md:max-w-4xl">
+            <p>
+              We offer competitive rates that give you real value. Typical moves
+              in Sharjah range from AED 700 to AED 4,000, depending on how much
+              stuff you have and the distance.
+            </p>
+            <p>
+              We provide free on-site estimates so you know the cost upfront.
+            </p>
+            <div className="flex mt-5 gap-x-3">
+              <Button callBtn>
+                <PhoneCall /> Call Now
+              </Button>
+              <Button callBtn variant={"secondary"}>
+                <MessageCircle /> Quote On WhatsApp
+              </Button>
+            </div>
+          </div>
+          <h2 className="md:text-4xl! text-3xl! mt-16">
+            {" "}
+            Moving Tips & Checklist
           </h2>
-          <p className="  mb-8">
-            Our Sharjah movers serve everywhere from Al Nahda to Al Majaz. We
-            cover all major neighbourhoods including:
-          </p>
-
-          <div className="space-y-3">
-            <ul className="grid grid-cols-1 gap-y-2">
-              <li className="flex items-start  text-gray-700">
-                <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
-                <p className="font-semibold">• Al Nahda & Al Taawun</p>
+          <div className="mt-3 w-7/12 h-1 bg-(--brand-color) rounded-3xl" />
+          <div className="flex mt-5 gap-x-3">
+            <ul className="list-disc list-inside space-y-2">
+              <li>
+                <b> Declutter:</b> Donate or sell items you don&apos;t use
+                anymore. Why pay to move things you don&apos;t need?
               </li>
-              <li className="flex items-start  text-gray-700">
-                <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
-                <p className="font-semibold">• Muwaileh & University City</p>
+              <li>
+                <b>Label Boxes:</b> Mark boxes by room (e.g., &quot;Kitchen –
+                Dishes&quot;). This makes unpacking much faster.
               </li>
-              <li className="flex items-start  text-gray-700">
-                <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
-                <p className="font-semibold">• Al Majaz & Al Qasimia</p>
+              <li>
+                <b>Keep Valuables With You:</b> Pack your documents, jewelry,
+                and cash in a separate bag and keep it with you.
               </li>
-              <li className="flex items-start  text-gray-700">
-                <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
-                <p className="font-semibold">• Abu Shagara & Al Khan</p>
+              <li>
+                <b>Check Utilities:</b> Make sure your SEWA and internet are
+                scheduled to be transferred a few days before you move.
               </li>
-              <li className="flex items-start  text-gray-700">
-                <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
-                <p className="font-semibold">• Industrial Areas 1–17</p>
+              <li>
+                <b>Watch the Timing:</b> Try to avoid moving on Friday
+                afternoons when Sharjah traffic is at its heaviest.
               </li>
             </ul>
           </div>
-        </div>
-      </section>
-      <section className="mt-36 max-w-5xl mx-auto md:p-10 px-3">
-        <h2 className="md:text-4xl! text-3xl!">Pricing & Free Quotes</h2>
-        <div className="mt-3 w-7/12 h-1 bg-(--brand-color) rounded-3xl" />
-        <div className="flex flex-col gap-y-3 mt-5 md:max-w-4xl">
-          <p>
-            We offer competitive rates that give you real value. Typical moves
-            in Sharjah range from AED 700 to AED 4,000, depending on how much
-            stuff you have and the distance.
-          </p>
-          <p>We provide free on-site estimates so you know the cost upfront.</p>
-          <div className="flex mt-5 gap-x-3">
-            <Button callBtn>
-              <PhoneCall /> Call Now
-            </Button>
-            <Button callBtn variant={"secondary"}>
-              <MessageCircle /> Quote On WhatsApp
-            </Button>
-          </div>
-        </div>
-        <h2 className="md:text-4xl! text-3xl! mt-16">
-          {" "}
-          Moving Tips & Checklist
-        </h2>
-        <div className="mt-3 w-7/12 h-1 bg-(--brand-color) rounded-3xl" />
-        <div className="flex mt-5 gap-x-3">
-          <ul className="list-disc list-inside space-y-2">
-            <li>
-              <b> Declutter:</b> Donate or sell items you don&apos;t use
-              anymore. Why pay to move things you don&apos;t need?
-            </li>
-            <li>
-              <b>Label Boxes:</b> Mark boxes by room (e.g., &quot;Kitchen –
-              Dishes&quot;). This makes unpacking much faster.
-            </li>
-            <li>
-              <b>Keep Valuables With You:</b> Pack your documents, jewelry, and
-              cash in a separate bag and keep it with you.
-            </li>
-            <li>
-              <b>Check Utilities:</b> Make sure your SEWA and internet are
-              scheduled to be transferred a few days before you move.
-            </li>
-            <li>
-              <b>Watch the Timing:</b> Try to avoid moving on Friday afternoons
-              when Sharjah traffic is at its heaviest.
-            </li>
-          </ul>
-        </div>
-      </section>
-      <FAQs faqs={SharjahFaqs} />
-      <CTA />
-    </main>
+        </section>
+        <FAQs faqs={SharjahFaqs} />
+        <CTA />
+      </main>
+    </>
   );
 };
 

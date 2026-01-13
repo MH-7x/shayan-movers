@@ -1,4 +1,5 @@
 import ContactSection from "@/components/ContactSection";
+import CTA from "@/components/CTA";
 import { FAQs } from "@/components/FAQs";
 import { ReviewSection } from "@/components/Services";
 import { Button } from "@/components/ui/button";
@@ -532,6 +533,7 @@ const OfficeMoversPage = () => {
         </div>
       </section>
       <FAQs faqs={OfficeMoversDubai} />
+      <CTA />
     </main>
   );
 };

@@ -58,7 +58,7 @@ const servicesList = [
     img: {
       src: "/Office-Commercial-Moving-Ajman.jpg",
     },
-    href: "/",
+    href: "/house-movers-in-dubai",
   },
   {
     title: "Office & Commercial Relocation",
@@ -72,7 +72,7 @@ const servicesList = [
     img: {
       src: "/Furniture-Movers-Assembly-Ajman.jpg",
     },
-    href: "/",
+    href: "/office-movers-in-dubai",
   },
   {
     title: "Villa Movers in Ras Al Khaimah",
@@ -88,7 +88,7 @@ const servicesList = [
     img: {
       src: "/House-Villa-Movers-in-Ajman.jpg",
     },
-    href: "/",
+    href: "/house-movers-in-dubai",
   },
 ];
 

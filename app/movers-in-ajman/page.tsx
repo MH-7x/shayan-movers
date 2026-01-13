@@ -70,7 +70,7 @@ const servicesList = [
     img: {
       src: "/House-Villa-Movers-in-Ajman.jpg",
     },
-    href: "/",
+    href: "/house-movers-in-dubai",
   },
   {
     title: "Office & Commercial Moving",
@@ -85,7 +85,7 @@ const servicesList = [
     img: {
       src: "/Office-Commercial-Moving-Ajman.jpg",
     },
-    href: "/",
+    href: "/office-movers-in-dubai",
   },
   {
     title: "Furniture Movers & Assembly",

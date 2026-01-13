@@ -43,7 +43,7 @@ export const servicesList = [
       src: "/home-movers-in-abu-dhabi.jpg",
       alt: "House Movers Abu Dhabi",
     },
-    href: "/",
+    href: "/house-furniture-movers-abu-dhabi",
   },
   {
     title: "Villa Movers in Abu Dhabi",
@@ -59,7 +59,7 @@ export const servicesList = [
       src: "/villa-movers-in-abu-dhabi.jpg",
       alt: "Villa Movers in Abu Dhabi",
     },
-    href: "/",
+    href: "/house-movers-in-dubai",
   },
   {
     title: "Professional Office Relocation",
@@ -75,7 +75,7 @@ export const servicesList = [
       src: "/office-relocation-in-abu-dhabi.jpg",
       alt: "Professional Office Relocation",
     },
-    href: "/",
+    href: "/office-movers-in-dubai",
   },
   {
     title: "Cheap Movers and Packers in Abu Dhabi",
