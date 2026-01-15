@@ -101,7 +101,7 @@ const QuoteForm = ({ side }: { side?: boolean }) => {
         />
         <div className="grid grid-cols-2 gap-x-5">
           <Select required name="moving-from">
-            <SelectTrigger className="w-full  py-6">
+            <SelectTrigger aria-label="Moving From" className="w-full  py-6">
               <SelectValue placeholder="Moving From" />
             </SelectTrigger>
             <SelectContent className="">
@@ -119,7 +119,7 @@ const QuoteForm = ({ side }: { side?: boolean }) => {
             </SelectContent>
           </Select>
           <Select required name="moving-to">
-            <SelectTrigger className="w-full  py-6">
+            <SelectTrigger aria-label="Moving To" className="w-full  py-6">
               <SelectValue placeholder="Moving To" />
             </SelectTrigger>
             <SelectContent className="">

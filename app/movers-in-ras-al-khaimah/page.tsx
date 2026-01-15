@@ -177,6 +177,7 @@ const RasAlKhaimahPage = () => {
           <Image
             src={"/movers-in-ras-al-khaimah.jpg"}
             alt="Movers and Packers in Ras Al Khaimah"
+            priority
             fill
             loading="eager"
             className="object-cover -z-1"

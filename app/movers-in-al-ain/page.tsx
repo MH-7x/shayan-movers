@@ -93,6 +93,7 @@ const AlAinPage = () => {
           <Image
             src={"/movers-in-al-ain.jpg"}
             alt="Movers and Packers in Al Ain"
+            priority
             fill
             loading="eager"
             className="object-cover -z-1"

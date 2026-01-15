@@ -273,6 +273,7 @@ const SharjahPage = () => {
           <Image
             src={"/movers-in-sharjah.jpg"}
             alt="Movers and Packers in sharjah"
+            priority
             fill
             loading="eager"
             className="object-cover -z-1"

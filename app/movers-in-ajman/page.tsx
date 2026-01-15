@@ -230,6 +230,7 @@ const page = () => {
           <Image
             src={"/movers-in-ajman.jpg"}
             alt="Movers and Packers in Ajman"
+            priority
             fill
             loading="eager"
             className="object-cover -z-1"

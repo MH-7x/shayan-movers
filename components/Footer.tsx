@@ -87,7 +87,7 @@ const navLinks: NavItem[] = [
       },
     ],
   },
-  { label: "About Us", href: "#" },
+  { label: "About Us", href: "/about-us" },
   { label: "Contact Movers", href: "/contact-us" },
 ];
 // Assuming your shadcn button is at this path as per instructions
@@ -107,7 +107,7 @@ export default function Footer() {
                 className="object-contain"
               />
             </div>
-            <p className="text-[#404040] text-sm leading-relaxed max-w-xs">
+            <p className="text-[#404040] text-sm! leading-relaxed max-w-xs">
               Shayan Movers is a leading provider of Fast and affordable movers
               in Dubai & Sharjah. We pack, move, and set up your furniture
               safely and securely.
@@ -226,7 +226,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-gray-600">
+          <p className="text-sm text-gray-700">
             © {new Date().getFullYear()} Shayan Movers. All rights reserved.
             Design and development by{" "}
             <a
@@ -240,20 +240,20 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-6">
             <a
-              href="#"
-              className="text-xs text-gray-600 hover:text-(--brand-color) transition-colors"
+              href="/privacy-policy"
+              className="text-sm text-gray-700 hover:text-(--brand-color) transition-colors"
             >
               Privacy
             </a>
             <a
-              href="#"
-              className="text-xs text-gray-600 hover:text-(--brand-color) transition-colors"
+              href="/terms-and-conditions"
+              className="text-sm text-gray-700 hover:text-(--brand-color) transition-colors"
             >
               Terms
             </a>
             <a
               href="#"
-              className="text-xs text-gray-600 hover:text-(--brand-color) transition-colors"
+              className="text-sm text-gray-700 hover:text-(--brand-color) transition-colors"
             >
               Sitemap
             </a>
