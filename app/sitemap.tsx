@@ -2,7 +2,7 @@ import { APP } from "@/App";
 import { MetadataRoute } from "next";
 const pages: MetadataRoute.Sitemap = [
   {
-    url: "/",
+    url: "",
     changeFrequency: "weekly",
     priority: 1,
     images: ["/shayan-movers-packers.jpg"],
