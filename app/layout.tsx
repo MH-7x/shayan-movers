@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import { Toaster } from "sonner";
 import ActionButton from "@/components/ActionButtons";
 import { PageBreadcrumbs } from "@/components/Breadcrumbs";
+import GTM from "@/components/GTM";
 
 const inter = Inter({
   adjustFontFallback: false,
@@ -48,6 +49,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="">
+      <GTM />
       <body className={`${inter.className} antialiased bg-(--neutral-color)`}>
         <PageBreadcrumbs />
         <Navbar />
