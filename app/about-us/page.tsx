@@ -11,8 +11,8 @@ export const metadata = MetadataTemplate({
       desc: "Learn about Shayan Movers - 20+ years moving homes and offices across Dubai, Sharjah, and Abu Dhabi. Real office in Sharjah. No hidden fees. Call now.",
     },
     image: {
-      path: "/shayan-movers.svg",
-      alt: "shayan movers and packers",
+      path: "/shayan-movers-packers.jpg",
+      alt: "Shayan Movers and Packers crew",
     },
     path: "/about-us",
   },
@@ -61,8 +61,9 @@ export default function AboutPage() {
             src={"/shayan-movers.svg"}
             alt="About Shayan Movers"
             fill
+            sizes="(min-width: 768px) 50vw, 100vw"
             className="object-contain rounded-2xl"
-            loading="eager"
+            preload
           />
         </div>
       </section>

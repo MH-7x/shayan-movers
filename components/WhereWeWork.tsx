@@ -41,7 +41,7 @@ const locations: LocationType[] = [
       "Jumeirah",
       "Palm Jumeirah",
     ],
-    href: "/",
+    href: "/house-movers-in-dubai",
   },
   {
     id: "sharjah",
@@ -54,7 +54,7 @@ const locations: LocationType[] = [
       "Muwaileh",
       "Al Majaz",
       "Al Khan",
-      "Bu Shaghara",
+      "Abu Shagara",
       "Hay Al Qasimiah", // Added your HQ area for completeness
     ],
     href: "/movers-in-sharjah",
@@ -82,7 +82,7 @@ const locations: LocationType[] = [
 const otherLinks = [
   "/movers-in-ajman",
   "/movers-in-ras-al-khaimah",
-  "movers-in-al-ain",
+  "/movers-in-al-ain",
 ];
 // --- Sub-Component: Location Card ---
 const LocationCard = ({ location }: { location: LocationType }) => (

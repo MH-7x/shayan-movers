@@ -1,25 +1,14 @@
-
-import { APP } from '@/App'
-import type { MetadataRoute } from 'next'
+import { APP } from "@/App";
+import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
-        userAgent: '*',
-        allow: '/',
-        disallow: [
-          '/api/',
-          '/server/',
-          '/private/',
-          '/admin/',
-        ],
+        userAgent: "*",
+        allow: "/",
       },
     ],
-    sitemap: [
-      `${APP.url}/sitemap.xml`,
-    
-    ],
-    host: `${APP.url}`,
-  }
+    sitemap: `${APP.url}/sitemap.xml`,
+  };
 }

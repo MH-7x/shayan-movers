@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const HomeFaqs = [
   {
     question: "Is Arabic required, or is English widely spoken in the UAE?",
@@ -1090,9 +1092,7 @@ export const AlAinFaqs = [
       <>
         <p>
           Shayan Movers has established a reputation for excellence over more
-          than 20 years in the UAE. We are a fully licensed and registered
-          company, offering customers peace of mind with up to AED 1,000 in
-          damage protection coverage for their belongings.
+          than 20 years in the UAE. We are a registered company, and our work is covered by insurance for damage or loss. Ask us for the details for your move.
         </p>
         <p>Our service is built on:</p>
         <ul>
@@ -1570,14 +1570,13 @@ export const HouseMoversDubaiFaqs = [
           <li>
             <strong>3-Bedroom Apartment:</strong> AED 2,200 – 3,000
           </li>
-
-          <li>
-            <strong>Villas (4-5 Bedroom):</strong> AED 3,000 – 6,000+
-          </li>
         </ul>
         <p className="mt-2">
           For an accurate quote, we offer a free home survey to assess your
-          specific items
+          specific items. Moving a villa? See our{" "}
+          <Link href="/villa-movers-in-dubai#villa-moving-cost-in-dubai">
+            villa moving prices.
+          </Link>
         </p>
       </div>
     ),
@@ -1795,5 +1794,96 @@ export const OfficeMoversDubai = [
         </p>
       </>
     ),
+  },
+];
+
+export const AffordableMoversDubaiFaqs = [
+  {
+    question: "How much do affordable movers in Dubai charge?",
+    answer:
+      "Our local moves start from AED 800 for a studio. A one to two bedroom apartment costs AED 1,200 to 1,800, a three bedroom costs AED 1,800 to 2,500, and a villa starts from AED 2,500. You get the exact price in writing before we start.",
+  },
+  {
+    question: "How can I find cheap movers in Dubai without losing quality?",
+    answer:
+      "Ask two or three companies for written quotes and compare what each one includes. Check their reviews, ask for licence and insurance details, and be careful with a quote given over the phone with no questions about your move.",
+  },
+  {
+    question: "Is a very low quote trustworthy?",
+    answer:
+      "Not always. Some affordable movers in Dubai are honest about their prices, and some quote low to win the job and add extras later. Ask what's included and get it in writing. Our quotes list everything, and we confirm any change with you before we do the work.",
+  },
+  {
+    question: "What's included in your price?",
+    answer:
+      "The crew, the truck, packing materials, loading, unloading, and furniture dismantling and reassembly. You pay after the work is done, and we accept all the usual payment methods.",
+  },
+  {
+    question: "How long does a move take?",
+    answer:
+      "Studios and one-bedroom flats usually take three to five hours. Two-bedroom homes take about six to eight. Large villas can take a day or two.",
+  },
+  {
+    question: "Do you work on weekends and at short notice?",
+    answer:
+      "Yes. Our affordable movers in Dubai work seven days a week. Short-notice moves depend on availability, so call or WhatsApp and we'll tell you straight away. For weekends, book one to two weeks ahead if you can.",
+  },
+  {
+    question: "Are my belongings insured?",
+    answer:
+      "Yes. Our work is covered by insurance for damage or loss. If something is damaged, tell us and we'll go through the claim with you. Insurance details are available on request.",
+  },
+  {
+    question: "Do I need a permit or NOC to move in Dubai?",
+    answer:
+      "Most buildings need a move-in or move-out permit, and some also ask for a no-objection certificate. Apply two to five days ahead, and check with your building management for what they need.",
+  },
+];
+
+export const VillaMoversDubaiFaqs = [
+  {
+    question: "How much do villa movers cost in Dubai?",
+    answer:
+      "A small villa starts from about AED 2,500. A 4-bedroom villa is usually AED 3,000 to 4,500, and a 5-bedroom villa is AED 4,500 to 6,000 or more. The final price depends on volume, distance, access and extras. We give a fixed price after a free survey.",
+  },
+  {
+    question: "How long does it take to move a villa?",
+    answer:
+      "A 4-bedroom villa usually takes 8 to 10 hours, and a 5-bedroom villa 10 to 12 hours or more. Large villas can take a full day or two. We confirm the timing at the survey.",
+  },
+  {
+    question: "Do you dismantle and reassemble furniture?",
+    answer:
+      "Yes. We take apart beds, wardrobes, tables and wall units, label the parts, and put them back together at the new villa.",
+  },
+  {
+    question: "Can you move garden furniture and pool equipment?",
+    answer:
+      "Yes. Outdoor furniture, loungers, barbecues and pool accessories all go on the truck. Fixed pool equipment such as pumps needs to be disconnected by a pool technician first.",
+  },
+  {
+    question: "Do you arrange the community move permit?",
+    answer:
+      "Yes. We arrange permits for Emaar, Nakheel and Dubai Properties communities. Tell us your community and date, and we'll tell you what documents we need.",
+  },
+  {
+    question: "How far ahead should I book?",
+    answer:
+      "Two to four weeks is a good target, mainly for the permit and NOC. We also take short-notice moves when we have crews free, so call and ask.",
+  },
+  {
+    question: "Do you provide packing materials?",
+    answer:
+      "Yes. We bring cartons, bubble wrap, packing paper and thick blankets. Custom crating is available for pianos, artwork and other special items.",
+  },
+  {
+    question: "Do you offer storage and cleaning?",
+    answer:
+      "Yes. We offer short and long term storage with pickup and delivery, and post-move cleaning for the villa you leave or the one you move into.",
+  },
+  {
+    question: "Are my belongings covered during the move?",
+    answer:
+      "Yes, your belongings are covered against damage or loss during the move. Ask us for the details for your move.",
   },
 ];

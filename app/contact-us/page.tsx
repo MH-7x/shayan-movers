@@ -27,7 +27,7 @@ export const metadata = MetadataTemplate({
   data: {
     meta: {
       title: "Contact Shayan Movers | Homes & Office Relocation Services",
-      desc: "Contact Shayan Movers — trusted residential movers in all overs UAE, Dubai & Abu Dhabi. Call or WhatsApp for a free quote.",
+      desc: "Contact Shayan Movers — trusted residential movers across the UAE, including Dubai & Abu Dhabi. Call or WhatsApp for a free quote.",
     },
     path: "/contact-us",
     image: {
@@ -45,13 +45,13 @@ const ContactUsPage = () => {
         desc={
           <>
             <p>
-              Looking fore experience and affordable movers and packers in dubai
-              to move you home, apartment or office, contact us and leave the
+              Looking for experienced and affordable movers and packers in Dubai
+              to move your home, apartment or office? Contact us and leave the
               stressful work to us.
             </p>
             <p>
-              We have more than 20+ years of experience in moving homes and
-              office in all over emarties.
+              We have more than 20 years of experience in moving homes and
+              offices across the UAE.
             </p>
           </>
         }

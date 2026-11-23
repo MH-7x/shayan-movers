@@ -5,93 +5,7 @@ import { ChevronDown, X, TimerResetIcon, Mail, PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-
-/**
- * Navigation Data Structure
- */
-interface SubMenuItem {
-  title: string;
-  description?: string;
-  href: string;
-}
-
-interface NavItem {
-  label: string;
-  href: string;
-  subItems?: SubMenuItem[];
-}
-
-const navLinks: NavItem[] = [
-  {
-    label: "Services",
-    href: "#",
-    subItems: [
-      {
-        title: "House & Villa Moving",
-        description:
-          "Villa movers Dubai, home relocation UAE, best house movers.",
-        href: "/house-movers-in-dubai",
-      },
-      {
-        title: "Office & Commercial Moving",
-        description:
-          "Office movers Dubai, business relocation, corporate moving services.",
-        href: "/office-movers-in-dubai",
-      },
-      {
-        title: "Furniture Moving & Assembly",
-        description:
-          "Furniture movers, sofa moving, handyman services, bed fixing.",
-        href: "#",
-      },
-      {
-        title: "Packing & wrapping",
-        description:
-          "Professional packing services, bubble wrap packing, carton boxes",
-        href: "#",
-      },
-      {
-        title: "Apartment & Studio Moving",
-        description: "Studio movers, flat shifting, apartment movers near me.",
-        href: "#",
-      },
-      {
-        title: "Storage & Warehousing",
-        description:
-          "Short term storage Dubai, self-storage UAE, furniture storage",
-        href: "#",
-      },
-      {
-        title: "Local & Inter-Emirate Moving",
-        description: "Moving from Dubai to Abu Dhabi, inter-city movers UAE.",
-        href: "#",
-      },
-    ],
-  },
-  {
-    label: "Areas We Serve",
-    href: "#",
-    subItems: [
-      {
-        title: "Movers and Packers in Abu Dhabi",
-        href: "/movers-and-packers-abu-dhabi",
-      },
-      { title: "Movers and Packers in Sharjah", href: "/movers-in-sharjah" },
-      { title: "Movers and Packers in Ajman", href: "/movers-in-ajman" },
-      { title: "Movers and Packers in Al Ain", href: "/movers-in-al-ain" },
-      {
-        title: "Movers and Packers in Ras Al Khaimah",
-        href: "/movers-in-ras-al-khaimah",
-      },
-      {
-        title: "House Furniture Movers in Abu Dhabi",
-        href: "/house-furniture-movers-abu-dhabi",
-      },
-    ],
-  },
-  { label: "About Us", href: "/about-us" },
-  { label: "Contact Movers", href: "/contact-us" },
-];
+import { navLinks, withPages } from "@/lib/navLinks";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -113,13 +27,10 @@ export default function Navbar() {
       {/* Top Utility Bar - Desktop Only */}
       <div className="hidden lg:block border-b border-gray-100 bg-[#fdf4f1]">
         <div className="max-w-7xl mx-auto px-6 h-10 flex items-center justify-end space-x-6 text-[13px] font-medium text-[#404040]">
-          <a
-            href="#"
-            className="flex items-center gap-1.5 hover:text-(--brand-color) transition-colors"
-          >
+          <span className="flex items-center gap-1.5">
             <TimerResetIcon size={14} />
             Available 24/7
-          </a>
+          </span>
           <a
             href="mailto:shayanmovers.ae@gmail.com"
             rel="noopener noreferrer"
@@ -163,25 +74,34 @@ export default function Navbar() {
                 key={link.label}
                 className="group relative h-full flex items-center"
               >
-                <a
-                  href={link.href}
-                  className="flex items-center gap-1 text-[15px] font-semibold text-(--heading-color) hover:text-(--brand-color) transition-colors py-7"
-                >
-                  {link.label}
-                  {link.subItems && (
+                {link.subItems ? (
+                  <button
+                    type="button"
+                    aria-haspopup="true"
+                    className="flex items-center gap-1 text-[15px] font-semibold text-(--heading-color) hover:text-(--brand-color) transition-colors py-7 cursor-pointer"
+                  >
+                    {link.label}
                     <ChevronDown
+                      aria-hidden="true"
                       size={14}
-                      className="group-hover:rotate-180 transition-transform duration-200"
+                      className="group-hover:rotate-180 group-focus-within:rotate-180 transition-transform duration-200"
                     />
-                  )}
-                </a>
+                  </button>
+                ) : (
+                  <Link
+                    href={link.href}
+                    className="flex items-center gap-1 text-[15px] font-semibold text-(--heading-color) hover:text-(--brand-color) transition-colors py-7"
+                  >
+                    {link.label}
+                  </Link>
+                )}
 
                 {/* Desktop Dropdown */}
                 {link.subItems && (
-                  <div className="absolute top-full left-0 w-96 bg-white border border-gray-100 shadow-xl rounded-xl p-4 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 ease-out z-50">
+                  <div className="absolute top-full left-0 w-96 bg-white border border-gray-100 shadow-xl rounded-xl p-4 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 transition-all duration-200 ease-out z-50">
                     <div className="grid gap-2">
-                      {link.subItems.map((sub) => (
-                        <a
+                      {withPages(link.subItems).map((sub) => (
+                        <Link
                           key={sub.title}
                           href={sub.href}
                           className="p-3 hover:bg-orange-50 rounded-lg transition-colors group/item block"
@@ -189,12 +109,7 @@ export default function Navbar() {
                           <p className="text-sm font-bold text-(--heading-color) group-hover/item:text-(--brand-color)">
                             {sub.title}
                           </p>
-                          {sub.description && (
-                            <p className="text-[12px] text-gray-500 mt-0.5 line-clamp-1">
-                              {sub.description}
-                            </p>
-                          )}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </div>
@@ -220,19 +135,16 @@ export default function Navbar() {
 
           {/* Mobile Toggle */}
           <button
+            type="button"
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMobileMenuOpen}
             className="lg:hidden p-2 text-(--heading-color)"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X aria-label="close menu icon" size={28} />
+              <X aria-hidden="true" size={28} />
             ) : (
-              <Image
-                alt="open menu icon"
-                src={"/menu.svg"}
-                aria-label="open menu icon"
-                width={28}
-                height={28}
-              />
+              <Image alt="" src={"/menu.svg"} width={28} height={28} />
             )}
           </button>
         </div>
@@ -249,12 +161,22 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <li key={link.label}>
                 <div className="flex flex-col">
-                  <span className="text-lg font-bold text-(--heading-color) mb-4">
-                    {link.label}
-                  </span>
+                  {link.subItems ? (
+                    <span className="text-lg font-bold text-(--heading-color) mb-4">
+                      {link.label}
+                    </span>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-lg font-bold text-(--heading-color)"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                   {link.subItems ? (
                     <div className="grid grid-cols-1 gap-4 pl-4 border-l-2 border-orange-100">
-                      {link.subItems.map((sub) => (
+                      {withPages(link.subItems).map((sub) => (
                         <Link
                           key={sub.title}
                           href={sub.href}

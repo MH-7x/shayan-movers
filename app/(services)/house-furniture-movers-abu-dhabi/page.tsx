@@ -1,3 +1,4 @@
+import JsonLd from "@/components/JsonLd";
 import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
@@ -20,8 +21,8 @@ import ContactSection from "@/components/ContactSection";
 export const metadata = MetadataTemplate({
   data: {
     meta: {
-      title: "House Furniture Movers in Abu Dhabi | Shayan Movers UAE ",
-      desc: "Professional house furniture movers in Abu Dhabi. Licensed packers & movers offering safe, affordable relocation services. Free quote! Call: +971 54 732 6816 ",
+      title: "House Furniture Movers in Abu Dhabi | Shayan Movers UAE",
+      desc: "Professional house furniture movers in Abu Dhabi. Safe, affordable packing and relocation. Free quote! Call +971 54 732 6816.",
     },
     image: {
       path: "/house-furniture-movers-abu-dhabi.jpg",
@@ -39,12 +40,12 @@ interface Feature {
 const WhyChooseUs = () => {
   const features: Feature[] = [
     {
-      title: "Licensed & Insured Moving Services",
+      title: "Insured Moving Services",
       description: (
         <p>
-          Fully licensed by Abu Dhabi Municipality with comprehensive insurance
-          coverage. We follow strict safety standards to ensure your belongings
-          are protected and you stay at ease.
+          Our work is covered by insurance for damage or loss. Ask us for the
+          details for your move. We follow strict safety standards to help
+          keep your belongings protected.
         </p>
       ),
       icon: <ShieldCheck className="w-8 h-8" />,
@@ -87,8 +88,8 @@ const WhyChooseUs = () => {
       description: (
         <p>
           Our GPS-tracked trucks are clean and well-maintained. We use
-          professional tools, including ramps and heavy-duty straps, to
-          guarantee safe and secure transport.
+          professional tools, including ramps and heavy-duty straps, to help
+          keep your items safe in transport.
         </p>
       ),
       icon: <Star className="w-8 h-8" />,
@@ -422,7 +423,6 @@ import { FAQs } from "@/components/FAQs";
 import { AbuDhabiHouseMoversFaqs } from "@/lib/lists";
 import CTA from "@/components/CTA";
 import MetadataTemplate from "@/lib/MetaDataTemplate";
-import Script from "next/script";
 import { generateFAQSchema } from "@/lib/GenerateFaqSchema";
 import { convertFaqsForSchema } from "@/lib/ConvertFaqsInRaw";
 
@@ -622,18 +622,13 @@ const FaqsSchema = generateFAQSchema(
 const HouseFurnitureMoversAbuDhabi = () => {
   return (
     <>
-      <Script
-        strategy="beforeInteractive"
-        id="FAQSchema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: FaqsSchema }}
-      />
+      <JsonLd json={FaqsSchema} />
       <main className=" mt-32">
         <section>
           <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24">
             <div className="mx-auto mb-12 w-full max-w-3xl text-center md:mb-16 lg:mb-20">
               <h1 className="mb-4 text-4xl font-semibold md:text-6xl">
-                Professional House Furniture Movers in Abu Dhabi .
+                Professional House Furniture Movers in Abu Dhabi
               </h1>
               <p className="mx-auto mb-5 max-w-4xl text-lg text-[#636262] lg:mb-8">
                 Moving your home is one of the biggest changes you can make. If
@@ -655,8 +650,9 @@ const HouseFurnitureMoversAbuDhabi = () => {
               <Image
                 src={heroImage}
                 placeholder="blur"
-                loading="eager"
+                preload
                 fill
+                sizes="(min-width: 1152px) 1152px, 100vw"
                 alt="House Furniture Movers in Abu Dhabi"
                 className="object-cover rounded-2xl"
               />
@@ -665,12 +661,14 @@ const HouseFurnitureMoversAbuDhabi = () => {
           </div>
 
           <img
-            alt="Line Svg"
+            alt=""
+            aria-hidden="true"
             src={"/lines-1.svg"}
             className="absolute hidden  bottom-0 left-0 right-auto top-auto -z-10 sm:inline-block md:bottom-1/2 md:left-0 md:right-auto md:top-auto"
           />
           <img
-            alt="Line Svg"
+            alt=""
+            aria-hidden="true"
             src={"/lines-1.svg"}
             className="absolute bottom-auto left-auto right-0 top-0 -z-10 hidden sm:inline-block "
           />

@@ -16,20 +16,23 @@ export interface Data {
 export default  function MetadataTemplate({data}: {
   data : Data;
 }):Metadata {
+  const url = `${APP.url}${data.path}`;
+  const image = { url: `${APP.url}${data.image.path}`, alt: data.image.alt };
 
   return {
     title: data.meta.title,
     description: data.meta.desc,
     alternates: {
-      canonical: `${APP.url}${data.path}`,
+      canonical: url,
     },
     openGraph: {
-      url: `${APP.url}${data.path}`,
+      url,
       title: data.meta.title,
-      images: [{url : `${APP.url}${data.image.path}`, alt : data.image.alt}],
+      images: [image],
       description: data.meta.desc,
       type: "website",
-      countryName: "United Arab Emairtes",
+      locale: "en_AE",
+      countryName: "United Arab Emirates",
       emails: ["shayanmovers.ae@gmail.com"],
       phoneNumbers: [APP.phone],
       siteName: APP.name,
@@ -37,6 +40,9 @@ export default  function MetadataTemplate({data}: {
     twitter: {
       card: "summary_large_image",
       creator: APP.name,
+      title: data.meta.title,
+      description: data.meta.desc,
+      images: [image],
     },
   };
 }

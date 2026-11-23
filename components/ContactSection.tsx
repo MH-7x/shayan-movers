@@ -43,7 +43,7 @@ const ContactSection = ({
           ) : (
             <>
               <p>
-                Founded in 2018, our team of 50+ trained packers and movers
+                With 20+ years of experience, our team of 50+ trained packers and movers
                 delivers stress-free house shifting services across Dubai, Abu
                 Dhabi, Sharjah, and Ajman.
               </p>

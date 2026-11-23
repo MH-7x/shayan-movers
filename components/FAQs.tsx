@@ -5,11 +5,17 @@ interface FAQProps {
   answer: string | ReactNode;
 }
 
-export function FAQs({ faqs }: { faqs: FAQProps[] }) {
+export function FAQs({
+  faqs,
+  title = "Common Questions & Answers",
+}: {
+  faqs: FAQProps[];
+  title?: string;
+}) {
   return (
     <section id="faqs" className="md:w-11/12 w-full mt-36 mx-auto md:px-0 px-3">
       <h2 className="text-center b1 font-black md:text-4xl text-3xl!">
-        Common Questions & Answers
+        {title}
       </h2>
       <div className="max-w-3xl mx-auto mt-10">
         {faqs.map((faq, index) => (

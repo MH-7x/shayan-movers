@@ -1,3 +1,4 @@
+import JsonLd from "@/components/JsonLd";
 import ContactSection from "@/components/ContactSection";
 import { ReviewSection } from "@/components/Services";
 import { Button } from "@/components/ui/button";
@@ -17,17 +18,16 @@ import { RAKFaqs } from "@/lib/lists";
 import CTA from "@/components/CTA";
 import { convertFaqsForSchema } from "@/lib/ConvertFaqsInRaw";
 import { generateFAQSchema } from "@/lib/GenerateFaqSchema";
-import Script from "next/script";
 
 export const metadata = MetadataTemplate({
   data: {
     meta: {
-      title: "Best Movers in Ras Al Khaimah | 0% Damage & Permit Support",
+      title: "Movers in Ras Al Khaimah | Permit Support & Free Quote",
       desc: "Trusted movers in Ras Al Khaimah for villas, apartments & offices. We handle Al Hamra/Mina Al Arab permits & EtihadWE clearance. Call +971 54 732 6816 now!",
     },
     image: {
       path: "/movers-in-ras-al-khaimah.jpg",
-      alt: "Movers and Packers in al ain",
+      alt: "Movers and Packers in Ras Al Khaimah",
     },
     path: "/movers-in-ras-al-khaimah",
   },
@@ -61,7 +61,7 @@ const servicesList = [
     img: {
       src: "/Office-Commercial-Moving-Ajman.jpg",
     },
-    href: "/house-movers-in-dubai",
+    href: "#contact-section",
   },
   {
     title: "Office & Commercial Relocation",
@@ -75,7 +75,7 @@ const servicesList = [
     img: {
       src: "/Furniture-Movers-Assembly-Ajman.jpg",
     },
-    href: "/office-movers-in-dubai",
+    href: "#contact-section",
   },
   {
     title: "Villa Movers in Ras Al Khaimah",
@@ -91,7 +91,7 @@ const servicesList = [
     img: {
       src: "/House-Villa-Movers-in-Ajman.jpg",
     },
-    href: "/house-movers-in-dubai",
+    href: "#contact-section",
   },
 ];
 
@@ -143,12 +143,7 @@ const FaqsSchema = generateFAQSchema(convertFaqsForSchema(RAKFaqs));
 const RasAlKhaimahPage = () => {
   return (
     <>
-      <Script
-        strategy="beforeInteractive"
-        id="FAQSchema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: FaqsSchema }}
-      />
+      <JsonLd json={FaqsSchema} />
       <main className="md:mt-30.25 mt-17.5 ">
         <section className=" bg-(--neutral-color)/75 md:pl-56 pl-3 md:pr-72 pr-3 py-14 flex items-center justify-start relative overflow-hidden">
           <div className="md:border-l-4 py-8 md:pl-5 border-(--heading-color) z-1">
@@ -177,9 +172,9 @@ const RasAlKhaimahPage = () => {
           <Image
             src={"/movers-in-ras-al-khaimah.jpg"}
             alt="Movers and Packers in Ras Al Khaimah"
-            priority
             fill
-            loading="eager"
+            sizes="100vw"
+            preload
             className="object-cover -z-1"
           />
         </section>
@@ -189,8 +184,8 @@ const RasAlKhaimahPage = () => {
           desc={
             <>
               <p>
-                At Shayan Movers, we offer licensed villa, apartment, and office
-                moving with a zero-damage guarantee.
+                At Shayan Movers, we offer villa, apartment, and office moving
+                with careful handling and insurance cover for damage or loss.
               </p>
               <p className="mt-1">
                 Whether you are moving into a beachside villa in Al Hamra or a

@@ -37,7 +37,7 @@ const GoogleReviewCard = ({ review }: { review: Review }) => {
         <div className="w-5 h-5 flex-shrink-0 relative">
           <Image
             src={"/google-icon.svg"}
-            alt="google icon"
+            alt="Google"
             fill
             className="object-cover"
           />

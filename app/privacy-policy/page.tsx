@@ -166,8 +166,9 @@ export default function PrivacyPolicy() {
           </h2>
           <p className="text-gray-700 leading-relaxed">
             Our website might use basic cookies to help it function properly. We
-            don&apos;t use tracking cookies or third-party advertising cookies.
-            We&apos;re not following you around the internet.
+            also use Google Tag Manager, which may set cookies or similar
+            identifiers to measure how visitors use the site. You can block or
+            delete cookies in your browser settings.
           </p>
         </section>
 

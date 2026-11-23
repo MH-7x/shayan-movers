@@ -20,6 +20,7 @@ const ServiceCard = ({
           src={image.src}
           alt={image.alt}
           fill
+          sizes="(min-width: 1024px) 384px, (min-width: 768px) 50vw, 100vw"
           className="absolute object-cover object-center"
         />
       </div>

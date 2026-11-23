@@ -1,3 +1,4 @@
+import JsonLd from "@/components/JsonLd";
 import { Button } from "@/components/ui/button";
 import {
   Building2,
@@ -19,7 +20,7 @@ import { ReviewSection } from "@/components/Services";
 export const metadata = MetadataTemplate({
   data: {
     meta: {
-      title: "House Movers in Dubai | Trusted Movers & Packers UAE ",
+      title: "House Movers in Dubai | Trusted Movers & Packers UAE",
       desc: "Looking for reliable house movers in Dubai? Shayan Movers offers affordable house shifting services across UAE. 24/7 support. Call +971 54 732 6816 now!",
     },
     image: {
@@ -30,7 +31,7 @@ export const metadata = MetadataTemplate({
   },
 });
 
-export const choiceList = [
+const choiceList = [
   {
     title: "Professional Packing",
     desc: "We use quality materials to keep your items safe.",
@@ -67,7 +68,7 @@ import CTA from "@/components/CTA";
 import MetadataTemplate from "@/lib/MetaDataTemplate";
 import { convertFaqsForSchema } from "@/lib/ConvertFaqsInRaw";
 import { generateFAQSchema } from "@/lib/GenerateFaqSchema";
-import Script from "next/script";
+import Link from "next/link";
 
 const MovingServices = () => {
   const services = [
@@ -124,7 +125,7 @@ const MovingServices = () => {
       src: "/Secure-Loading-Transportation.jpg",
       list: [
         "3-ton truck: Best for studios and 1-bedroom flats",
-        "7-ton to 10-ton trucks: Used for larger apartments and villas",
+        "7-ton to 10-ton trucks: Used for larger apartments and homes",
       ],
     },
     {
@@ -149,9 +150,9 @@ const MovingServices = () => {
       {/* Hero Header */}
       <section className="bg-(--heading-color)  py-24 px-3">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl! md:text-5xl font-bold mb-6 text-white! leading-tight">
+          <h2 className="text-3xl! md:text-5xl font-bold mb-6 text-white! leading-tight">
             Complete House Moving Services
-          </h1>
+          </h2>
           <p className="md:text-xl text-lg text-slate-300 max-w-2xl mx-auto">
             Our services are designed to handle the hard parts of relocation.
             Here is exactly what you get when you hire us.
@@ -267,16 +268,6 @@ const pricingData = [
     cost: "AED 2,200 - 3,000",
     duration: "6-8 hours",
   },
-  {
-    type: "4-Bedroom Villa",
-    cost: "AED 3,000 - 4,500",
-    duration: "8-10 hours",
-  },
-  {
-    type: "5-Bedroom Villa",
-    cost: "AED 4,500 - 6,000+",
-    duration: "10-12+ hours",
-  },
 ];
 
 interface Feature {
@@ -363,12 +354,7 @@ const FaqsSchema = generateFAQSchema(
 const HouseMoversDubai = () => {
   return (
     <>
-      <Script
-        strategy="beforeInteractive"
-        id="FAQSchema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: FaqsSchema }}
-      />
+      <JsonLd json={FaqsSchema} />
       <main className=" mt-32">
         <section>
           <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24">
@@ -378,8 +364,15 @@ const HouseMoversDubai = () => {
               </h1>
               <p className="mx-auto mb-5 max-w-4xl text-lg text-[#636262] lg:mb-8">
                 Moving house is a lot of work. Whether you are moving out of a
-                studio apartment or relocating a large 5-bedroom villa, the
-                logistics can be overwhelming.
+                studio apartment or relocating a large home, the logistics can
+                be overwhelming. Planning a villa move? See our{" "}
+                <Link
+                  href="/villa-movers-in-dubai"
+                  className="text-(--brand-color) underline underline-offset-2"
+                >
+                  villa movers in Dubai
+                </Link>{" "}
+                page.
               </p>
 
               <div className="flex justify-center gap-x-4">
@@ -396,8 +389,9 @@ const HouseMoversDubai = () => {
               <Image
                 src={heroImage}
                 placeholder="blur"
-                loading="eager"
+                preload
                 fill
+                sizes="(min-width: 1152px) 1152px, 100vw"
                 alt="House Movers in Dubai"
                 className="object-cover rounded-2xl"
               />
@@ -406,12 +400,14 @@ const HouseMoversDubai = () => {
           </div>
 
           <img
-            alt="Line Svg"
+            alt=""
+            aria-hidden="true"
             src={"/lines-1.svg"}
             className="absolute hidden  bottom-0 left-0 right-auto top-auto -z-10 sm:inline-block md:bottom-1/2 md:left-0 md:right-auto md:top-auto"
           />
           <img
-            alt="Line Svg"
+            alt=""
+            aria-hidden="true"
             src={"/lines-1.svg"}
             className="absolute bottom-auto left-auto right-0 top-0 -z-10 hidden sm:inline-block "
           />
@@ -536,6 +532,17 @@ const HouseMoversDubai = () => {
               </div>
             </div>
 
+            <p className="mt-6 text-center">
+              Moving a villa? See our{" "}
+              <Link
+                href="/villa-movers-in-dubai#villa-moving-cost-in-dubai"
+                className="text-(--brand-color) underline underline-offset-2"
+              >
+                villa moving prices
+              </Link>
+              .
+            </p>
+
             <div className="mt-6 flex items-start gap-3 p-4 bg-amber-50 text-amber-900 rounded-lg border border-amber-100 max-w-3xl mx-auto">
               <Info className="w-5 h-5 shrink-0 mt-0.5 text-amber-600" />
               <p className="text-sm">
@@ -576,9 +583,6 @@ const HouseMoversDubai = () => {
                 <li className="flex items-start  text-gray-700">
                   <CheckCircle2 className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0 group-hover:text-gray-600 transition-colors" />
 
-                  <b>Downtown Dubai & Business Bay </b>
-                </li>
-                <li className="flex items-start  text-gray-700">
                   <b>Downtown Dubai & Business Bay </b>
                 </li>
                 <li className="flex items-start  text-gray-700">

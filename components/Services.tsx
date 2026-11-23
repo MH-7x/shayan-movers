@@ -15,11 +15,20 @@ const serviceList = [
   {
     image: {
       src: "/home-moving-in-dubai.jpg",
-      alt: "Home moving services for apartments and villas",
+      alt: "Home moving services for apartments and houses",
     },
     href: "/house-movers-in-dubai",
     title: "Home Moving",
-    desc: "We pack and move studio apartments, 1–5 bedroom homes, and villas. From kitchen items to furniture, electronics, and personal belongings, everything is packed using proper protective materials.",
+    desc: "We pack and move studio apartments and 1–5 bedroom homes. From kitchen items to furniture, electronics, and personal belongings, everything is packed using proper protective materials.",
+  },
+  {
+    image: {
+      src: "/Apartment-Villa-Moving.jpg",
+      alt: "Movers in uniform carrying garden furniture at a villa in Dubai",
+    },
+    href: "/villa-movers-in-dubai",
+    title: "Villa Moving",
+    desc: "We move villas of every size, from small two-bedroom villas to large homes with six or seven bedrooms. Packing, dismantling, transport, permits and setup at the new place.",
   },
   {
     image: {
@@ -35,7 +44,7 @@ const serviceList = [
       src: "/packing-services-dubai.jpg",
       alt: "Professional packing services with boxes and bubble wrap",
     },
-    href: "/",
+    href: "/house-movers-in-dubai",
     title: "Packing Services",
     desc: "Short on time? Our team handles complete packing using high-quality boxes, bubble wrap, and packing paper to keep your items safe.",
   },
@@ -44,7 +53,7 @@ const serviceList = [
       src: "/furniture-assembly-services-in-dubai.jpg",
       alt: "Furniture dismantling and assembly services",
     },
-    href: "/",
+    href: "/house-movers-in-dubai",
     title: "Furniture Assembly",
     desc: "Large furniture is professionally dismantled before moving and reassembled at your new location with proper tools and care.",
   },
@@ -53,7 +62,7 @@ const serviceList = [
       src: "/storage-services-in-dubai.jpg",
       alt: "Secure storage solutions for household items",
     },
-    href: "/",
+    href: "/affordable-movers-in-dubai",
     title: "Storage Solutions",
     desc: "Need temporary storage? Our secure facilities are available for both short-term and long-term storage requirements.",
   },
@@ -62,7 +71,7 @@ const serviceList = [
       src: "/piano-movers.jpg",
       alt: "Special handling for pianos, antiques, and fragile items",
     },
-    href: "/",
+    href: "/villa-movers-in-dubai",
     title: "Special Items",
     desc: "Pianos, artwork, antiques, and fragile items receive extra care with custom packing and crating for maximum protection.",
   },
@@ -183,15 +192,24 @@ const googleReviews = [
   },
 ];
 
-export function ReviewSection() {
+export function ReviewSection({ hideTitle = false }: { hideTitle?: boolean }) {
   return (
-    <section className="mt-36 max-w-6xl md:px-0 px-3  mx-auto">
+    <section
+      aria-label={hideTitle ? "Google reviews" : undefined}
+      className={`${hideTitle ? "mt-16" : "mt-36"} max-w-6xl md:px-0 px-3  mx-auto`}
+    >
       <div className="flex items-center justify-center text-center flex-col">
-        <h2 className=" whitespace-normal md:text-5xl text-4xl! wrap-break-word">
-          What Our Customers Says
-        </h2>
+        {!hideTitle && (
+          <h2 className=" whitespace-normal md:text-5xl text-4xl! wrap-break-word">
+            What Our Customers Say
+          </h2>
+        )}
 
-        <div className="flex md:flex-row flex-col gap-3 mt-5 items-center justify-center">
+        <div
+          className={`flex md:flex-row flex-col gap-3 ${
+            hideTitle ? "" : "mt-5"
+          } items-center justify-center`}
+        >
           <div className="flex gap-x-1 ">
             {Array(5)
               .fill(0)

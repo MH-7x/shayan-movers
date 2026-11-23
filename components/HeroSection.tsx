@@ -11,7 +11,7 @@ const HeroSection = () => {
       >
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#d84315]/10 text-[#d84315] text-sm font-semibold">
           <Star className="size-3.5 fill-current" />
-          Trusted Movers in Dubai & Sharjah
+          Trusted Movers in Dubai & Overall UAE
         </div>
         <h1 className="font-extrabold! mt-5">
           Moving Made <span className="text-[#d84315]">Simple.</span>{" "}
@@ -42,7 +42,8 @@ const HeroSection = () => {
           alt="Shayan Movers and Packers in Dubai"
           fill
           placeholder="blur"
-          loading="eager"
+          sizes="(min-width: 1000px) 1000px, 100vw"
+          preload
           className="object-cover"
         />
         <div className="absolute md:bottom-6 -bottom-6 md:left-6 md:right-6  md:w-96 w-full bg-white/60 backdrop-blur-lg p-4 rounded-[0.625rem] shadow-lg z-20 flex items-center gap-4 border border-(--neutral-color)">

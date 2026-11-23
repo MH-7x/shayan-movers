@@ -24,9 +24,10 @@ const CTA = () => {
       </div>
       <div className="z-20 relative md:h-[420px] h-96">
         <Image
-          src={"/cta-image.png"}
-          alt="cta image"
+          src={"/cta-image.webp"}
+          alt="Smiling mover holding two boxes while on a phone call"
           fill
+          sizes="(min-width: 768px) 50vw, 100vw"
           className="absolute object-contain object-center"
         />
       </div>

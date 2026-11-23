@@ -53,7 +53,6 @@ function Button({
   if (wtsBtn) {
     return (
       <Link
-        aria-label="Contact Us On WhatsApp"
         href={`https://wa.me/${APP.phone}?text=I%20Come%20From%20Your%20Website%20and%20I%20Need%20Moving%20Services`}
         target="_blank"
         rel="noopener noreferrer"
@@ -68,12 +67,7 @@ function Button({
   }
   if (callBtn) {
     return (
-      <Link
-        aria-label="Call To Us"
-        href={`tel:${APP.phone}`}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <Link href={`tel:${APP.phone}`}>
         <Comp
           data-slot="button"
           className={cn(buttonVariants({ variant, size, className }))}

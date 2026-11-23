@@ -1,3 +1,4 @@
+import JsonLd from "@/components/JsonLd";
 import ContactSection from "@/components/ContactSection";
 import CTA from "@/components/CTA";
 import { FAQs } from "@/components/FAQs";
@@ -31,13 +32,12 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import Script from "next/script";
 
 export const metadata = MetadataTemplate({
   data: {
     meta: {
       title: "Office Movers in Dubai – Office Relocation Services Dubai",
-      desc: "Looking for reliable office movers in Dubai? We offer professional office relocation, packing, and storage services in Dubai. Get a free quote or Call +971 54 732 6816 now!",
+      desc: "Reliable office movers in Dubai: office relocation, packing and storage. Get a free quote or call +971 54 732 6816 now.",
     },
     image: {
       path: "/office-movers-in-dubai.jpg",
@@ -58,7 +58,7 @@ const WhyChooseUs = () => {
     {
       title: "Licensed & Insured",
       description:
-        "We are fully licensed by Dubai authorities. Our services are insured, so you can rest easy knowing your assets are protected during the move.",
+        "We are a registered company, and our work is covered by insurance for damage or loss. Ask us for the details for your move.",
       icon: <ShieldCheck className="w-8 h-8" />,
     },
     {
@@ -149,7 +149,7 @@ const WhyChooseUs = () => {
   );
 };
 
-export const servicesList = [
+const servicesList = [
   {
     title: "Office Packing and Unpacking Services",
     desc: (
@@ -163,7 +163,7 @@ export const servicesList = [
       src: "/Office-Packing-Unpacking-Services.jpg",
       alt: "Office Packing and Unpacking Services",
     },
-    href: "/",
+    href: "#contact-section",
   },
   {
     title: "Furniture & Equipment Transportation",
@@ -178,7 +178,7 @@ export const servicesList = [
       src: "/Furniture-Equipment-Transportation.jpg",
       alt: "Furniture & Equipment Transportation",
     },
-    href: "/",
+    href: "#contact-section",
   },
   {
     title: "IT Equipment Relocation",
@@ -193,7 +193,7 @@ export const servicesList = [
       src: "/IT-Equipment-Relocation.jpg",
       alt: "IT Equipment Relocation",
     },
-    href: "/",
+    href: "#contact-section",
   },
   {
     title: "Storage Solutions",
@@ -208,7 +208,7 @@ export const servicesList = [
       src: "/Storage-Solutions-Office.jpg",
       alt: "Storage Solutions for Office Furniture",
     },
-    href: "/",
+    href: "#contact-section",
   },
   {
     title: "Furniture Reassembly & Setup",
@@ -223,7 +223,7 @@ export const servicesList = [
       src: "/Furniture-Reassembly-Setup.jpg",
       alt: "Office Furniture Reassembly and Setup",
     },
-    href: "/",
+    href: "#contact-section",
   },
   {
     title: "Specialized Junk Removal",
@@ -238,7 +238,7 @@ export const servicesList = [
       src: "/Specialized-Junk-Removal-Office.jpg",
       alt: "Specialized Junk Removal",
     },
-    href: "/",
+    href: "#contact-section",
   },
 ];
 
@@ -297,12 +297,7 @@ const FaqsSchema = generateFAQSchema(convertFaqsForSchema(OfficeMoversDubai));
 const OfficeMoversPage = () => {
   return (
     <>
-      <Script
-        strategy="beforeInteractive"
-        id="FAQSchema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: FaqsSchema }}
-      />
+      <JsonLd json={FaqsSchema} />
       <main className=" mt-32">
         <section>
           <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24">
@@ -335,8 +330,9 @@ const OfficeMoversPage = () => {
               <Image
                 src={heroImage}
                 placeholder="blur"
-                loading="eager"
+                preload
                 fill
+                sizes="(min-width: 1152px) 1152px, 100vw"
                 alt="Office Movers in Dubai"
                 className="object-cover rounded-2xl"
               />
@@ -345,12 +341,14 @@ const OfficeMoversPage = () => {
           </div>
 
           <img
-            alt="Line Svg"
+            alt=""
+            aria-hidden="true"
             src={"/lines-1.svg"}
             className="absolute hidden  bottom-0 left-0 right-auto top-auto -z-10 sm:inline-block md:bottom-1/2 md:left-0 md:right-auto md:top-auto"
           />
           <img
-            alt="Line Svg"
+            alt=""
+            aria-hidden="true"
             src={"/lines-1.svg"}
             className="absolute bottom-auto left-auto right-0 top-0 -z-10 hidden sm:inline-block "
           />

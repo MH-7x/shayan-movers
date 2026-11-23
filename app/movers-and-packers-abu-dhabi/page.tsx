@@ -1,3 +1,4 @@
+import JsonLd from "@/components/JsonLd";
 import ContactSection from "@/components/ContactSection";
 import CTA from "@/components/CTA";
 import { FAQs } from "@/components/FAQs";
@@ -11,9 +12,8 @@ import MetadataTemplate from "@/lib/MetaDataTemplate";
 import { CheckCircle2, Landmark, MessageCircle, PhoneCall } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import Script from "next/script";
 
-export const choiceList = [
+const choiceList = [
   {
     title: "We respond fast",
     desc: "When you message us, you won't wait for hours. We usually reply within 5 to 10 minutes to give you a quote or answer your questions.",
@@ -32,7 +32,7 @@ export const choiceList = [
   },
 ];
 
-export const servicesList = [
+const servicesList = [
   {
     title: "House Movers Abu Dhabi",
     desc: (
@@ -62,7 +62,7 @@ export const servicesList = [
       src: "/villa-movers-in-abu-dhabi.jpg",
       alt: "Villa Movers in Abu Dhabi",
     },
-    href: "/house-movers-in-dubai",
+    href: "/house-furniture-movers-abu-dhabi",
   },
   {
     title: "Professional Office Relocation",
@@ -78,7 +78,7 @@ export const servicesList = [
       src: "/office-relocation-in-abu-dhabi.jpg",
       alt: "Professional Office Relocation",
     },
-    href: "/office-movers-in-dubai",
+    href: "#contact-section",
   },
   {
     title: "Cheap Movers and Packers in Abu Dhabi",
@@ -93,7 +93,7 @@ export const servicesList = [
       src: "/cheap-movers-in-abu-dhabi.jpg",
       alt: "Cheap Movers and Packers in Abu Dhabi",
     },
-    href: "/",
+    href: "#contact-section",
   },
 ];
 
@@ -116,18 +116,12 @@ const FaqsSchema = generateFAQSchema(convertFaqsForSchema(AbuDhabiFaqs));
 const AbuDhabiPage = () => {
   return (
     <>
-      <Script
-        strategy="beforeInteractive"
-        id="FAQSchema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: FaqsSchema }}
-      />
+      <JsonLd json={FaqsSchema} />
       <main className="md:mt-30.25 mt-24 ">
         <section className=" bg-(--neutral-color)/75 md:pl-56 pl-3 md:pr-72 pr-3 py-14 flex items-center justify-start relative overflow-hidden">
           <div className="md:border-l-4 py-8 md:pl-5 border-(--heading-color) z-1">
             <h1 className="text-(--brand-color)! md:text-4xl! text-3xl!">
               Reliable Movers and Packers Abu Dhabi: Stress-Free Shifting
-              Guaranteed
             </h1>
             <p className="mt-5">
               Moving to a new home or office is a big task. It’s often stressful
@@ -151,9 +145,9 @@ const AbuDhabiPage = () => {
           <Image
             src={"/movers-and-packers-abu-dhabi.jpg"}
             alt="Movers and Packers Abu Dhabi"
-            priority
             fill
-            loading="eager"
+            sizes="100vw"
+            preload
             className="object-cover -z-1"
           />
         </section>

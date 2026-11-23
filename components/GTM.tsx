@@ -1,6 +1,4 @@
 // components/GTM.tsx
-"use client";
-
 import Script from "next/script";
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "GTM-5HHT4XK6";
@@ -21,5 +19,18 @@ const GTM: React.FC = () => {
     </>
   );
 };
+
+/** Google Tag Manager fallback for visitors without JavaScript. */
+export const GTMNoScript: React.FC = () => (
+  <noscript>
+    <iframe
+      src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+      height="0"
+      width="0"
+      title="Google Tag Manager"
+      style={{ display: "none", visibility: "hidden" }}
+    />
+  </noscript>
+);
 
 export default GTM;

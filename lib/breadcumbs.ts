@@ -2,7 +2,7 @@
 
 export type BreadcrumbItem = { name: string; url: string };
 
-export const SITE_URL = process.env.APP_URL;
+export const SITE_URL = process.env.APP_URL || "https://shayanmovers.ae";
 
 /* ======================
    HOME
@@ -15,6 +15,21 @@ export const breadcrumbs_home: BreadcrumbItem[] = [
 /* ======================
    STATIC PAGES
 ====================== */
+
+export const breadcrumbs_aboutUs: BreadcrumbItem[] = [
+  { name: "Home", url: "" },
+  { name: "About Us", url: "/about-us" },
+];
+
+export const breadcrumbs_privacyPolicy: BreadcrumbItem[] = [
+  { name: "Home", url: "" },
+  { name: "Privacy Policy", url: "/privacy-policy" },
+];
+
+export const breadcrumbs_termsAndConditions: BreadcrumbItem[] = [
+  { name: "Home", url: "" },
+  { name: "Terms and Conditions", url: "/terms-and-conditions" },
+];
 
 export const breadcrumbs_contactUs: BreadcrumbItem[] = [
   { name: "Home", url: "" },
@@ -65,6 +80,17 @@ export const breadcrumbs_officeMoversDubai: BreadcrumbItem[] = [
   { name: "Home", url: "" },
   { name: "Office Movers in Dubai", url: "/office-movers-in-dubai" },
 ];
+export const breadcrumbs_affordableMoversDubai: BreadcrumbItem[] = [
+  { name: "Home", url: "" },
+  {
+    name: "Affordable Movers in Dubai",
+    url: "/affordable-movers-in-dubai",
+  },
+];
+export const breadcrumbs_villaMoversDubai: BreadcrumbItem[] = [
+  { name: "Home", url: "" },
+  { name: "Villa Movers in Dubai", url: "/villa-movers-in-dubai" },
+];
 export const breadcrumbs_AbuDhabiMovers: BreadcrumbItem[] = [
   { name: "Home", url: "" },
   { name: "Movers and Packers Abu Dhabi", url: "/movers-and-packers-abu-dhabi" },
@@ -77,6 +103,9 @@ export const breadcrumbs_AbuDhabiMovers: BreadcrumbItem[] = [
 export const BREADCRUMBS_BY_PATH: Record<string, BreadcrumbItem[]> = {
   "/": breadcrumbs_home,
   "/contact-us": breadcrumbs_contactUs,
+  "/about-us": breadcrumbs_aboutUs,
+  "/privacy-policy": breadcrumbs_privacyPolicy,
+  "/terms-and-conditions": breadcrumbs_termsAndConditions,
   "/movers-in-ajman": breadcrumbs_moversInAjman,
   "/movers-in-al-ain": breadcrumbs_moversInAlAin,
   "/movers-in-ras-al-khaimah": breadcrumbs_moversInRAK,
@@ -85,5 +114,7 @@ export const BREADCRUMBS_BY_PATH: Record<string, BreadcrumbItem[]> = {
     breadcrumbs_houseFurnitureMoversAbuDhabi,
   "/house-movers-in-dubai": breadcrumbs_houseMoversDubai,
   "/office-movers-in-dubai": breadcrumbs_officeMoversDubai,
+  "/villa-movers-in-dubai": breadcrumbs_villaMoversDubai,
+  "/affordable-movers-in-dubai": breadcrumbs_affordableMoversDubai,
   "/movers-and-packers-abu-dhabi": breadcrumbs_AbuDhabiMovers,
 };

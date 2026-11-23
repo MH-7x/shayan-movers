@@ -1,3 +1,4 @@
+import JsonLd from "@/components/JsonLd";
 import ContactSection from "@/components/ContactSection";
 import CTA from "@/components/CTA";
 import { FAQs } from "@/components/FAQs";
@@ -17,7 +18,6 @@ import {
   PhoneCall,
 } from "lucide-react";
 import Image from "next/image";
-import Script from "next/script";
 
 export const metadata = MetadataTemplate({
   data: {
@@ -36,7 +36,7 @@ export const metadata = MetadataTemplate({
 const choiceList = [
   {
     title: "Licensed & Insured",
-    desc: "A legal, registered company with AED 1,000 damage protection.",
+    desc: "A registered company. Our work is covered for damage or loss, so ask us for the details.",
   },
   {
     title: "24/7 Support",
@@ -60,12 +60,7 @@ const FaqsSchema = generateFAQSchema(convertFaqsForSchema(AlAinFaqs));
 const AlAinPage = () => {
   return (
     <>
-      <Script
-        strategy="beforeInteractive"
-        id="FAQSchema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: FaqsSchema }}
-      />
+      <JsonLd json={FaqsSchema} />
       <main className="md:mt-30.25 mt-17.5 ">
         <section className=" bg-(--neutral-color)/75 md:pl-56 pl-3 md:pr-72 pr-3 py-14 flex items-center justify-start relative overflow-hidden">
           <div className="md:border-l-4 py-8 md:pl-5 border-(--heading-color) z-1">
@@ -93,9 +88,9 @@ const AlAinPage = () => {
           <Image
             src={"/movers-in-al-ain.jpg"}
             alt="Movers and Packers in Al Ain"
-            priority
             fill
-            loading="eager"
+            sizes="100vw"
+            preload
             className="object-cover -z-1"
           />
         </section>

@@ -42,7 +42,8 @@ const Process = () => {
             width={200}
             height={200}
             src={"/arrow.png"}
-            alt="right arrow"
+            alt=""
+            aria-hidden="true"
           />
         </div>
         <div className="flex items-center justify-center flex-col gap-y-3 relative">
@@ -62,7 +63,8 @@ const Process = () => {
             width={200}
             height={200}
             src={"/arrow.png"}
-            alt="right arrow"
+            alt=""
+            aria-hidden="true"
           />
         </div>
         <div className="flex items-center justify-center flex-col gap-y-3">

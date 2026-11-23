@@ -1,3 +1,4 @@
+import JsonLd from "@/components/JsonLd";
 import ContactSection from "@/components/ContactSection";
 import { HomeFaqs } from "@/lib/lists";
 import { ReviewSection, Services } from "@/components/Services";
@@ -9,7 +10,6 @@ import HeroSection from "@/components/HeroSection";
 import Process from "@/components/Process";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import MetadataTemplate from "@/lib/MetaDataTemplate";
-import Script from "next/script";
 import { generateFAQSchema } from "@/lib/GenerateFaqSchema";
 import { convertFaqsForSchema } from "@/lib/ConvertFaqsInRaw";
 
@@ -32,12 +32,7 @@ const FaqsSchema = generateFAQSchema(convertFaqsForSchema(HomeFaqs));
 const HomePage = () => {
   return (
     <>
-      <Script
-        strategy="beforeInteractive"
-        id="FAQSchema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: FaqsSchema }}
-      />
+      <JsonLd json={FaqsSchema} />
       <main className="mt-32 overflow-hidden">
         <HeroSection />
         <ContactSection

@@ -1,3 +1,4 @@
+import JsonLd from "@/components/JsonLd";
 import ContactSection from "@/components/ContactSection";
 import { ReviewSection } from "@/components/Services";
 import { Button } from "@/components/ui/button";
@@ -8,8 +9,8 @@ import Image from "next/image";
 export const metadata = MetadataTemplate({
   data: {
     meta: {
-      title: "Movers in Ajman | Shyan Movers & Packers",
-      desc: "Looking for reliable movers in Ajman? Shayan Movers offers top-rated house & office moving services in Ajman. Get a free quote today – licensed, insured, & 24/7 support.",
+      title: "Movers in Ajman | Shayan Movers & Packers",
+      desc: "Looking for reliable movers in Ajman? Shayan Movers offers house & office moving in Ajman. Get a free quote today. Call +971 54 732 6816.",
     },
     image: {
       path: "/movers-in-ajman.jpg",
@@ -25,7 +26,6 @@ import Process from "@/components/Process";
 import { FAQs } from "@/components/FAQs";
 import { AjmanFaqs } from "@/lib/lists";
 import CTA from "@/components/CTA";
-import Script from "next/script";
 import { generateFAQSchema } from "@/lib/GenerateFaqSchema";
 import { convertFaqsForSchema } from "@/lib/ConvertFaqsInRaw";
 
@@ -73,7 +73,7 @@ const servicesList = [
     img: {
       src: "/House-Villa-Movers-in-Ajman.jpg",
     },
-    href: "/house-movers-in-dubai",
+    href: "#contact-section",
   },
   {
     title: "Office & Commercial Moving",
@@ -88,7 +88,7 @@ const servicesList = [
     img: {
       src: "/Office-Commercial-Moving-Ajman.jpg",
     },
-    href: "/office-movers-in-dubai",
+    href: "#contact-section",
   },
   {
     title: "Furniture Movers & Assembly",
@@ -103,7 +103,7 @@ const servicesList = [
     img: {
       src: "/Furniture-Movers-Assembly-Ajman.jpg",
     },
-    href: "/",
+    href: "#contact-section",
   },
   {
     title: "Packing & Unpacking Services",
@@ -117,9 +117,9 @@ const servicesList = [
     ),
     img: {
       src: "/Packing-Unpacking-Services-Ajman.jpg",
-      alt: "Cheap Movers and Packers in Abu Dhabi",
+      alt: "Movers packing and unpacking household items in Ajman",
     },
-    href: "/",
+    href: "#contact-section",
   },
 ];
 
@@ -195,12 +195,7 @@ const FaqsSchema = generateFAQSchema(convertFaqsForSchema(AjmanFaqs));
 const page = () => {
   return (
     <>
-      <Script
-        strategy="beforeInteractive"
-        id="FAQSchema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: FaqsSchema }}
-      />
+      <JsonLd json={FaqsSchema} />
       <main className="md:mt-30.25 mt-17.5 ">
         <section className=" bg-(--neutral-color)/75 md:pl-56 pl-3 md:pr-72 pr-3 py-14 flex items-center justify-start relative overflow-hidden">
           <div className="md:border-l-4 py-8 md:pl-5 border-(--heading-color) z-1">
@@ -230,9 +225,9 @@ const page = () => {
           <Image
             src={"/movers-in-ajman.jpg"}
             alt="Movers and Packers in Ajman"
-            priority
             fill
-            loading="eager"
+            sizes="100vw"
+            preload
             className="object-cover -z-1"
           />
         </section>

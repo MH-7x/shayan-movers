@@ -1,97 +1,7 @@
-import {
-  Facebook,
-  Twitter,
-  Instagram,
-  Linkedin,
-  MapPin,
-  Phone,
-} from "lucide-react";
+import { MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-interface SubMenuItem {
-  title: string;
-  description?: string;
-  href: string;
-}
-
-interface NavItem {
-  label: string;
-  href: string;
-  subItems?: SubMenuItem[];
-}
-const navLinks: NavItem[] = [
-  {
-    label: "Services",
-    href: "#",
-    subItems: [
-      {
-        title: "House & Villa Moving",
-        description:
-          "Villa movers Dubai, home relocation UAE, best house movers.",
-        href: "/house-movers-in-dubai",
-      },
-      {
-        title: "Office & Commercial Moving",
-        description:
-          "Office movers Dubai, business relocation, corporate moving services.",
-        href: "/office-movers-in-dubai",
-      },
-      {
-        title: "Furniture Moving & Assembly",
-        description:
-          "Furniture movers, sofa moving, handyman services, bed fixing.",
-        href: "#",
-      },
-      {
-        title: "Packing & wrapping",
-        description:
-          "Professional packing services, bubble wrap packing, carton boxes",
-        href: "#",
-      },
-      {
-        title: "Apartment & Studio Moving",
-        description: "Studio movers, flat shifting, apartment movers near me.",
-        href: "#",
-      },
-      {
-        title: "Storage & Warehousing",
-        description:
-          "Short term storage Dubai, self-storage UAE, furniture storage",
-        href: "#",
-      },
-      {
-        title: "Local & Inter-Emirate Moving",
-        description: "Moving from Dubai to Abu Dhabi, inter-city movers UAE.",
-        href: "#",
-      },
-    ],
-  },
-  {
-    label: "Areas We Serve",
-    href: "#",
-    subItems: [
-      {
-        title: "Movers and Packers in Abu Dhabi",
-        href: "/movers-and-packers-abu-dhabi",
-      },
-      { title: "Movers and Packers in Sharjah", href: "/movers-in-sharjah" },
-      { title: "Movers and Packers in Ajman", href: "/movers-in-ajman" },
-      { title: "Movers and Packers in Al Ain", href: "/movers-in-al-ain" },
-      {
-        title: "Movers and Packers in Ras Al Khaimah",
-        href: "/movers-in-ras-al-khaimah",
-      },
-      {
-        title: "House Furniture Movers in Abu Dhabi",
-        href: "/house-furniture-movers-abu-dhabi",
-      },
-    ],
-  },
-  { label: "About Us", href: "/about-us" },
-  { label: "Contact Movers", href: "/contact-us" },
-];
-// Assuming your shadcn button is at this path as per instructions
-
+import { navLinks, withPages } from "@/lib/navLinks";
 export default function Footer() {
   return (
     <footer className="bg-white border-t border-gray-100 pt-16 pb-8">
@@ -112,36 +22,6 @@ export default function Footer() {
               in Dubai & Sharjah. We pack, move, and set up your furniture
               safely and securely.
             </p>
-            <div className="flex items-center gap-4">
-              <a
-                href="#"
-                title="facebook profile"
-                className="p-2 bg-gray-50 rounded-full text-gray-400 hover:text-(--brand-color) hover:bg-orange-50 transition-all"
-              >
-                <Facebook size={18} />
-              </a>
-              <a
-                href="#"
-                title="twitter profile"
-                className="p-2 bg-gray-50 rounded-full text-gray-400 hover:text-(--brand-color) hover:bg-orange-50 transition-all"
-              >
-                <Twitter size={18} />
-              </a>
-              <a
-                href="#"
-                title="instagram profile"
-                className="p-2 bg-gray-50 rounded-full text-gray-400 hover:text-(--brand-color) hover:bg-orange-50 transition-all"
-              >
-                <Instagram size={18} />
-              </a>
-              <a
-                href="#"
-                title="linkedin profile"
-                className="p-2 bg-gray-50 rounded-full text-gray-400 hover:text-(--brand-color) hover:bg-orange-50 transition-all"
-              >
-                <Linkedin size={18} />
-              </a>
-            </div>
             <div className="flex items-center gap-3 text-sm text-[#404040]">
               <MapPin size={16} className="text-(--brand-color) shrink-0" />
               <address
@@ -154,70 +34,62 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-3 text-sm text-[#404040]">
               <Phone size={16} className="text-(--brand-color) shrink-0" />
-              <Link href={"tel:+971547326816"}>+971 547326816</Link>
+              <Link href={"tel:+971547326816"}>+971 54 732 6816</Link>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-(--heading-color) font-bold! text-xl! mb-6">
-              Services
-            </h4>
+            <p className="text-(--heading-color) font-bold text-xl mb-6">Services</p>
             <ul className="space-y-4">
-              {navLinks[0].subItems &&
-                navLinks[0].subItems.map((item) => (
-                  <li key={item.title}>
-                    <a
-                      href={item.href}
-                      className="text-sm text-[#404040] hover:text-(--brand-color) transition-colors"
-                    >
-                      {item.title}
-                    </a>
-                  </li>
-                ))}
+              {withPages(navLinks[0].subItems).map((item) => (
+                <li key={item.title}>
+                  <Link
+                    href={item.href}
+                    className="text-sm text-[#404040] hover:text-(--brand-color) transition-colors"
+                  >
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Support */}
           <div>
-            <h4 className="text-(--heading-color) font-bold! text-xl! mb-6">
-              Locations
-            </h4>
+            <p className="text-(--heading-color) font-bold text-xl mb-6">Locations</p>
             <ul className="space-y-4">
-              {navLinks[1].subItems &&
-                navLinks[1].subItems.map((item) => (
-                  <li key={item.title}>
-                    <a
-                      href={item.href}
-                      className="text-sm text-[#404040] hover:text-(--brand-color) transition-colors"
-                    >
-                      {item.title}
-                    </a>
-                  </li>
-                ))}
+              {withPages(navLinks[1].subItems).map((item) => (
+                <li key={item.title}>
+                  <Link
+                    href={item.href}
+                    className="text-sm text-[#404040] hover:text-(--brand-color) transition-colors"
+                  >
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact & Newsletter */}
           <div className="space-y-6">
-            <h4 className="text-(--heading-color) font-bold! text-xl! mb-6">
-              More Pages
-            </h4>
+            <p className="text-(--heading-color) font-bold text-xl mb-6">More Pages</p>
             <ul className="space-y-4">
               {[
-                { title: "About Us", href: "#" },
+                { title: "About Us", href: "/about-us" },
                 { title: "Contact Us", href: "/contact-us" },
-                { title: "Sitemap", href: "#" },
-                { title: "Privacy Policy ", href: "#" },
-                { title: "Terms of Service ", href: "#" },
+                { title: "Sitemap", href: "/sitemap.xml" },
+                { title: "Privacy Policy", href: "/privacy-policy" },
+                { title: "Terms and Conditions", href: "/terms-and-conditions" },
               ].map((item) => (
                 <li key={item.title}>
-                  <a
+                  <Link
                     href={item.href}
                     className="text-sm text-[#404040] hover:text-(--brand-color) transition-colors"
                   >
                     {item.title}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -231,7 +103,7 @@ export default function Footer() {
             Design and development by{" "}
             <a
               href="https://github.com/MH-7x"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer nofollow"
               target="_blank"
               className="text-(--brand-color) hover:underline"
             >
@@ -239,24 +111,24 @@ export default function Footer() {
             </a>
           </p>
           <div className="flex items-center gap-6">
-            <a
+            <Link
               href="/privacy-policy"
               className="text-sm text-gray-700 hover:text-(--brand-color) transition-colors"
             >
               Privacy
-            </a>
-            <a
+            </Link>
+            <Link
               href="/terms-and-conditions"
               className="text-sm text-gray-700 hover:text-(--brand-color) transition-colors"
             >
               Terms
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="/sitemap.xml"
               className="text-sm text-gray-700 hover:text-(--brand-color) transition-colors"
             >
               Sitemap
-            </a>
+            </Link>
           </div>
         </div>
       </div>

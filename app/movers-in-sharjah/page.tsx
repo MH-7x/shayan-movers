@@ -1,3 +1,4 @@
+import JsonLd from "@/components/JsonLd";
 import ContactSection from "@/components/ContactSection";
 import { ReviewSection } from "@/components/Services";
 import { Button } from "@/components/ui/button";
@@ -34,7 +35,6 @@ import { SharjahFaqs } from "@/lib/lists";
 import CTA from "@/components/CTA";
 import { generateFAQSchema } from "@/lib/GenerateFaqSchema";
 import { convertFaqsForSchema } from "@/lib/ConvertFaqsInRaw";
-import Script from "next/script";
 
 interface Feature {
   title: string;
@@ -57,9 +57,9 @@ const WhyChooseUs = () => {
       icon: <CircleDollarSign className="w-8 h-8" />,
     },
     {
-      title: "No-Damage Guarantee",
+      title: "Careful Handling",
       description:
-        "We use the best packing materials, including thick bubble wrap. If any item is damaged, we will replace it.",
+        "We use the best packing materials, including thick bubble wrap. Our work is covered for damage or loss, so ask us for the details.",
       icon: <PackageCheck className="w-8 h-8" />,
     },
     {
@@ -140,7 +140,7 @@ const services = [
     img: {
       src: "/House-Villa-Moving-Sharjah.jpg",
     },
-    href: "/house-movers-in-dubai",
+    href: "#contact-section",
   },
   {
     title: "Apartment & Studio Moving",
@@ -155,7 +155,7 @@ const services = [
     img: {
       src: "/Apartment-Studio-Moving-Sharjah.jpg",
     },
-    href: "/house-movers-in-dubai",
+    href: "#contact-section",
   },
   {
     title: "Office & Commercial Moving",
@@ -170,7 +170,7 @@ const services = [
     img: {
       src: "/Office-Commercial-Moving-Sharjah.jpg",
     },
-    href: "/office-movers-in-dubai",
+    href: "#contact-section",
   },
   {
     title: "Furniture Moving & Assembly",
@@ -185,7 +185,7 @@ const services = [
     img: {
       src: "/Furniture-Moving-Assembly-Sharjah.jpg",
     },
-    href: "/",
+    href: "#contact-section",
   },
   {
     title: "Packing & Wrapping Services",
@@ -200,7 +200,7 @@ const services = [
     img: {
       src: "/Packing-Wrapping-Services-Sharjah.jpg",
     },
-    href: "/",
+    href: "#contact-section",
   },
   {
     title: "Storage & Warehousing",
@@ -208,14 +208,14 @@ const services = [
       <>
         If your new home isn&apos;t ready yet, we have a solution. We offer
         climate-controlled storage in Sharjah monitored 24/7 by CCTV. <br /> Our
-        units are fully insured and available for both short-term and long-term
+        units are available for both short-term and long-term
         needs.
       </>
     ),
     img: {
       src: "/Storage-Warehousing-Sharjah.jpg",
     },
-    href: "/",
+    href: "#contact-section",
   },
   {
     title: "Local & Inter-Emirate Moving",
@@ -229,7 +229,7 @@ const services = [
     img: {
       src: "/Local-Inter-Emirate-Moving-Sharjah.jpg",
     },
-    href: "/",
+    href: "#contact-section",
   },
 ];
 
@@ -238,12 +238,7 @@ const FaqsSchema = generateFAQSchema(convertFaqsForSchema(SharjahFaqs));
 const SharjahPage = () => {
   return (
     <>
-      <Script
-        strategy="beforeInteractive"
-        id="FAQSchema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: FaqsSchema }}
-      />
+      <JsonLd json={FaqsSchema} />
 
       <main className="md:mt-30.25 mt-17.5 ">
         <section className=" bg-(--neutral-color)/75 md:pl-56 pl-3 md:pr-72 pr-3 py-14 flex items-center justify-start relative overflow-hidden">
@@ -257,9 +252,9 @@ const SharjahPage = () => {
               Movers is here to help.
             </p>
             <p className="mt-2">
-              We are a trusted Sharjah moving company with over 15 years of
-              experience in the UAE. Our team is fully licensed and insured,
-              offering 24/7 service to fit your busy schedule.
+              We are a trusted Sharjah moving company with over 20 years of
+              experience in the UAE. Our work is covered by insurance for damage
+              or loss, and we offer 24/7 service to fit your busy schedule.
             </p>
             <div className="flex mt-5 gap-x-3">
               <Button callBtn>
@@ -273,9 +268,9 @@ const SharjahPage = () => {
           <Image
             src={"/movers-in-sharjah.jpg"}
             alt="Movers and Packers in sharjah"
-            priority
             fill
-            loading="eager"
+            sizes="100vw"
+            preload
             className="object-cover -z-1"
           />
         </section>
